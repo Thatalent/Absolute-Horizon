@@ -20,7 +20,7 @@ public class Stab : Moves {
 		EpUse = (int)(1/((float)(BattleController.Player.Strength+BattleController.Player.Skill)/100));
 		MpUse = 0;
 		SpUse = 0.2f;
-
+        MoveCount = 3;
 
 	
 	}

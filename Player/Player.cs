@@ -16,6 +16,7 @@ public class Player {
 	private int playerLvl;
 	private float playerExp;
 	private string playerName;
+    private int moveCounter;
 
 	private int health;
 	private int attack;
@@ -40,6 +41,7 @@ public class Player {
 	public int PlayerLvl{ get; set; }
 	public float PlayerExp{ get; set; }
 	public string PlayerName{ get; set; }
+    public int MoveCounter { get; set; }
 
 	public int Health{ get; set; }
 	public int Attack{ get; set; }

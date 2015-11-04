@@ -18,6 +18,7 @@ public class Moves {
 	private int epUse;
 	private int mpUse;
 	private float spUse;
+    private int moveCount;
 
 
 	
@@ -57,6 +58,7 @@ public class Moves {
 	public int MpUse{ get; set; }
 	public float SpUse{ get; set; }
 	public string Name{ get; set; }
+    public int MoveCount { get; set; }
 
 
 

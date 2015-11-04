@@ -23,13 +23,15 @@ public class GameInformtion : MonoBehaviour {
 	public static int MaxEnergy{ get; set; }//maxEnergy is depended on stamina 
 	public static int Energy{ get; set; }
 
-	
+	public static Player Player { get; set; }
 	public static int Health{ get; set; }
 	public static int Attack{ get; set; }
 	public static int Defense{ get; set; }
 	public static int Magic{ get; set; }
 	public static int MagicDefense{ get; set; }
 	public static int Agility{ get; set; }
+
+    public static int MoveCounter { get; set; }
 	
 	public static Moves[]attacks = new Moves[16]; 
 	private static Moves[]spells = new Moves[16];
@@ -42,27 +44,28 @@ public class GameInformtion : MonoBehaviour {
 
 
 	public static Player data(){
-		Player player = new Player ();
-		player.CharacterClass = GameInformtion.PlayerClass;
-		player.PlayerLvl = GameInformtion.PlayerLvl;
-		player.PlayerName = GameInformtion.PlayerName;
-		player.Stamina = GameInformtion.Stamina;
-		player.Strength = GameInformtion.Strength;
-		player.Endurance = GameInformtion.Endurance;
-		player.Intelligence = GameInformtion.Intelligence;
-		player.Resistance = GameInformtion.Resistance;
-		player.Speed = GameInformtion.Speed;
-		player.Skill = GameInformtion.Skill;
-		player.Luck = GameInformtion.Luck;
-		player.Health = GameInformtion.Health;
-		player.Attack = GameInformtion.Attack;
-		player.Defense = GameInformtion.Defense;
-		player.Magic = GameInformtion.Magic;
-		player.MagicDefense = GameInformtion.MagicDefense;
-		player.Energy = GameInformtion.MaxEnergy;
-		player.EnergyRate = GameInformtion.EnergyRate;
-		player.Agility = GameInformtion.Agility;
-		return player;
+		Player = new Player ();
+		Player.CharacterClass = GameInformtion.PlayerClass;
+		Player.PlayerLvl = GameInformtion.PlayerLvl;
+		Player.PlayerName = GameInformtion.PlayerName;
+		Player.Stamina = GameInformtion.Stamina;
+		Player.Strength = GameInformtion.Strength;
+		Player.Endurance = GameInformtion.Endurance;
+		Player.Intelligence = GameInformtion.Intelligence;
+		Player.Resistance = GameInformtion.Resistance;
+		Player.Speed = GameInformtion.Speed;
+		Player.Skill = GameInformtion.Skill;
+		Player.Luck = GameInformtion.Luck;
+		Player.Health = GameInformtion.Health;
+		Player.Attack = GameInformtion.Attack;
+		Player.Defense = GameInformtion.Defense;
+		Player.Magic = GameInformtion.Magic;
+		Player.MagicDefense = GameInformtion.MagicDefense;
+		Player.Energy = GameInformtion.MaxEnergy;
+		Player.EnergyRate = GameInformtion.EnergyRate;
+		Player.Agility = GameInformtion.Agility;
+        Player.MoveCounter = MoveCounter;
+		return Player;
 	}
 
 	public static void save(Player player){
@@ -85,7 +88,8 @@ public class GameInformtion : MonoBehaviour {
 		GameInformtion.Agility = GameInformtion.Speed;
 		GameInformtion.EnergyRate = (GameInformtion.Endurance+GameInformtion.Resistance) / 20;
 		GameInformtion.MaxEnergy = GameInformtion.Stamina + (GameInformtion.Strength+GameInformtion.Intelligence) / 2;
-		GameInformtion.Energy= GameInformtion.MaxEnergy ;
+        Energy = MaxEnergy;
+        MoveCounter = (Speed + Skill / 2) / 2 + PlayerLvl + 3;
 	}
 
 
