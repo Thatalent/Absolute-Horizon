@@ -29,7 +29,7 @@ public class Stab : Moves {
 		int damage=attack.attacking ();
 		BattleController.Enemy.GetComponent<Enemy>().Health = BattleController.Enemy.GetComponent<Enemy>().Health + damage;
         Debug.Log("damage: "+damage);
-        enemyStatus();
+        enemyStatus(damage, 0, 0);
 	}
 	
 

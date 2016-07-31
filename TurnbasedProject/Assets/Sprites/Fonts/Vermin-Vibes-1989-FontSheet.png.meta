@@ -1,0 +1,1707 @@
+fileFormatVersion: 2
+guid: fdd8d2cedabba914ea1d3ce188603276
+timeCreated: 1466266830
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Vermin-Vibes-1989-FontSheet_0
+    21300002: Vermin-Vibes-1989-FontSheet_1
+    21300004: Vermin-Vibes-1989-FontSheet_2
+    21300006: Vermin-Vibes-1989-FontSheet_3
+    21300008: Vermin-Vibes-1989-FontSheet_4
+    21300010: Vermin-Vibes-1989-FontSheet_5
+    21300012: Vermin-Vibes-1989-FontSheet_6
+    21300014: Vermin-Vibes-1989-FontSheet_7
+    21300016: Vermin-Vibes-1989-FontSheet_8
+    21300018: Vermin-Vibes-1989-FontSheet_9
+    21300020: Vermin-Vibes-1989-FontSheet_10
+    21300022: Vermin-Vibes-1989-FontSheet_11
+    21300024: Vermin-Vibes-1989-FontSheet_12
+    21300026: Vermin-Vibes-1989-FontSheet_13
+    21300028: Vermin-Vibes-1989-FontSheet_14
+    21300030: Vermin-Vibes-1989-FontSheet_15
+    21300032: Vermin-Vibes-1989-FontSheet_16
+    21300034: Vermin-Vibes-1989-FontSheet_17
+    21300036: Vermin-Vibes-1989-FontSheet_18
+    21300038: Vermin-Vibes-1989-FontSheet_19
+    21300040: Vermin-Vibes-1989-FontSheet_20
+    21300042: Vermin-Vibes-1989-FontSheet_21
+    21300044: Vermin-Vibes-1989-FontSheet_22
+    21300046: Vermin-Vibes-1989-FontSheet_23
+    21300048: Vermin-Vibes-1989-FontSheet_24
+    21300050: Vermin-Vibes-1989-FontSheet_25
+    21300052: Vermin-Vibes-1989-FontSheet_26
+    21300054: Vermin-Vibes-1989-FontSheet_27
+    21300056: Vermin-Vibes-1989-FontSheet_28
+    21300058: Vermin-Vibes-1989-FontSheet_29
+    21300060: Vermin-Vibes-1989-FontSheet_30
+    21300062: Vermin-Vibes-1989-FontSheet_31
+    21300064: Vermin-Vibes-1989-FontSheet_32
+    21300066: Vermin-Vibes-1989-FontSheet_33
+    21300068: Vermin-Vibes-1989-FontSheet_34
+    21300070: Vermin-Vibes-1989-FontSheet_35
+    21300072: Vermin-Vibes-1989-FontSheet_36
+    21300074: Vermin-Vibes-1989-FontSheet_37
+    21300076: Vermin-Vibes-1989-FontSheet_38
+    21300078: Vermin-Vibes-1989-FontSheet_39
+    21300080: Vermin-Vibes-1989-FontSheet_40
+    21300082: Vermin-Vibes-1989-FontSheet_41
+    21300084: Vermin-Vibes-1989-FontSheet_42
+    21300086: Vermin-Vibes-1989-FontSheet_43
+    21300088: Vermin-Vibes-1989-FontSheet_44
+    21300090: Vermin-Vibes-1989-FontSheet_45
+    21300092: Vermin-Vibes-1989-FontSheet_46
+    21300094: Vermin-Vibes-1989-FontSheet_47
+    21300096: Vermin-Vibes-1989-FontSheet_48
+    21300098: Vermin-Vibes-1989-FontSheet_49
+    21300100: Vermin-Vibes-1989-FontSheet_50
+    21300102: Vermin-Vibes-1989-FontSheet_51
+    21300104: Vermin-Vibes-1989-FontSheet_52
+    21300106: Vermin-Vibes-1989-FontSheet_53
+    21300108: Vermin-Vibes-1989-FontSheet_54
+    21300110: Vermin-Vibes-1989-FontSheet_55
+    21300112: Vermin-Vibes-1989-FontSheet_56
+    21300114: Vermin-Vibes-1989-FontSheet_57
+    21300116: Vermin-Vibes-1989-FontSheet_58
+    21300118: Vermin-Vibes-1989-FontSheet_59
+    21300120: Vermin-Vibes-1989-FontSheet_60
+    21300122: Vermin-Vibes-1989-FontSheet_61
+    21300124: Vermin-Vibes-1989-FontSheet_62
+    21300126: Vermin-Vibes-1989-FontSheet_63
+    21300128: Vermin-Vibes-1989-FontSheet_64
+    21300130: Vermin-Vibes-1989-FontSheet_65
+    21300132: Vermin-Vibes-1989-FontSheet_66
+    21300134: Vermin-Vibes-1989-FontSheet_67
+    21300136: Vermin-Vibes-1989-FontSheet_68
+    21300138: Vermin-Vibes-1989-FontSheet_69
+    21300140: Vermin-Vibes-1989-FontSheet_70
+    21300142: Vermin-Vibes-1989-FontSheet_71
+    21300144: Vermin-Vibes-1989-FontSheet_72
+    21300146: Vermin-Vibes-1989-FontSheet_73
+    21300148: Vermin-Vibes-1989-FontSheet_74
+    21300150: Vermin-Vibes-1989-FontSheet_75
+    21300152: Vermin-Vibes-1989-FontSheet_76
+    21300154: Vermin-Vibes-1989-FontSheet_77
+    21300156: Vermin-Vibes-1989-FontSheet_78
+    21300158: Vermin-Vibes-1989-FontSheet_79
+    21300160: Vermin-Vibes-1989-FontSheet_80
+    21300162: Vermin-Vibes-1989-FontSheet_81
+    21300164: Vermin-Vibes-1989-FontSheet_82
+    21300166: Vermin-Vibes-1989-FontSheet_83
+    21300168: Vermin-Vibes-1989-FontSheet_84
+    21300170: Vermin-Vibes-1989-FontSheet_85
+    21300172: Vermin-Vibes-1989-FontSheet_86
+    21300174: Vermin-Vibes-1989-FontSheet_87
+    21300176: Vermin-Vibes-1989-FontSheet_88
+    21300178: Vermin-Vibes-1989-FontSheet_89
+    21300180: Vermin-Vibes-1989-FontSheet_90
+    21300182: Vermin-Vibes-1989-FontSheet_91
+    21300184: Vermin-Vibes-1989-FontSheet_92
+    21300186: Vermin-Vibes-1989-FontSheet_93
+    21300188: Vermin-Vibes-1989-FontSheet_94
+    21300190: Vermin-Vibes-1989-FontSheet_95
+    21300192: Vermin-Vibes-1989-FontSheet_96
+    21300194: Vermin-Vibes-1989-FontSheet_97
+    21300196: Vermin-Vibes-1989-FontSheet_98
+    21300198: Vermin-Vibes-1989-FontSheet_99
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Vermin-Vibes-1989-FontSheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 925
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 18}
+        - {x: -18, y: -9}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 907
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 27}
+        - {x: -20.5, y: -27}
+        - {x: -8.5, y: -27}
+        - {x: 20.5, y: -1}
+        - {x: 20.5, y: 27}
+    - name: Vermin-Vibes-1989-FontSheet_2
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 925
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_3
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 907
+        width: 36
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 27}
+        - {x: -18, y: -27}
+        - {x: -10, y: -27}
+        - {x: 3, y: -15}
+        - {x: 18, y: 2}
+        - {x: 18, y: 27}
+    - name: Vermin-Vibes-1989-FontSheet_4
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 925
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_5
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 916
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -22.5}
+        - {x: -11, y: -22.5}
+        - {x: -7, y: -18.5}
+        - {x: 18, y: -2.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_6
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 916
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 9.5}
+        - {x: 7, y: 4.5}
+        - {x: -7, y: 11.5}
+        - {x: 18, y: 11.5}
+        - {x: 18, y: 22.5}
+        - {x: -18, y: 22.5}
+        - {x: -18, y: -17.5}
+        - {x: 4, y: -22.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 11.5}
+        - {x: 13, y: 11.5}
+    - name: Vermin-Vibes-1989-FontSheet_7
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 916
+        width: 36
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 27}
+        - {x: -18, y: -27}
+        - {x: 18, y: -27}
+        - {x: 18, y: 27}
+    - name: Vermin-Vibes-1989-FontSheet_8
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 925
+        width: 9
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_9
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 907
+        width: 36
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 27}
+        - {x: -18, y: 7}
+        - {x: -18, y: -27}
+        - {x: -10, y: -27}
+        - {x: 3, y: -15}
+        - {x: 18, y: 2}
+        - {x: 18, y: 27}
+    - name: Vermin-Vibes-1989-FontSheet_10
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 916
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -15.5}
+        - {x: -6, y: -21.5}
+        - {x: -1, y: -22.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_11
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 925
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: -7}
+        - {x: -7, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_12
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 925
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_13
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 920
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 23}
+        - {x: -18, y: -20}
+        - {x: -7, y: -23}
+        - {x: 18, y: -23}
+        - {x: 18, y: 23}
+    - name: Vermin-Vibes-1989-FontSheet_14
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 925
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_15
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 916
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -22.5}
+        - {x: -11, y: -22.5}
+        - {x: -7, y: -18.5}
+        - {x: 18, y: -2.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_16
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 916
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -15.5}
+        - {x: -11, y: -22.5}
+        - {x: 14, y: -22.5}
+        - {x: 18, y: -20.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_17
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 830
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -22.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_18
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 839
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_19
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 839
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: 6}
+        - {x: -7, y: -18}
+        - {x: 7, y: -18}
+        - {x: 18, y: 6}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_20
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 839
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_21
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 839
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: 8}
+        - {x: 9, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_22
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 839
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 18}
+        - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+    - name: Vermin-Vibes-1989-FontSheet_23
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 834
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 20}
+        - {x: 9, y: 20}
+        - {x: 3, y: 17}
+        - {x: -10, y: 23}
+        - {x: -20, y: 23}
+        - {x: -20, y: 9}
+        - {x: -17, y: 3}
+        - {x: -23, y: -10}
+        - {x: -23, y: -20}
+        - {x: -8, y: -21}
+        - {x: -3, y: -17}
+        - {x: 7, y: -23}
+        - {x: 20, y: -23}
+        - {x: 20, y: -9}
+        - {x: 17, y: -3}
+        - {x: 23, y: 10}
+    - name: Vermin-Vibes-1989-FontSheet_24
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 839
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 14.5}
+        - {x: -12.5, y: 20.5}
+        - {x: -20.5, y: 20.5}
+        - {x: -20.5, y: 0.5}
+        - {x: -9.5, y: -20.5}
+        - {x: 4.5, y: -20.5}
+        - {x: 20.5, y: 7.5}
+        - {x: 20.5, y: 17.5}
+        - {x: 6.5, y: 17.5}
+    - name: Vermin-Vibes-1989-FontSheet_25
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 839
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 18}
+        - {x: -23, y: -18}
+        - {x: 20, y: -18}
+        - {x: 23, y: -7}
+        - {x: 23, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_26
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 752
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 18}
+        - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: -10}
+        - {x: 12, y: -3}
+    - name: Vermin-Vibes-1989-FontSheet_27
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 734
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.5, y: 27}
+        - {x: -20.5, y: -27}
+        - {x: -8.5, y: -27}
+        - {x: 20.5, y: -1}
+        - {x: 20.5, y: 27}
+    - name: Vermin-Vibes-1989-FontSheet_28
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 752
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_29
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 734
+        width: 36
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 27}
+        - {x: -18, y: -27}
+        - {x: -10, y: -27}
+        - {x: 3, y: -15}
+        - {x: 18, y: 2}
+        - {x: 18, y: 27}
+    - name: Vermin-Vibes-1989-FontSheet_30
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 779
+        width: 36
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_31
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 743
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -22.5}
+        - {x: -11, y: -22.5}
+        - {x: -7, y: -18.5}
+        - {x: 18, y: -2.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_32
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 743
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 9.5}
+        - {x: 7, y: 4.5}
+        - {x: -7, y: 11.5}
+        - {x: 18, y: 11.5}
+        - {x: 18, y: 22.5}
+        - {x: -18, y: 22.5}
+        - {x: -18, y: -17.5}
+        - {x: 4, y: -22.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 11.5}
+        - {x: 13, y: 11.5}
+    - name: Vermin-Vibes-1989-FontSheet_33
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 743
+        width: 36
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 27}
+        - {x: -18, y: -27}
+        - {x: 18, y: -27}
+        - {x: 18, y: 27}
+    - name: Vermin-Vibes-1989-FontSheet_34
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 752
+        width: 9
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_35
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 734
+        width: 36
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 27}
+        - {x: -18, y: 7}
+        - {x: -18, y: -27}
+        - {x: -10, y: -27}
+        - {x: 3, y: -15}
+        - {x: 18, y: 2}
+        - {x: 18, y: 27}
+    - name: Vermin-Vibes-1989-FontSheet_36
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 743
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -15.5}
+        - {x: -6, y: -21.5}
+        - {x: -1, y: -22.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_37
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 752
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: -7}
+        - {x: -7, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_38
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 752
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_39
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 747
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 23}
+        - {x: -18, y: -20}
+        - {x: -7, y: -23}
+        - {x: 18, y: -23}
+        - {x: 18, y: 23}
+    - name: Vermin-Vibes-1989-FontSheet_40
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 752
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_41
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 743
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -22.5}
+        - {x: -11, y: -22.5}
+        - {x: -7, y: -18.5}
+        - {x: 18, y: -2.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_42
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 743
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -15.5}
+        - {x: -11, y: -22.5}
+        - {x: 14, y: -22.5}
+        - {x: 18, y: -20.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_43
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 765
+        width: 36
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_44
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 752
+        width: 36
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_45
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 657
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 22.5}
+        - {x: -18, y: -22.5}
+        - {x: 18, y: -22.5}
+        - {x: 18, y: 22.5}
+    - name: Vermin-Vibes-1989-FontSheet_46
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 666
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_47
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 666
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: 6}
+        - {x: -7, y: -18}
+        - {x: 7, y: -18}
+        - {x: 18, y: 6}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_48
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 666
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_49
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 666
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: -8, y: -18}
+        - {x: 9, y: -12}
+        - {x: 18, y: 9}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_50
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 666
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 18}
+        - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+    - name: Vermin-Vibes-1989-FontSheet_51
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 661
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 20}
+        - {x: 9, y: 20}
+        - {x: 3, y: 17}
+        - {x: -10, y: 23}
+        - {x: -20, y: 23}
+        - {x: -20, y: 9}
+        - {x: -17, y: 3}
+        - {x: -23, y: -10}
+        - {x: -23, y: -20}
+        - {x: -8, y: -21}
+        - {x: -3, y: -17}
+        - {x: 7, y: -23}
+        - {x: 20, y: -23}
+        - {x: 20, y: -9}
+        - {x: 17, y: -3}
+        - {x: 23, y: 10}
+    - name: Vermin-Vibes-1989-FontSheet_52
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 666
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0.5, y: 14.5}
+        - {x: -12.5, y: 20.5}
+        - {x: -20.5, y: 20.5}
+        - {x: -20.5, y: 0.5}
+        - {x: -9.5, y: -20.5}
+        - {x: 4.5, y: -20.5}
+        - {x: 20.5, y: 7.5}
+        - {x: 20.5, y: 17.5}
+        - {x: 6.5, y: 17.5}
+    - name: Vermin-Vibes-1989-FontSheet_53
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 666
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 18}
+        - {x: -23, y: -18}
+        - {x: 20, y: -18}
+        - {x: 23, y: -7}
+        - {x: 23, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_54
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 666
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -21, y: 1}
+        - {x: -23, y: -6}
+        - {x: -23, y: -18}
+        - {x: -5, y: -18}
+        - {x: 20, y: 0}
+        - {x: 23, y: 9}
+        - {x: 23, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_55
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 688
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_56
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 688
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_57
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 666
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_58
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 666
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_59
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 666
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 18}
+        - {x: -23, y: 10}
+        - {x: -3, y: -18}
+        - {x: 23, y: -18}
+        - {x: 23, y: -6}
+        - {x: -2, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_60
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 666
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 5}
+        - {x: -16.5, y: -4}
+        - {x: 6.5, y: -19}
+        - {x: 16.5, y: -19}
+        - {x: 16.5, y: 19}
+        - {x: 0.5, y: 19}
+        - {x: -13.5, y: 11}
+    - name: Vermin-Vibes-1989-FontSheet_61
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 661
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_62
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 666
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_63
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 666
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_64
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 579
+        width: 33
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 19}
+        - {x: -16.5, y: -19}
+        - {x: -12.5, y: -19}
+        - {x: 16.5, y: -6}
+        - {x: 16.5, y: 12}
+        - {x: -8.5, y: 19}
+    - name: Vermin-Vibes-1989-FontSheet_65
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 592
+        width: 36
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_66
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 601
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_67
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 601
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_68
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 601
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_69
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 579
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_70
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 579
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_71
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 561
+        width: 5
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_72
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 592
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_73
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 579
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: -9}
+        - {x: -9, y: -7}
+        - {x: -11, y: -7}
+        - {x: -11, y: 7}
+        - {x: -9, y: 7}
+        - {x: -7, y: 9}
+        - {x: -7, y: 7}
+        - {x: -9, y: 7}
+        - {x: -11, y: 5}
+        - {x: -11, y: -5}
+        - {x: -9, y: -7}
+        - {x: -7, y: -7}
+        - {x: -7, y: -9}
+        - {x: -5, y: -11}
+        - {x: 18, y: -11}
+        - {x: 18, y: 12}
+        - {x: 17, y: 15}
+        - {x: 14, y: 18}
+        - {x: -16, y: 18}
+        - {x: -18, y: 14}
+        - {x: -18, y: -12}
+        - {x: -17, y: -15}
+        - {x: -13, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: -13}
+        - {x: 14, y: -11}
+        - {x: -7, y: -11}
+    - name: Vermin-Vibes-1989-FontSheet_74
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 579
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 18}
+        - {x: -16, y: 18}
+        - {x: -18, y: 16}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+    - name: Vermin-Vibes-1989-FontSheet_75
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 574
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 23}
+        - {x: -18, y: 20}
+        - {x: -18, y: -20}
+        - {x: -9, y: -23}
+        - {x: 9, y: -23}
+        - {x: 18, y: -20}
+        - {x: 18, y: 20}
+        - {x: 9, y: 23}
+    - name: Vermin-Vibes-1989-FontSheet_76
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 579
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 18}
+        - {x: -21, y: 1}
+        - {x: -23, y: -6}
+        - {x: -23, y: -18}
+        - {x: -5, y: -18}
+        - {x: 20, y: 0}
+        - {x: 23, y: 9}
+        - {x: 23, y: 18}
+      - - {x: 7, y: -9}
+        - {x: 7, y: -18}
+        - {x: 20, y: -18}
+        - {x: 20, y: -9}
+        - {x: 18, y: -7}
+        - {x: 9, y: -7}
+      - - {x: -20, y: 18}
+        - {x: -20, y: 9}
+        - {x: -18, y: 7}
+        - {x: -9, y: 7}
+        - {x: -7, y: 9}
+        - {x: -7, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_77
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 593
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: -16.5}
+        - {x: 17, y: -9.5}
+        - {x: 14, y: 1.5}
+        - {x: 4, y: 16.5}
+        - {x: -5, y: 16.5}
+        - {x: -9, y: 9.5}
+        - {x: -17, y: -10.5}
+        - {x: -17, y: -16.5}
+        - {x: -9, y: -16.5}
+        - {x: -3, y: -1.5}
+        - {x: 9, y: -16.5}
+    - name: Vermin-Vibes-1989-FontSheet_78
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 578
+        width: 41
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13.5, y: 23.5}
+        - {x: 7.5, y: 25.5}
+        - {x: -14.5, y: 25.5}
+        - {x: -20.5, y: 18.5}
+        - {x: -20.5, y: -22.5}
+        - {x: -17.5, y: -25.5}
+        - {x: 20.5, y: -25.5}
+        - {x: 20.5, y: 6.5}
+        - {x: 13.5, y: 6.5}
+    - name: Vermin-Vibes-1989-FontSheet_79
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 574
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 23}
+        - {x: -23, y: -2}
+        - {x: -23, y: -21}
+        - {x: 3, y: -23}
+        - {x: 21, y: -23}
+        - {x: 23, y: 2}
+        - {x: 23, y: 21}
+        - {x: -1, y: 23}
+    - name: Vermin-Vibes-1989-FontSheet_80
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 579
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_81
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 579
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_82
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 583
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_83
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 579
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_84
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 583
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_85
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 579
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_86
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 579
+        width: 36
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_87
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 506
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_88
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 515
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_89
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 497
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_90
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 407
+        width: 9
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Vermin-Vibes-1989-FontSheet_91
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_92
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_93
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -7}
+        - {x: 6, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_94
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_95
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_96
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: -7, y: -18}
+        - {x: 11, y: -14}
+        - {x: 18, y: 7}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_97
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_98
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+    - name: Vermin-Vibes-1989-FontSheet_99
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 407
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 18}
+        - {x: -18, y: -18}
+        - {x: 18, y: -18}
+        - {x: 18, y: 18}
+      - - {x: -5, y: 7}
+        - {x: -7, y: 5}
+        - {x: -7, y: -5}
+        - {x: -5, y: -7}
+        - {x: 5, y: -7}
+        - {x: 7, y: -5}
+        - {x: 7, y: 5}
+        - {x: 5, y: 7}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

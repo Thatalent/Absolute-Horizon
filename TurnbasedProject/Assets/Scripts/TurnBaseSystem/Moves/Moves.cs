@@ -53,11 +53,27 @@ public class Moves {
 
 
     //Used to resize the enemy status bars and other status effects
-	public virtual void enemyStatus()
+	public virtual void enemyStatus(int dmg, int mpDmg, int epDmg)
     {
+        if(dmg != 0)
+        {
+            FloatingText.Show(string.Format("{0}", dmg), "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, BattleController.Enemy.transform.position, 1.5f, 1));
+        }
         Status status = BattleController.Enemy.GetComponentInChildren<BaseStatusBar>();
         status.changeStatusSize(BattleController.Enemy.GetComponent<Enemy>().Health, BattleController.Enemy.GetComponent<Enemy>().MaxHealth);
         Debug.Log("Enemy : "+BattleController.Enemy.GetComponent<Enemy>().Health);
+
+        // Uncomment for future use. 
+        //Used to create pop up text when changing the mana and energy points of the Enemey
+     /*   if (mpDmg != 0)
+        {
+            FloatingText.Show(string.Format("-{0}", mpDmg), "EnemyManaTaken", new FromWorldPointPositioner(Camera.main, BattleController.Enemy.transform.position, 1.5f, 50));
+        }
+
+        if (epDmg != 0)
+        {
+            FloatingText.Show(string.Format("-{0}", epDmg), "EnemyEnergyTaken", new FromWorldPointPositioner(Camera.main, BattleController.Enemy.transform.position, 1.5f, 50));
+        }*/
     }
     public virtual void playerStatus()
     {

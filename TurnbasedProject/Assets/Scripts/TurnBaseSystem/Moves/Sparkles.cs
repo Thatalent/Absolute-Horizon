@@ -31,7 +31,7 @@ public class Sparkles : Moves {
         Magic spell = new Magic((BattleController.Player.Intelligence + DmgBoost), BattleController.Enemy.GetComponent<Enemy>().Resistance);
         int damage = spell.casting();
         BattleController.Enemy.GetComponent<Enemy>().Health = BattleController.Enemy.GetComponent<Enemy>().Health + damage;
-        enemyStatus();
+        enemyStatus(damage, 0, 0);
        
 
     }
