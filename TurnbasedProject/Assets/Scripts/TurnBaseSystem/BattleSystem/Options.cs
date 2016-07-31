@@ -36,11 +36,19 @@ public class Options : MonoBehaviour {
 
 
         //Conditional Input for ending Player's Turn
-        if (Input.GetButtonDown("cancel")||End)
+        if ((Input.GetButtonDown("cancel")||End)&& OptionsModule.ActiveTurn)
         {
             // OptionsModule.endPlayerTurn();
             End = false;
             StartCoroutine(OptionsModule.turnWait());
+        }
+
+        if (Input.GetButtonDown("Down"))
+        {
+            if (i == 1)
+            {
+                i = i - 1;
+            }
         }
 
 		for (int j=0; j<6; j++) {
