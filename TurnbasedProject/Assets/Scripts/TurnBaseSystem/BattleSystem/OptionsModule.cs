@@ -20,13 +20,13 @@ public class OptionsModule : MonoBehaviour {
 
     public static void playerTurn(Moves playerMove)
     {
-        int m = GameInformtion.Player.MoveCounter - playerMove.MoveCount;
+        int m = GameInformation.Player.MoveCounter - playerMove.MoveCount;
         // Debug.Log(GameInformtion.Energy);
         // Debug.Log(playerMove.EpUse);
 
-        if (GameInformtion.Energy >= playerMove.EpUse && (m) >= 0 && GameInformtion.Mana >= playerMove.MpUse && GameInformtion.SpecialCharge >= playerMove.SpUse)
+        if (GameInformation.Energy >= playerMove.EpUse && (m) >= 0 && GameInformation.Mana >= playerMove.MpUse && GameInformation.SpecialCharge >= playerMove.SpUse)
         {
-            GameInformtion.Player.MoveCounter = m;
+            GameInformation.Player.MoveCounter = m;
             //  Debug.Log(GameInformtion.Energy);
             playerMove.resource();
             float hit = playerMove.accuracy();
@@ -37,33 +37,41 @@ public class OptionsModule : MonoBehaviour {
         }
         else if (m < 0)
         {
-            Options.End = true;
+            Options.EndPlayerTurn = true;
         }
-        else if (OptionsModule.ActiveTurn == true && GameInformtion.Energy < playerMove.EpUse)
+        else if (OptionsModule.ActiveTurn == true && GameInformation.Energy < playerMove.EpUse)
         {
-            Options.End = true;
+            Options.EndPlayerTurn = true;
         }
-       if (GameInformtion.Player.MoveCounter < Options.LoMv)
+       if (GameInformation.Player.MoveCounter < Options.LowestMoveCount)
         {
-            Options.End = true;
+            Options.EndPlayerTurn = true;
           //  endPlayerTurn();
          //   turnWait();
         }
-      if  (GameInformtion.Energy < OptionsModule.LoAttackEnergy )
+      if  (GameInformation.Energy < OptionsModule.LoAttackEnergy )
         {
-            Options.End = true;
+            if (OptionsModule.ActiveTurn)
+            {
+                Options.EndPlayerTurn = true;
+            } else
+            {
+                FloatingText.Show("Need More Energy :(", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, GameInformation.MoveWait, 0));
+            }
+
+
             //  endPlayerTurn();
             //   turnWait();
         }
-        if     (GameInformtion.Energy < OptionsModule.LoMagicEnergy | GameInformtion.Mana < OptionsModule.LoMana)
+        if     (GameInformation.Energy < OptionsModule.LoMagicEnergy | GameInformation.Mana < OptionsModule.LoMana)
         {
-            Options.End = true;
+            Options.EndPlayerTurn = true;
             //  endPlayerTurn();
             //   turnWait();
         }
-        else if (GameInformtion.Player.MoveCounter <= 0)
+        else if (GameInformation.Player.MoveCounter <= 0)
         {
-            Options.End=true;
+            Options.EndPlayerTurn=true;
             //turnWait();
            // endPlayerTurn();
         }
@@ -80,11 +88,10 @@ public class OptionsModule : MonoBehaviour {
             t=1;
             Options.Wait = true;
             ActiveTurn = false;
-            Debug.Log("Now Waiting.");
-            yield return new WaitForSeconds(GameInformtion.MoveWait);
+            yield return new WaitForSeconds(GameInformation.MoveWait);
             Options.Wait = false;
-            Debug.Log("Done Waiting.");
-            GameInformtion.Player.MoveCounter = GameInformtion.MoveCounter;
+            FloatingText.Show("Ready!!!", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, 1f, 0));
+            GameInformation.Player.MoveCounter = GameInformation.MoveCounter;
             t = 0;
         }
     }

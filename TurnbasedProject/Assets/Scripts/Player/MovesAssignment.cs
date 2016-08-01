@@ -18,14 +18,14 @@ public class MovesAssignment : MonoBehaviour {
 	}
 
 	public static void attackMove(string aMove){
-		Moves[] attacks = GameInformtion.Attacks;
+		Moves[] attacks = GameInformation.Attacks;
 		switch (aMove) 
 		{
 		case "Stab":
 			attacks[a]=new Stab();
 			Debug.Log (attacks[a]);
-			GameInformtion.Attacks=attacks;
-			Debug.Log (GameInformtion.Attacks);
+			GameInformation.Attacks=attacks;
+			Debug.Log (GameInformation.Attacks);
 			a++;
 			break;
 		}
@@ -35,14 +35,14 @@ public class MovesAssignment : MonoBehaviour {
 	}
     public static void magicMove(string mMove)
     {
-        Moves[] spells = GameInformtion.Spells;
+        Moves[] spells = GameInformation.Spells;
         switch (mMove)
         {
             case "Sparkles":
                 spells[m] = new Sparkles();
                 Debug.Log(spells[m]);
-                GameInformtion.Spells = spells;
-                Debug.Log(GameInformtion.Spells);
+                GameInformation.Spells = spells;
+                Debug.Log(GameInformation.Spells);
                 m++;
                 break;
         }
