@@ -35,7 +35,8 @@ void Start () {
 
 
         //Conditional Input for ending Player's Turn
-        if (Input.GetButtonDown("cancel")||EndPlayerTurn)
+
+        if (Input.GetButtonDown("cancel")||EndPlayerTurn && OptionsModule.ActiveTurn)
         {
             // OptionsModule.endPlayerTurn();
             EndPlayerTurn = false;
@@ -44,7 +45,16 @@ void Start () {
             StartCoroutine(OptionsModule.turnWait());
         }
 
-        for (int j=0; j<6; j++) {
+        if (Input.GetButtonDown("Down"))
+        {
+            if (i == 1)
+            {
+                i = i - 1;
+            }
+        }
+
+		for (int j=0; j<6; j++) {
+
 			if(BattleController.EnemyMob[j]!=null){
 				if (BattleController.EnemyMob[j].activeInHierarchy){
 					BattleController.Enemy=BattleController.EnemyMob[j];
