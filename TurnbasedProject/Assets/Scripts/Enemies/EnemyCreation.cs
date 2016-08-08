@@ -3,17 +3,15 @@ using System.Collections;
 
 public class EnemyCreation {
 
-    private Enemy enemy;
-    private int enemyID;
-    private EnemyClass[] enemyMob;
-
     // Use this for initialization
     public EnemyCreation() {
 
-       // EnemyCreation create = new EnemyCreation();
-        //create.makeEnemy();
-
-
+        GameObject[] enemyPositionObjects = GameObject.FindGameObjectsWithTag("EnemyPosition");
+        EnemyLocation = new Transform[enemyPositionObjects.Length];
+        for(int i = 0; i < enemyPositionObjects.Length; i++)
+        {
+            EnemyLocation[i] = enemyPositionObjects[i].transform;
+        }
     }
 
     public EnemyClass findEnemy() {
@@ -33,22 +31,21 @@ public class EnemyCreation {
         }
     }
 
-    public void makeEnemy()
+    public GameObject[] makeEnemy()
     {
         int i = 0;
-        // int enemyNumber = Random.Range(1, 6);
-        // EnemyMob = new EnemyClass[enemyNumber];
-        int enemyNumber = 0;
-        EnemyMob = new EnemyClass[] { new Noob ()};
+        int enemyNumber = Random.Range(1, 6);
+        EnemyMob = new EnemyClass[enemyNumber];
+      //  EnemyMob = new EnemyClass[] { new Noob ()};
+        
+        GameObject[] monsterMob = new GameObject[enemyNumber];
         do {
             GameObject monster= Object.Instantiate(GameObject.FindGameObjectWithTag("Enemy"));
          //   monster.SetActive(true);
-			BattleController.EnemyMob[i]=monster;
-            Debug.Log(EnemyMob[i]);
-           // BattleController.EnemyMob[i].SetActive(true);
+			monsterMob[i]=monster;
+            monsterMob[i].SetActive(true);
             Enemy = monster.GetComponent<Enemy>();
             Enemy.EnemyClass = EnemyMob[i];
-            Debug.Log(monster.GetComponent<Enemy>().EnemyClass);
             Enemy.MaxHealth = Enemy.EnemyClass.MaxHealth;
             Enemy.Health = Enemy.EnemyClass.Health;
             Enemy.Attack = Enemy.EnemyClass.Attack;
@@ -61,21 +58,40 @@ public class EnemyCreation {
             Enemy.MaxEnergy = Enemy.EnemyClass.MaxEnergy;
             Enemy.EnergyRate = Enemy.EnemyClass.EnergyRate;
             Enemy.EnemyName = Enemy.EnemyClass.EnemyName;
-            Debug.Log(monster.GetComponent<Enemy>().Agility);
+            monster.transform.position = EnemyLocation[i].position;
+            monster.transform.rotation = EnemyLocation[i].rotation;
             monster.GetComponent<SpriteRenderer>().enabled = true;
-            SpriteRenderer[] m = monster.GetComponentsInChildren<SpriteRenderer>();
-            for(int j=0;j<m.Length;j++)
+            SpriteRenderer[] monsterSpriteArray = monster.GetComponentsInChildren<SpriteRenderer>();
+            for(int j=0;j<monsterSpriteArray.Length;j++)
             {
-                m[j].enabled = true;
+                monsterSpriteArray[j].enabled = true;
             }
             addMoves(monster);
             
 
             i++;
         } while (i < enemyNumber);
+        return monsterMob;
+    }
+
+    virtual
+    public EnemyClass[] getEnemyTypes(int enemyNumber)
+    {
+        EnemyClass[] listOfEnemies = new EnemyClass[enemyNumber];
+        switch (GameInformtion.PlayerClass.CharacterClassName)
+        {
+            case "Student": listOfEnemies = Enemies_for_Student.getEnemyTypes(enemyNumber);
+                break;
+            case "Royal": listOfEnemies = new Enemies_for_Royality().getEnemyTypes(enemyNumber);
+                break;
+
+            default: break;
+        }
+        return listOfEnemies;
     }
 
     public Enemy Enemy { get; set; }
     public int EnemyID { get; set; }
     public EnemyClass[] EnemyMob { get; set; }
+    public Transform[] EnemyLocation { get; set; }
 }
