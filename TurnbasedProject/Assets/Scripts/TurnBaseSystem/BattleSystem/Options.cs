@@ -3,24 +3,23 @@ using System.Collections;
 
 public class Options : MonoBehaviour {
 
-	void Awake(){
-		DontDestroyOnLoad(transform.gameObject);
-	}
+    void Awake() {
+        DontDestroyOnLoad(transform.gameObject);
+    }
 
-	private static Moves[]attacks;
-	private static Moves trigger;
-	private  static Moves[]spells;
-	private static Moves[]specials;
-	private static  int[] move;
-	private static  int i;
-	private static  Moves playerMove;
-    private static bool activeTurn;
-    private static bool activeEnemy;
-    private static bool wait;
-    private static int loMv;
+    private static Moves[] attacks;
+    private static Moves trigger;
+    private static Moves[] spells;
+    private static Moves[] specials;
+    private static int[] move;
+    private static int i;
+    private static Moves playerMove;
+    private enum UserChoiceStatus {SELECT_ACTION, SELECT_MOVE, INITIATE_MOVE, END_MOVE}; 
+    //TODO: FINISH DIS
 
-	// Use this for initialization
-	void Start () {
+
+// Use this for initialization
+void Start () {
 		attacks=new Moves[16];
 		trigger=null;
 		spells=new Moves[16];
@@ -36,10 +35,13 @@ public class Options : MonoBehaviour {
 
 
         //Conditional Input for ending Player's Turn
-        if ((Input.GetButtonDown("cancel")||End)&& OptionsModule.ActiveTurn)
+
+        if (Input.GetButtonDown("cancel")||EndPlayerTurn && OptionsModule.ActiveTurn)
         {
             // OptionsModule.endPlayerTurn();
-            End = false;
+            EndPlayerTurn = false;
+            FloatingText.Show("Waiting . . .", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, GameInformation.MoveWait, 0));
+
             StartCoroutine(OptionsModule.turnWait());
         }
 
@@ -52,6 +54,7 @@ public class Options : MonoBehaviour {
         }
 
 		for (int j=0; j<6; j++) {
+
 			if(BattleController.EnemyMob[j]!=null){
 				if (BattleController.EnemyMob[j].activeInHierarchy){
 					BattleController.Enemy=BattleController.EnemyMob[j];
@@ -114,17 +117,17 @@ public class Options : MonoBehaviour {
                 OptionsModule.ActiveTurn = true;
                 if (move[0] == 1)
                 {
-                    playerMove = GameInformtion.Attacks[move[1]];
+                    playerMove = GameInformation.Attacks[move[1]];
                     //Debug.Log (playerMove);
                     //BattleController.EnemyMob=GameObject.FindGameObjectsWithTag("Enemy");
                 }
                 else if (move[0] == 2)
                 {
-                    playerMove = GameInformtion.Spells[move[1]];
+                    playerMove = GameInformation.Spells[move[1]];
                 }
                 else if (move[0] == 3)
                 {
-                    playerMove = GameInformtion.Specials[move[1]];
+                    playerMove = GameInformation.Specials[move[1]];
                 }
                 else if (move[0] == 4)
                 {
@@ -142,37 +145,32 @@ public class Options : MonoBehaviour {
                 }
             }
         }
-        else
-            Debug.Log("Waiting. . .");
-	}
+    }
 
-	public static void loadMoves(){
+    public static void loadMoves(){
         OptionsModule.start();
-		Options.Attacks  = GameInformtion.Attacks;
+		Options.Attacks  = GameInformation.Attacks;
 		Options.attacks = Attacks;
-        LoMv= OptionsModule.lowMove(Attacks);
+        LowestMoveCount= OptionsModule.lowMove(Attacks);
         OptionsModule.lowEnergy(Attacks, "attacks");
-
 		Debug.Log (attacks[0]);
-
-        Spells = GameInformtion.Spells;
-		spells  = GameInformtion.Spells;
+        Spells = GameInformation.Spells;
+		spells  = GameInformation.Spells;
         Debug.Log(Spells[0]);
         OptionsModule.lowMove(Spells);
         OptionsModule.lowEnergy(Spells, "spells");
         OptionsModule.lowMana(Spells);
-        specials  = GameInformtion.Specials;
+        specials  = GameInformation.Specials;
        // OptionsModule.lowMove(specials);
-        trigger  = GameInformtion.Trigger;
+        trigger  = GameInformation.Trigger;
 	}
 
 	public static Moves[] Attacks{ get; set; }
 	public static Moves[] Spells{ get; set; }	
 	public static Moves[] Specials{ get; set; }
 	public static Moves Trigger{ get; set; }
-    public static bool ActiveTurn { get; set; }
     public static bool ActiveEnemy { get; set; }
     public static bool Wait { get; set; }
-    public static int LoMv { get; set; }
-    public static bool End { get; set; }
+    public static int LowestMoveCount { get; set; }
+    public static bool EndPlayerTurn { get; set; }
 }

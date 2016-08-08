@@ -20,20 +20,20 @@ public class Energy : MonoBehaviour {
         //Debug.Log(GameInformtion.Energy);
 		while(battle) {
             yield return new WaitForSeconds(1);
-			if (GameInformtion.Energy < GameInformtion.MaxEnergy & !OptionsModule.ActiveTurn) {
-				GameInformtion.Energy = GameInformtion.Energy + GameInformtion.EnergyRate;
+			if (GameInformation.Energy < GameInformation.MaxEnergy & !OptionsModule.ActiveTurn) {
+				GameInformation.Energy = GameInformation.Energy + GameInformation.EnergyRate;
                 energyStatus();
             //yield return new WaitForSeconds(10);
-				Debug.Log(GameInformtion.Energy);
-				if (GameInformtion.Energy > GameInformtion.MaxEnergy) {
-					GameInformtion.Energy = GameInformtion.MaxEnergy;
+				Debug.Log(GameInformation.Energy);
+				if (GameInformation.Energy > GameInformation.MaxEnergy) {
+					GameInformation.Energy = GameInformation.MaxEnergy;
                     energyStatus();
                   //  yield return new WaitForSeconds(2f);
 				}
 			}
-          if (GameInformtion.Energy < 0)
+          if (GameInformation.Energy < 0)
             {
-                GameInformtion.Energy = 0;
+                GameInformation.Energy = 0;
                 energyStatus();
             }
             else if (OptionsModule.ActiveTurn)
@@ -44,7 +44,7 @@ public class Energy : MonoBehaviour {
 	}
     static public void energyStatus() {
         Status energyStatus = GameObject.FindGameObjectWithTag("Player_EnergyBar").GetComponent<Status>();
-        energyStatus.changeStatusSize(GameInformtion.Energy, GameInformtion.MaxEnergy);
+        energyStatus.changeStatusSize(GameInformation.Energy, GameInformation.MaxEnergy);
     }
 	//public static Player Player{ get; set; }
 }

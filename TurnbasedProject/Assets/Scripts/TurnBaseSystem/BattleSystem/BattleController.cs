@@ -9,7 +9,7 @@ public class BattleController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		BattleController.Player = GameInformtion.data();
+		BattleController.Player = GameInformation.data();
 		Debug.Log ("BattleController.Player=null");
 		BattleController.Battle = true;
 		Energy energy = gameObject.GetComponent<Energy> ();

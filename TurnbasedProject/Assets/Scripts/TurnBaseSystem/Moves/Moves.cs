@@ -46,9 +46,9 @@ public class Moves {
 
     //Used to change resources like items, energy, magic, or special
 	public void resource(){
-        GameInformtion.Energy = GameInformtion.Energy - EpUse;
-        GameInformtion.Mana = GameInformtion.Mana - MpUse;
-        GameInformtion.SpecialCharge = GameInformtion.SpecialCharge - SpUse;
+        GameInformation.Energy = GameInformation.Energy - EpUse;
+        GameInformation.Mana = GameInformation.Mana - MpUse;
+        GameInformation.SpecialCharge = GameInformation.SpecialCharge - SpUse;
     }
 
 
@@ -78,10 +78,10 @@ public class Moves {
     public virtual void playerStatus()
     {
         Status healthStatus = GameObject.FindGameObjectWithTag("Player_HealthBar").GetComponent<Status>();
-        healthStatus.changeStatusSize(GameInformtion .Health, GameInformtion.MaxHealth);
+        healthStatus.changeStatusSize(GameInformation .Health, GameInformation.MaxHealth);
 
         Status magicStatus = GameObject.FindGameObjectWithTag("Player_MagicBar").GetComponent<Status>();
-        magicStatus.changeStatusSize(GameInformtion.Mana, GameInformtion.MaxMana);
+        magicStatus.changeStatusSize(GameInformation.Mana, GameInformation.MaxMana);
 
         Energy.energyStatus();
     }
