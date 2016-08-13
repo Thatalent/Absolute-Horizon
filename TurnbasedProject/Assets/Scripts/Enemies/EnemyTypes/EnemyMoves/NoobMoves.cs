@@ -67,13 +67,13 @@ public class NoobMoves : EnemyMoves {
     }
     public override void move()
     {
-        Attack attack = new Attack((gameObject.GetComponent<Enemy>().Attack + DmgBoost), GameInformtion.Defense);
+        Attack attack = new Attack((gameObject.GetComponent<Enemy>().Attack + DmgBoost), GameInformation.Defense);
         int damage = attack.attacking();
-        GameInformtion.Health = GameInformtion.Health + damage;
+        GameInformation.Health = GameInformation.Health + damage;
         BaseStatusBar status = GameObject.FindGameObjectWithTag("Player_HealthBar").GetComponent<BaseStatusBar>() ;
-        status.changeStatusSize(GameInformtion.Health, GameInformtion.MaxHealth);
+        status.changeStatusSize(GameInformation.Health, GameInformation.MaxHealth);
 
-        Debug.Log(GameInformtion.Health);
+        Debug.Log(GameInformation.Health);
         
 
     }
