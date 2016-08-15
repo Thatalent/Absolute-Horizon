@@ -26,7 +26,7 @@ void Start () {
 		specials=new Moves[5]; 
 		move = new int[3];
         Wait = false;
-		i= 0;
+        UserChoice = UserChoiceStatus.SELECT_ACTION;
 	}
 
 
@@ -47,7 +47,7 @@ void Start () {
 
         if (Input.GetButtonDown("Down"))
         {
-            if (i == 1)
+            if (UserChoice == UserChoiceStatus.SELECT_MOVE)
             {
                 i = i - 1;
             }
@@ -173,4 +173,5 @@ void Start () {
     public static bool Wait { get; set; }
     public static int LowestMoveCount { get; set; }
     public static bool EndPlayerTurn { get; set; }
+    private static UserChoiceStatus UserChoice { get; set; }
 }
