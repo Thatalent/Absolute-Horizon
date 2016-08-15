@@ -8,27 +8,99 @@ public class GameInformation : MonoBehaviour {
 	}
 	public static BaseCharacterClass PlayerClass { get; set; }
 	public static string PlayerName{ get; set; }
-	public static int Stamina{ get; set;  }
-	public static int Strength{ get; set; }//effects energy usage
-	public static int Endurance{ get; set; }
-	public static int Intelligence{ get; set; }
-	public static int Resistance{ get; set; }
-	public static int Speed{ get; set; }
-	public static int Skill{ get; set; }
-	public static int Luck{ get; set; }
 
-	public static int PlayerLvl{ get; set; }
-	public static float PlayerExp{ get; set; }
-	public static int EnergyRate{ get; set; }//energyRate is depended on endurance
-	public static int MaxEnergy{ get; set; }//maxEnergy is depended on stamina 
-	public static int Energy{ get; set; }
 
-	public static Player Player { get; set; }
+     
+    ///<summary>
+    ///Calls and sets the Stamina of the Player on GameInformation.
+    ///</summary>	
+    public static int Stamina{ get; set;  }
+    ///<summary>
+    ///Calls and sets the Strength of the Player on GameInformation.
+    ///</summary>	
+    public static int Strength{ get; set; }
+    ///<summary>
+    ///Calls and sets the Endurance of the Player on GameInformation.
+    ///</summary>
+    public static int Endurance{ get; set; }
+    ///<summary>
+    ///Calls and sets the Intelligence of the Player on GameInformation.
+    ///</summary>	
+    public static int Intelligence{ get; set; }
+    ///<summary>
+    ///Calls and sets the Resistance of the Player on GameInformation.
+    ///</summary>	
+    public static int Resistance{ get; set; }
+    ///<summary>
+    ///Calls and sets the Speed of the Player on GameInformation.
+    ///</summary>	
+    public static int Speed{ get; set; }
+    ///<summary>
+    ///Calls and sets the Skill of the Player on GameInformation.
+    ///</summary>	
+    public static int Skill{ get; set; }
+    ///<summary>
+    ///Calls and sets the Luck of the Player on GameInformation.
+    ///</summary>	
+    public static int Luck{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the Player level of the Player on GameInformation.
+    ///</summary>	
+    public static int PlayerLvl{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the Player Experience of the Player on GameInformation.
+    ///</summary>	
+    public static float PlayerExp{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the Enerhy Rate of the Player on GameInformation.
+    ///</summary>	
+    public static int EnergyRate{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the Maximum Energy of the Player on GameInformation.
+    ///</summary>	
+    public static int MaxEnergy{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the current Energy of the Player on GameInformation.
+    ///</summary>	
+    public static int Energy{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the Player on GameInformation.
+    ///</summary>	
+    public static Player Player { get; set; }
+    ///<summary>
+    ///Calls and sets the Maximum of the Player on GameInformation.
+    ///</summary>	
     public static int MaxHealth { get; set; }
-	public static int Health{ get; set; }
-	public static int Attack{ get; set; }
-	public static int Defense{ get; set; }
-	public static int Magic{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the current Health of the Player on GameInformation.
+    ///</summary>	
+    public static int Health{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the current Attack of the Player on GameInformation.
+    ///</summary>	
+    public static int Attack{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the Defense of the Player on GameInformation.
+    ///</summary>	
+    public static int Defense{ get; set; }
+
+    ///<summary>
+    ///Calls and sets the current Magic of the Player on GameInformation.
+    ///</summary>	
+    public static int Magic{ get; set; }
+
+     ///<summary>
+    ///Calls and sets the Stamina of the Player on GameInformation.
+    ///</summary>	
 	public static int MagicDefense{ get; set; }
     public static int Mana { get; set; }
     public static int MaxMana { get; set; }
