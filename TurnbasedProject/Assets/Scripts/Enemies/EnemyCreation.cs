@@ -82,7 +82,7 @@ public class EnemyCreation {
         {
             case "Student": listOfEnemies = new Enemies_for_Student().getEnemyTypes(enemyNumber);
                 break;
-            case "Royal": listOfEnemies = new Enemies_for_Royality().getEnemyTypes(enemyNumber);
+            case "Royal": listOfEnemies = new Enemies_for_Royalty().getEnemyTypes(enemyNumber);
                 break;
 
             default: break;
