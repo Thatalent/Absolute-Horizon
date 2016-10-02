@@ -21,15 +21,13 @@ public class OptionsModule : MonoBehaviour {
     public static void playerTurn(Moves playerMove)
     {
         int m = GameInformation.Player.MoveCounter - playerMove.MoveCount;
-        // Debug.Log(GameInformtion.Energy);
-        // Debug.Log(playerMove.EpUse);
 
         if (GameInformation.Energy >= playerMove.EpUse && (m) >= 0 && GameInformation.Mana >= playerMove.MpUse && GameInformation.SpecialCharge >= playerMove.SpUse)
         {
             GameInformation.Player.MoveCounter = m;
-            //  Debug.Log(GameInformtion.Energy);
             playerMove.resource();
             float hit = playerMove.accuracy();
+
             if (Random.value <= hit)
             {
                 playerMove.move();
@@ -76,11 +74,7 @@ public class OptionsModule : MonoBehaviour {
            // endPlayerTurn();
         }
     }
-  /*  public static void endPlayerTurn()
-    {
-        Options.ActiveTurn = false;
-        GameInformtion.Player.MoveCounter = GameInformtion.MoveCounter;
-    }*/
+
     public static IEnumerator turnWait()
     {
         if (t == 0)
@@ -115,21 +109,7 @@ public class OptionsModule : MonoBehaviour {
         {
             moveCounted[i] = (int)moveCounts[i];
         }
-            Solution.quickSort(moveCounted, 0, moveCounted.Length-1);
-        /*for(int i=0; i < moves.Length; i++)
-        {
-            if (moves[i] != null)
-            {
-                if (moves[i].MoveCount < lowestMove)
-                {
-                    lowestMove = moves[i].MoveCount;
-                }
-                else
-                    continue;
-            }
-            else
-                continue;
-        }*/
+        Solution.quickSort(moveCounted, 0, moveCounted.Length-1);
         lowestMove = moveCounted[0];
         return lowestMove;
     }

@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MovesAssignment : MonoBehaviour {
 
-	private static string[] aMoves=new string[16];
-	private static string[] mMoves=new string[16];
+	private static string[] aMoves=new string[9];
+	private static string[] mMoves=new string[9];
 	private static int a;
 	private static int m;
 
@@ -23,15 +23,12 @@ public class MovesAssignment : MonoBehaviour {
 		{
 		case "Stab":
 			attacks[a]=new Stab();
-			Debug.Log (attacks[a]);
 			GameInformation.Attacks=attacks;
-			Debug.Log (GameInformation.Attacks);
 			a++;
 			break;
 		}
-		if (a == 16)
+		if (a == 9)
 			a = 0;
-		//Options.loadMoves ();
 	}
     public static void magicMove(string mMove)
     {
@@ -40,15 +37,12 @@ public class MovesAssignment : MonoBehaviour {
         {
             case "Sparkles":
                 spells[m] = new Sparkles();
-                Debug.Log(spells[m]);
                 GameInformation.Spells = spells;
-                Debug.Log(GameInformation.Spells);
                 m++;
                 break;
         }
-        if (m  == 16)
+        if (m  == 9)
             m = 0;
-        //Options.loadMoves();
     }
     // Update is called once per frame
     void Update () {

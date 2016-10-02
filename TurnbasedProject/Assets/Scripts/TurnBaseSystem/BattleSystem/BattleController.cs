@@ -35,7 +35,7 @@ public class BattleController : MonoBehaviour {
         {
             SceneManager.LoadScene("CharacterCreation");
         }
-
+        Enemies = EnemyMob.Length;
     }
 
 	public static Player Player{ get; set; }

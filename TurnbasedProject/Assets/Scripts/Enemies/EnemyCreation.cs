@@ -38,6 +38,7 @@ public class EnemyCreation {
         EnemyMob = new EnemyClass[enemyNumber];
       //  EnemyMob = new EnemyClass[] { new Noob ()};
         
+
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do {
             GameObject monster= Object.Instantiate(GameObject.FindGameObjectWithTag("Enemy"));
