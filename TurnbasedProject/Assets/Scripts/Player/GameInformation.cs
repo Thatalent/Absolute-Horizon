@@ -89,7 +89,7 @@ public class GameInformation : MonoBehaviour {
     public static float PlayerExp{ get; set; }
 
     ///<summary>
-    ///Calls and sets the Enerhy Rate of the Player on GameInformation.
+    ///Calls and sets the Energy Rate of the Player on GameInformation.
     ///</summary>	
     public static int EnergyRate{ get; set; }
 
@@ -135,9 +135,9 @@ public class GameInformation : MonoBehaviour {
      ///<summary>
     ///Calls and sets the Stamina of the Player on GameInformation.
     /// 
-    /// Health is solely dependant on Stamina.
+    /// Health is solely dependent on Stamina.
     /// 
-    /// Stamina also influences the Maximum Enegry a player can have at one time.
+    /// Stamina also influences the Maximum Energy a player can have at one time.
     ///</summary>	
     /// <return>MagicDefense</return>
 	public static int MagicDefense{ get; set; }
@@ -148,8 +148,14 @@ public class GameInformation : MonoBehaviour {
 
     public static int MoveCounter { get; set; }
     public static float MoveWait { get; set; }
-	
-	private static Moves[]attacks = new Moves[16]; 
+
+    /*gets and sets values of the Player's current location information*/
+    public static int World { get; set; }
+    public static int Zone { get; set; }
+    public static int Location { get; set; }
+    public static int Area { get; set; }
+
+    private static Moves[]attacks = new Moves[16]; 
 	private static Moves[]spells = new Moves[16];
 	private static Moves[]specials = new Moves[5];
 

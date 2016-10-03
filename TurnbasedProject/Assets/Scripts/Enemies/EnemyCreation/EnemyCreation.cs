@@ -80,11 +80,10 @@ public class EnemyCreation {
         EnemyClass[] listOfEnemies = new EnemyClass[enemyNumber];
         switch (GameInformation.PlayerClass.CharacterClassName)
         {
-            case "Student": listOfEnemies = new Enemies_for_Student().getEnemyTypes(enemyNumber);
+            case "Student":
+                string [] potentialEnemies = { "Floob", "Noob"};
                 break;
-            case "Royal": listOfEnemies = new Enemies_for_Royalty().getEnemyTypes(enemyNumber);
-                break;
-
+            
             default: break;
         }
         return listOfEnemies;

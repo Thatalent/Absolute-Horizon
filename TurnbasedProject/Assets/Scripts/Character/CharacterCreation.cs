@@ -43,12 +43,18 @@ public class CharacterCreation : MonoBehaviour {
 			NewPlayer.Luck =NewPlayer.CharacterClass.Luck;
 			NewPlayer.PlayerExp=0f;
 			GameInformation.save (NewPlayer);
-			BattleController.Player=GameInformation.data();
+            GameInformation.World = 0;
+            GameInformation.Zone= 0;
+            GameInformation.Location = 0;
+            GameInformation.Area = 0;
+            BattleController.Player=GameInformation.data();
 			Debug.Log (BattleController.Player.Skill);
 			MovesAssignment.attackMove ("Stab");
             MovesAssignment.magicMove("Sparkles");
             Debug.Log(GameInformation.Spells[0]);
             Options.loadMoves();
+
+            Thing.GetEnemyList();
 			SceneManager.LoadScene ("BattleScence");
 
 		}
