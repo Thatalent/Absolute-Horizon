@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface TestWorld
+public interface World2
 {
     int getLocation();
-
 }

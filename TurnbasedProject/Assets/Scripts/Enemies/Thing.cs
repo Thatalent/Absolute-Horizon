@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 
-public class Thing {
+public class Thing
+{
 
-    public static void GetEnemyList(){
+    public static void GetEnemyList()
+    {
 
         List<EnemyClass> objects = new List<EnemyClass>();
 
-        foreach (Type type in Assembly.GetAssembly(typeof(EnemyClass)).GetTypes().Where(myType => myType.IsClass && !myType.IsAbstract && myType.IsSubclassOf(typeof(EnemyClass)))){
+        foreach (Type type in Assembly.GetAssembly(typeof(EnemyClass)).GetTypes().Where(myType => myType.IsClass && !myType.IsAbstract && myType.IsSubclassOf(typeof(EnemyClass))))
+        {
             objects.Add((EnemyClass)Activator.CreateInstance(type));
         }
 

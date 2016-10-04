@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Floob : EnemyClass {
-
+public class Floob : EnemyClass, World2
+{
+    public int location;
     public Floob()
     {
-        EnemyName = "Noob";
+        EnemyName = "Floob";
         Health = 75;
         MaxHealth = 75;
         Attack = 15;
@@ -19,9 +20,14 @@ public class Floob : EnemyClass {
         EnergyRate = (Defense + MagicDefense) / 4;
         MaxEnergy = (Health - 90) + (Attack + Magic) / 2;
 
+        location = 4;
+
         // Attacks[0] = new Stab();
+    }
 
-
-
+    public int getLocation()
+    {
+        Debug.Log("Floob Location returned " + location);
+        return location;
     }
 }

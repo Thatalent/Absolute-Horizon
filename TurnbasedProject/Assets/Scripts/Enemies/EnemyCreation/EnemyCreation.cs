@@ -1,21 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCreation {
+public class EnemyCreation
+{
 
     // Use this for initialization
-    public EnemyCreation() {
+    public EnemyCreation()
+    {
 
         GameObject[] enemyPositionObjects = GameObject.FindGameObjectsWithTag("EnemyPosition");
         EnemyLocation = new Transform[enemyPositionObjects.Length];
-        for(int i = 0; i < enemyPositionObjects.Length; i++)
+        for (int i = 0; i < enemyPositionObjects.Length; i++)
         {
             EnemyLocation[i] = enemyPositionObjects[i].transform;
         }
     }
 
-    public EnemyClass findEnemy() {
-        switch (EnemyID) {
+    public EnemyClass findEnemy()
+    {
+        switch (EnemyID)
+        {
             case 1: return new Noob();
 
             default: return null;
@@ -26,7 +30,8 @@ public class EnemyCreation {
     {
         switch (Enemy.EnemyName)
         {
-            case "Noob": monster.AddComponent<NoobMoves>();
+            case "Noob":
+                monster.AddComponent<NoobMoves>();
                 break;
         }
     }
@@ -36,13 +41,15 @@ public class EnemyCreation {
         int i = 0;
         int enemyNumber = Random.Range(1, 6);
         EnemyMob = new EnemyClass[enemyNumber];
-      //  EnemyMob = new EnemyClass[] { new Noob ()};
-        
+        EnemyMob = EnemySelection.GetEnemyMob(enemyNumber);
+        //  EnemyMob = new EnemyClass[] { new Noob ()};
+
         GameObject[] monsterMob = new GameObject[enemyNumber];
-        do {
-            GameObject monster= Object.Instantiate(GameObject.FindGameObjectWithTag("Enemy"));
-         //   monster.SetActive(true);
-			monsterMob[i]=monster;
+        do
+        {
+            GameObject monster = Object.Instantiate(GameObject.FindGameObjectWithTag("Enemy"));
+            //   monster.SetActive(true);
+            monsterMob[i] = monster;
             monsterMob[i].SetActive(true);
             Enemy = monster.GetComponent<Enemy>();
             Enemy.EnemyClass = EnemyMob[i];
@@ -62,12 +69,12 @@ public class EnemyCreation {
             monster.transform.rotation = EnemyLocation[i].rotation;
             monster.GetComponent<SpriteRenderer>().enabled = true;
             SpriteRenderer[] monsterSpriteArray = monster.GetComponentsInChildren<SpriteRenderer>();
-            for(int j=0;j<monsterSpriteArray.Length;j++)
+            for (int j = 0; j < monsterSpriteArray.Length; j++)
             {
                 monsterSpriteArray[j].enabled = true;
             }
             addMoves(monster);
-            
+
 
             i++;
         } while (i < enemyNumber);
@@ -81,9 +88,9 @@ public class EnemyCreation {
         switch (GameInformation.PlayerClass.CharacterClassName)
         {
             case "Student":
-                string [] potentialEnemies = { "Floob", "Noob"};
+                string[] potentialEnemies = { "Floob", "Noob" };
                 break;
-            
+
             default: break;
         }
         return listOfEnemies;
