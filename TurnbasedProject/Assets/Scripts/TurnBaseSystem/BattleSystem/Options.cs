@@ -54,15 +54,13 @@ void Start () {
             }
         }
 
-		for (int j=0; j<6; j++) {
+		for (int j=0; j<BattleController.EnemyMob.Length; j++) {
 
 			if(BattleController.EnemyMob[j]!=null){
 				if (BattleController.EnemyMob[j].activeInHierarchy){
 					BattleController.Enemy=BattleController.EnemyMob[j];
 				}
 			}
-			else
-				j++;
 		}
         if (!ActiveEnemy && !Wait)
         {

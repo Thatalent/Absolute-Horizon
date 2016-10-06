@@ -3,20 +3,7 @@ using System.Collections;
 
 public class EnemyClass {
 
-	private int health;
-	private int attack;
-	private int defense;
-	private int magic;
-	private int magicDefense;
-	private int agility;
-	private int skill;
-	private int luck;
-
-	private int energyRate;
-	private int maxEnergy;
-	private int energy;
-
-	public int Health{ get; set; }
+    public int Health{ get; set; }
     public int MaxHealth { get; set; }
 	public int Attack{ get; set; }
 	public int Defense{ get; set; }
@@ -26,7 +13,7 @@ public class EnemyClass {
 	public int Skill{ get; set; }
 	public int Luck{ get; set; }
 
-	public int EnergyRate{ get; set; }//energyRate is depended on endurance
+    public int EnergyRate{ get; set; }//energyRate is depended on endurance
 	public int MaxEnergy{ get; set; }//maxEnergy is depended on stamina 
 	public int Energy{ get; set; }
 
