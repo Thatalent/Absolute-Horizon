@@ -4,7 +4,6 @@ using System.Collections;
 public class Stab : Moves {
 
 
-	 
 	public Stab(){
 		Name = "Stab";
 		Player = BattleController.Player;
@@ -20,9 +19,7 @@ public class Stab : Moves {
 		EpUse = (int)(1/((float)(BattleController.Player.Strength+BattleController.Player.Skill)/100));
 		MpUse = 0;
 		SpUse = -0.2f;
-        MoveCount = 3;
-
-	
+        MoveCount = 3;	
 	}
 	public override void move(){
 		Attack attack = new Attack((BattleController.Player.Attack+DmgBoost) , BattleController.Enemy.GetComponent<Enemy>().Defense );

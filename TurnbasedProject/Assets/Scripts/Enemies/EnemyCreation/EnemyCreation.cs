@@ -44,6 +44,7 @@ public class EnemyCreation
         EnemyMob = EnemySelection.GetEnemyMob(enemyNumber);
         //  EnemyMob = new EnemyClass[] { new Noob ()};
 
+
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do
         {

@@ -27,7 +27,6 @@ public class Moves {
         playerStatus();
         float hit=(BattleController.Player.Skill/BattleController.Enemy.GetComponent<Enemy>().Agility)*HitRate;
 		return hit;
-		
 	}
 	public void animate(){
 		//start amination	
@@ -50,10 +49,14 @@ public class Moves {
         GameInformation.Mana = GameInformation.Mana - MpUse;
         GameInformation.SpecialCharge = GameInformation.SpecialCharge - SpUse;
     }
+    public Transform enemyStatus(int dmg, int epDmg)
+    {
+        return null;
+    }
 
 
     //Used to resize the enemy status bars and other status effects
-	public virtual void enemyStatus(int dmg, int mpDmg, int epDmg)
+    public virtual void enemyStatus(int dmg, int mpDmg, int epDmg)
     {
         if(dmg != 0)
         {
@@ -75,6 +78,8 @@ public class Moves {
             FloatingText.Show(string.Format("-{0}", epDmg), "EnemyEnergyTaken", new FromWorldPointPositioner(Camera.main, BattleController.Enemy.transform.position, 1.5f, 50));
         }*/
     }
+
+
     public virtual void playerStatus()
     {
         Status healthStatus = GameObject.FindGameObjectWithTag("Player_HealthBar").GetComponent<Status>();
