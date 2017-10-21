@@ -41,31 +41,21 @@ public class EnemyCreation
         int i = 0;
         int enemyNumber = Random.Range(1, 6);
         EnemyMob = new EnemyClass[enemyNumber];
-        EnemyMob = EnemySelection.GetEnemyMob(enemyNumber);
+        EnemyService enemyService = EnemyServiceFactory.newEnemyService("TestWorld");
+        EnemyMob = enemyService.createAndReturnEnemyMob(enemyNumber);
         //  EnemyMob = new EnemyClass[] { new Noob ()};
 
 
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do
         {
+            //"Enemy" will be replaced with a string {EnemyClass.Name} in order to allow for a object to be dynamically built off of the types of enemies found in EnemySelection.GetEnemyMob()
             GameObject monster = Object.Instantiate(GameObject.FindGameObjectWithTag("Enemy"));
             //   monster.SetActive(true);
             monsterMob[i] = monster;
             monsterMob[i].SetActive(true);
             Enemy = monster.GetComponent<Enemy>();
             Enemy.EnemyClass = EnemyMob[i];
-            Enemy.MaxHealth = Enemy.EnemyClass.MaxHealth;
-            Enemy.Health = Enemy.EnemyClass.Health;
-            Enemy.Attack = Enemy.EnemyClass.Attack;
-            Enemy.Defense = Enemy.EnemyClass.Defense;
-            Enemy.Skill = Enemy.EnemyClass.Skill;
-            Enemy.Agility = Enemy.EnemyClass.Agility;
-            Enemy.Luck = Enemy.EnemyClass.Luck;
-            Enemy.Magic = Enemy.EnemyClass.Magic;
-            Enemy.MagicDefense = Enemy.EnemyClass.MagicDefense;
-            Enemy.MaxEnergy = Enemy.EnemyClass.MaxEnergy;
-            Enemy.EnergyRate = Enemy.EnemyClass.EnergyRate;
-            Enemy.EnemyName = Enemy.EnemyClass.EnemyName;
             monster.transform.position = EnemyLocation[i].position;
             monster.transform.rotation = EnemyLocation[i].rotation;
             monster.GetComponent<SpriteRenderer>().enabled = true;
@@ -82,8 +72,7 @@ public class EnemyCreation
         return monsterMob;
     }
 
-    virtual
-    public EnemyClass[] getEnemyTypes(int enemyNumber)
+    virtual public EnemyClass[] getEnemyTypes(int enemyNumber)
     {
         EnemyClass[] listOfEnemies = new EnemyClass[enemyNumber];
         switch (GameInformation.PlayerClass.CharacterClassName)

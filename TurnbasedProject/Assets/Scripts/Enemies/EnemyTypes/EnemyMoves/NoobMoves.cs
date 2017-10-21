@@ -27,7 +27,7 @@ public class NoobMoves : EnemyMoves {
                         Options.ActiveEnemy = true;
                         Debug.Log("Trying to attack! >:3");
                         choice1();
-                        Debug.Log("Finish attack! :3");
+                        Debug.Log("Finished attacking! :3");
                         Options.ActiveEnemy = false;
                         yield return new WaitForSeconds(2);
                         break;

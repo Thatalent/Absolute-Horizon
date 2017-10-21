@@ -3,7 +3,24 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-    public EnemyClass EnemyClass { get; set; }
+    public EnemyClass EnemyClass {
+        get { return EnemyClass; }
+        set {
+            EnemyClass = value;
+            MaxHealth = EnemyClass.MaxHealth;
+            Health = EnemyClass.Health;
+            Attack = EnemyClass.Attack;
+            Defense = EnemyClass.Defense;
+            Skill = EnemyClass.Skill;
+            Agility = EnemyClass.Agility;
+            Luck = EnemyClass.Luck;
+            Magic = EnemyClass.Magic;
+            MagicDefense = EnemyClass.MagicDefense;
+            MaxEnergy = EnemyClass.MaxEnergy;
+            EnergyRate = EnemyClass.EnergyRate;
+            EnemyName = EnemyClass.EnemyName;
+        }
+    }
     public string EnemyName { get; set; }
     public int Stamina { get; set; }//effects maxuim energy
     public int Strength { get; set; }//effects energy usage
@@ -37,7 +54,6 @@ public class Enemy : MonoBehaviour {
     public Moves[] Attacks { get; set; }
     public Moves[] Spells { get; set; }
     public Moves[] Specials { get; set; }
-
 
     // Use this for initialization
     void Start () {

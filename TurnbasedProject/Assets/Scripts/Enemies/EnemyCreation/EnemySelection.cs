@@ -7,23 +7,23 @@ using System.Collections.Generic;
 public class EnemySelection : MonoBehaviour
 {
 
-    public static EnemyClass[] World1Enemies { get; set; }
-    public static EnemyClass[] World2Enemies { get; set; }
-    public static EnemyClass[] World3Enemies { get; set; }
-    public static EnemyClass[] World4Enemies { get; set; }
+    public static Type[] World1Enemies { get; set; }
+    public static Type[] World2Enemies { get; set; }
+    public static Type[] World3Enemies { get; set; }
+    public static Type[] World4Enemies { get; set; }
 
 
     public static void World1SetEnemyList()
     {
 
-        List<EnemyClass> objects = new List<EnemyClass>();
+        List<Type> objects = new List<Type>();
 
         foreach (Type type in Assembly.GetAssembly(typeof(EnemyClass)).GetTypes().Where(myType => myType.IsClass && !myType.IsAbstract && typeof(TestWorld).IsAssignableFrom(myType)))
         {
-            objects.Add((EnemyClass)Activator.CreateInstance(type));
+            objects.Add(type);
         }
 
-        foreach (EnemyClass e in objects)
+        foreach (Type e in objects)
         {
             Debug.Log(e);
         }
@@ -37,7 +37,8 @@ public class EnemySelection : MonoBehaviour
         EnemyClass[] EnemyMob = new EnemyClass[enemyNumber];
         for (int i = 0; i < enemyNumber; i++)
         {
-            EnemyMob[i] = (EnemyClass)EnemySelection.World1Enemies.GetValue(UnityEngine.Random.Range(0, EnemySelection.World1Enemies.Length));
+            Type type = (Type)EnemySelection.World1Enemies.GetValue(UnityEngine.Random.Range(0, EnemySelection.World1Enemies.Length));
+            EnemyMob[i] =  (EnemyClass)Activator.CreateInstance(type);
         }
         return EnemyMob;
     }
