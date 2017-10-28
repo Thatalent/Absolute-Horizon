@@ -12,9 +12,9 @@ public class DualStrike : Moves {
         FrzRate = 0f;
         StnRate = 0f;
         PsnRate = 0f;
-        DmgX = 0.75f;
+        DmgX = 1.0f;
         HitRate = 1.00f;
-        DmgBoost = 2;
+        DmgBoost = 4;
         EpUse = (int)(1 / ((float)(BattleController.Player.Strength + BattleController.Player.Skill) / 100));
         MpUse = 0;
         SpUse = -0.2f;
@@ -26,6 +26,7 @@ public class DualStrike : Moves {
         if (BattleController.Battle)
         {
             Moves secondAttack = new TrailingStrike(Options.getNextEnemy(BattleController.EnemyIndex));
+            secondAttack.move();
         }
     }
 }

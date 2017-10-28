@@ -33,11 +33,15 @@ public class Moves {
 	}
     //override to specify the actions for the move
 	public virtual void move(){
-        GameObject enemy = BattleController.Enemy;
+        GameObject enemy = Enemy;
+        if (enemy == null)
+        {
+            enemy = BattleController.Enemy;
+        }
         Attack attack = new Attack((int)(DmgX * BattleController.Player.Attack + DmgBoost), enemy.GetComponent<Enemy>().Defense);
         int damage = attack.attacking();
         enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + damage;
-        Debug.Log("damage: " + damage);
+        Debug.Log("damage of move - " + Name + " is equal to:" + damage);
         enemyStatus(damage, 0, 0, enemy);
         additionalActions();
     }
@@ -66,7 +70,7 @@ public class Moves {
     {
         if(dmg != 0)
         {
-            FloatingText.Show(string.Format("{0}", dmg), "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, enemy.transform.position, 1.5f, 1));
+            FloatingText.Show(string.Format("{0}", dmg), "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, enemy.transform.position, 3.5f, 0));
         }
         Status status = enemy.GetComponentInChildren<BaseStatusBar>();
         status.changeStatusSize(enemy.GetComponent<Enemy>().Health, enemy.GetComponent<Enemy>().MaxHealth);

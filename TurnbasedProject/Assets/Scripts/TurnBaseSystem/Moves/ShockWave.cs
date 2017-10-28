@@ -26,7 +26,7 @@ public class ShockWave : Moves {
         foreach(GameObject enemy in BattleController.EnemyMob){
             Attack attack = new Attack((BattleController.Player.Attack + DmgBoost), enemy.GetComponent<Enemy>().Defense);
             int damage = attack.attacking();
-            BattleController.Enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + damage;
+            enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + damage;
             Debug.Log("damage: " + damage);
             enemyStatus(damage, 0, 0, enemy);
         }
