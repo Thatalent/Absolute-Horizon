@@ -57,6 +57,8 @@ public class CharacterCreation : MonoBehaviour
             BattleController.Player = GameInformation.data();
             Debug.Log(BattleController.Player.Skill);
             MovesAssignment.attackMove("Stab");
+            MovesAssignment.attackMove("DualStrike");
+            MovesAssignment.attackMove("ShockWave");
             MovesAssignment.magicMove("Sparkles");
             Debug.Log(GameInformation.Spells[0]);
             Options.loadMoves();
