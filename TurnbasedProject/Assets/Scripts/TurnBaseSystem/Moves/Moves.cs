@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Moves {
+public abstract class Moves {
 	
 	private Player player;
 	private GameObject enemy;
@@ -25,21 +25,21 @@ public class Moves {
     //Use to specify how accuracy is handled by the move
 	public virtual float accuracy(){
         playerStatus();
-        float hit=(BattleController.Player.Skill/BattleController.Enemy.GetComponent<Enemy>().Agility)*HitRate;
+        float hit=(BattleController.player.Skill/BattleController.Enemy.GetComponent<Enemy>().Agility)*HitRate;
 		return hit;
 	}
 	public void animate(){
-		//start amination	
+		//start animation	
 	}
     //override to specify the actions for the move
 	public virtual void move(){
 
 	}
 
-    //Used to add a percentage of special points to player's gauage
+    //Used to add a percentage of special points to player's gauge
 	public void sepc(){
 
-		//add a percentage of special points to player's gauage
+		//add a percentage of special points to player's gauge
 
 	}
 

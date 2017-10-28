@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Attack {
-
+	//TODO: refactor field name to totalDamage, attackerDamage, and defenderDefense (lol redundant)
 	private int tDmg;
 
 	private int pDmg;
@@ -31,7 +31,7 @@ public class Attack {
 		}
 		return false;
 	}
-
+	//TODO: refactor field name to TotalDamage, AttackerDamage, and DefenderDefense (lol redundant)
 	private int TDmg{ get; set; }
 	private int PDmg{ get; set; }
 	private int EDef{ get; set; }

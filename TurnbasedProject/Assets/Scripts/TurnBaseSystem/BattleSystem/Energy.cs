@@ -16,7 +16,7 @@ public class Energy : MonoBehaviour {
 
     }
     IEnumerator energyRate(){
-		bool battle = BattleController.Battle;
+		bool battle = BattleController.ActiveBattle;
         //Debug.Log(GameInformtion.Energy);
 		while(battle) {
             yield return new WaitForSeconds(1);
