@@ -16,16 +16,6 @@ public class EnemyCreation
         }
     }
 
-    public EnemyClass findEnemy()
-    {
-        switch (EnemyID)
-        {
-            case 1: return new Noob();
-
-            default: return null;
-
-        }
-    }
     public void addMoves(GameObject monster)
     {
         switch (Enemy.EnemyName)
@@ -41,10 +31,8 @@ public class EnemyCreation
         int i = 0;
         int enemyNumber = Random.Range(1, 6);
         EnemyMob = new EnemyClass[enemyNumber];
-        EnemyService enemyService = EnemyServiceFactory.newEnemyService("TestWorld");
-        EnemyMob = enemyService.createAndReturnEnemyMob(enemyNumber);
-        //  EnemyMob = new EnemyClass[] { new Noob ()};
-
+        EnemyService = EnemyServiceFactory.newEnemyService("TestWorld");
+        EnemyMob = EnemyService.createAndReturnEnemyMob(enemyNumber);
 
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do
@@ -56,6 +44,7 @@ public class EnemyCreation
             monsterMob[i].SetActive(true);
             Enemy = monster.GetComponent<Enemy>();
             Enemy.EnemyClass = EnemyMob[i];
+            Enemy.initStats();
             monster.transform.position = EnemyLocation[i].position;
             monster.transform.rotation = EnemyLocation[i].rotation;
             monster.GetComponent<SpriteRenderer>().enabled = true;
@@ -90,4 +79,5 @@ public class EnemyCreation
     public int EnemyID { get; set; }
     public EnemyClass[] EnemyMob { get; set; }
     public Transform[] EnemyLocation { get; set; }
+    public EnemyService EnemyService { get; set; }
 }

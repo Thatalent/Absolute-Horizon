@@ -4,15 +4,20 @@ using System;
 
 public class TestWorldEnemyServiceFactory : EnemyServiceFactory
 {
-
-    public EnemyClass[] createAndReturnEnemyMob(int numberOfEnemies)
+    public override void addEnemyMoves(GameObject enemy)
     {
-        return EnemySelection.getEnemyMob(numberOfEnemies);
+        
     }
 
-    public EnemyStrategy determineAttackPattern(Enemy currentEnemy)
+    public override EnemyClass[] createAndReturnEnemyMob(int numberOfEnemies)
     {
-
+        return EnemySelection.getWorld1EnemyMob(numberOfEnemies);
     }
 
+    public override EnemyStrategy determineAttackPattern(Enemy currentEnemy)
+    {
+        return EnemyStrategy.EASY;
+    }
+
+  
 }

@@ -5,6 +5,7 @@ public interface EnemyService {
 
     EnemyClass[] createAndReturnEnemyMob(int enemyNumber);
 
-    EnemyServiceFactory.EnemyStrategy determineAttackPattern();
+    EnemyServiceFactory.EnemyStrategy determineAttackPattern(Enemy enemy);
 
+    void addEnemyMoves(GameObject enemy);
 }

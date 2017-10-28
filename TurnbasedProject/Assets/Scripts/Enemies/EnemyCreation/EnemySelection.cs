@@ -12,8 +12,14 @@ public class EnemySelection : MonoBehaviour
     public static Type[] World3Enemies { get; set; }
     public static Type[] World4Enemies { get; set; }
 
+    public static Dictionary<string, EnemyMoves> TestWorldEnemyMoves { get; set; }
+    public static Dictionary<string, EnemyMoves> World1EnemyMoves{ get; set;}
+    public static Dictionary<string, EnemyMoves> World2EnemyMoves { get; set; }
+    public static Dictionary<string, EnemyMoves> World3EnemyMoves { get; set; }
+    public static Dictionary<string, EnemyMoves> World4EnemyMoves { get; set; }
 
-    public static void World1SetEnemyList()
+
+    public static void world1SetEnemyList()
     {
 
         List<Type> objects = new List<Type>();
@@ -32,7 +38,7 @@ public class EnemySelection : MonoBehaviour
 
     }
 
-    public static EnemyClass[] GetEnemyMob(int enemyNumber)
+    public static EnemyClass[] getWorld1EnemyMob(int enemyNumber)
     {
         EnemyClass[] EnemyMob = new EnemyClass[enemyNumber];
         for (int i = 0; i < enemyNumber; i++)
@@ -43,7 +49,7 @@ public class EnemySelection : MonoBehaviour
         return EnemyMob;
     }
 
-    public static void World2GetEnemyList()
+    public static void world2GetEnemyList()
     {
 
         List<EnemyClass> objects = new List<EnemyClass>();

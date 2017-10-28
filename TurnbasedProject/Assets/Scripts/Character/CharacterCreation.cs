@@ -61,7 +61,7 @@ public class CharacterCreation : MonoBehaviour
             Debug.Log(GameInformation.Spells[0]);
             Options.loadMoves();
             Debug.Log("Get World1 Enemy List");
-            EnemySelection.World1SetEnemyList();
+            EnemySelection.world1SetEnemyList();
             SceneManager.LoadScene("BattleScence");
 
         }
