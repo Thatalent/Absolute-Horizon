@@ -40,7 +40,7 @@ public class NoobMoves : EnemyMoves {
             }
             else
             {
-                Debug.Log("Can't attack at the moment!");
+                
                 yield return new WaitForFixedUpdate();
             }
         }
