@@ -2,11 +2,11 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class BattleController : MonoBehaviour
+public class BattleController : MonoBehaviour, BattleControllerService
 {
 
     private static bool monsterCreation;
-    private static EnemyCreation create;
+    private static EnemyCreation Create { get; set; }
 
     // Use this for initialization
     void Start()
@@ -16,10 +16,11 @@ public class BattleController : MonoBehaviour
         BattleController.Battle = true;
         Energy energy = gameObject.GetComponent<Energy>();
         energy.enabled = true;
-        EnemyCreation create = new EnemyCreation();
-        EnemyMob = create.makeEnemy();
+        Create = new EnemyCreation();
+        EnemyMob = Create.makeEnemy();
         Enemies = EnemyMob.Length;
         monsterCreation = true;
+        Enemy = EnemyMob[EnemyIndex];
     }
 
     // Update is called once per frame
@@ -31,8 +32,6 @@ public class BattleController : MonoBehaviour
         }
         if (GameObject.FindGameObjectWithTag("Enemy") && !monsterCreation)
         {
-            monsterCreation = true;
-            create.makeEnemy();
             Enemies = EnemyMob.Length;
 
         }
@@ -48,4 +47,5 @@ public class BattleController : MonoBehaviour
     public static int Enemies { get; set; }
     public static bool Battle { get; set; }
     public static GameObject[] EnemyMob { get; set; }
+    public static int EnemyIndex { get; set; }
 }

@@ -21,12 +21,23 @@ public class MovesAssignment : MonoBehaviour {
 		Moves[] attacks = GameInformation.Attacks;
 		switch (aMove) 
 		{
-		case "Stab":
-			attacks[a]=new Stab();
-			GameInformation.Attacks=attacks;
-			a++;
-			break;
-		}
+		    case "Stab":
+			    attacks[a]=new Stab();
+			    GameInformation.Attacks=attacks;
+			    a++;
+			    break;
+            case "DualStrike":
+                attacks[a] = new DualStrike();
+                GameInformation.Attacks = attacks;
+                a++;
+                break;
+            case "ShockWave":
+                attacks[a] = new ShockWave();
+                GameInformation.Attacks = attacks;
+                a++;
+                break;
+            default: break;
+        }
 		if (a == 9)
 			a = 0;
 	}
@@ -40,6 +51,7 @@ public class MovesAssignment : MonoBehaviour {
                 GameInformation.Spells = spells;
                 m++;
                 break;
+            default: break;
         }
         if (m  == 9)
             m = 0;

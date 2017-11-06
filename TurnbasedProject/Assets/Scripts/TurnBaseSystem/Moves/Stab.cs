@@ -21,13 +21,4 @@ public class Stab : Moves {
 		SpUse = -0.2f;
         MoveCount = 3;	
 	}
-	public override void move(){
-		Attack attack = new Attack((BattleController.Player.Attack+DmgBoost) , BattleController.Enemy.GetComponent<Enemy>().Defense );
-		int damage=attack.attacking ();
-		BattleController.Enemy.GetComponent<Enemy>().Health = BattleController.Enemy.GetComponent<Enemy>().Health + damage;
-        Debug.Log("damage: "+damage);
-        enemyStatus(damage, 0, 0);
-	}
-	
-
 }
