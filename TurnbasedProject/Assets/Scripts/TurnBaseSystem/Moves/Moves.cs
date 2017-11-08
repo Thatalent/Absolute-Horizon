@@ -25,7 +25,7 @@ public abstract class Moves {
     //Use to specify how accuracy is handled by the move
 	public virtual float accuracy(){
         playerStatus();
-        float hit=(BattleController.player.Skill/BattleController.Enemy.GetComponent<Enemy>().Agility)*HitRate;
+        float hit=(BattleController.Player.Skill/BattleController.Enemy.GetComponent<Enemy>().Agility)*HitRate;
 		return hit;
 	}
 	public void animate(){
