@@ -56,20 +56,31 @@ public class EnemyGenerator
         int i = 0;
         int enemyNumber = Random.Range(1, 6);
         EnemyMob = new EnemyClass[enemyNumber];
-        EnemyService = EnemyServiceFactory.newEnemyService("TestWorld");
-        EnemyMob = EnemyService.createAndReturnEnemyMob(enemyNumber);
+        EnemyMob = EnemySelection.GetEnemyMob(enemyNumber);
+        //  EnemyMob = new EnemyClass[] { new Noob ()};
+
 
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do
         {
-            //"Enemy" will be replaced with a string {EnemyClass.Name} in order to allow for a object to be dynamically built off of the types of enemies found in EnemySelection.GetEnemyMob()
             GameObject monster = Object.Instantiate(GameObject.FindGameObjectWithTag("Enemy"));
             //   monster.SetActive(true);
             monsterMob[i] = monster;
             monsterMob[i].SetActive(true);
             Enemy = monster.GetComponent<Enemy>();
             Enemy.EnemyClass = EnemyMob[i];
-            Enemy.initStats();
+            Enemy.MaxHealth = Enemy.EnemyClass.MaxHealth;
+            Enemy.Health = Enemy.EnemyClass.Health;
+            Enemy.Attack = Enemy.EnemyClass.Attack;
+            Enemy.Defense = Enemy.EnemyClass.Defense;
+            Enemy.Skill = Enemy.EnemyClass.Skill;
+            Enemy.Agility = Enemy.EnemyClass.Agility;
+            Enemy.Luck = Enemy.EnemyClass.Luck;
+            Enemy.Magic = Enemy.EnemyClass.Magic;
+            Enemy.MagicDefense = Enemy.EnemyClass.MagicDefense;
+            Enemy.MaxEnergy = Enemy.EnemyClass.MaxEnergy;
+            Enemy.EnergyRate = Enemy.EnemyClass.EnergyRate;
+            Enemy.EnemyName = Enemy.EnemyClass.EnemyName;
             monster.transform.position = EnemyLocation[i].position;
             monster.transform.rotation = EnemyLocation[i].rotation;
             monster.GetComponent<SpriteRenderer>().enabled = true;
@@ -109,5 +120,4 @@ public class EnemyGenerator
     public int EnemyID { get; set; }
     public EnemyClass[] EnemyMob { get; set; }
     public Transform[] EnemyLocation { get; set; }
-    public EnemyService EnemyService { get; set; }
 }

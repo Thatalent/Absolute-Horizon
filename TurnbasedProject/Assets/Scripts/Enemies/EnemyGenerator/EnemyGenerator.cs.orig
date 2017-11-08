@@ -18,6 +18,7 @@ public class EnemyGenerator
         }
     }
 
+<<<<<<< HEAD:TurnbasedProject/Assets/Scripts/Enemies/EnemyGenerator/EnemyGenerator.cs
 	/// <summary>
 	/// Finds the enemy.
 	/// </summary>
@@ -38,6 +39,9 @@ public class EnemyGenerator
 	/// </summary>
 	/// <param name="monster">Monster.</param>
     public void addMoves(GameObject enemy)
+=======
+    public void addMoves(GameObject monster)
+>>>>>>> master:TurnbasedProject/Assets/Scripts/Enemies/EnemyCreation/EnemyCreation.cs
     {
         switch (Enemy.EnemyName)
         {
@@ -86,11 +90,14 @@ public class EnemyGenerator
         return monsterMob;
     }
 
+<<<<<<< HEAD:TurnbasedProject/Assets/Scripts/Enemies/EnemyGenerator/EnemyGenerator.cs
 	/// <summary>
 	/// Gets the enemy types.
 	/// </summary>
 	/// <returns>The enemy types.</returns>
 	/// <param name="enemyNumber">Enemy number.</param>
+=======
+>>>>>>> master:TurnbasedProject/Assets/Scripts/Enemies/EnemyCreation/EnemyCreation.cs
     virtual public EnemyClass[] getEnemyTypes(int enemyNumber)
     {
         EnemyClass[] listOfEnemies = new EnemyClass[enemyNumber];

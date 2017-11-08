@@ -38,6 +38,21 @@ public class Enemy : MonoBehaviour {
     public Moves[] Spells { get; set; }
     public Moves[] Specials { get; set; }
 
+    public void initStats()
+    {
+        MaxHealth = EnemyClass.MaxHealth;
+        Health = EnemyClass.Health;
+        Attack = EnemyClass.Attack;
+        Defense = EnemyClass.Defense;
+        Skill = EnemyClass.Skill;
+        Agility = EnemyClass.Agility;
+        Luck = EnemyClass.Luck;
+        Magic = EnemyClass.Magic;
+        MagicDefense = EnemyClass.MagicDefense;
+        MaxEnergy = EnemyClass.MaxEnergy;
+        EnergyRate = EnemyClass.EnergyRate;
+        EnemyName = EnemyClass.EnemyName;
+    }
 
     // Use this for initialization
     void Start () {

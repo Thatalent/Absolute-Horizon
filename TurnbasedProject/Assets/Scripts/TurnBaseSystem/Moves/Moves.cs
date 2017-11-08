@@ -33,8 +33,18 @@ public abstract class Moves {
 	}
     //override to specify the actions for the move
 	public virtual void move(){
-
-	}
+        GameObject enemy = Enemy;
+        if (enemy == null)
+        {
+            enemy = BattleController.Enemy;
+        }
+        Attack attack = new Attack((int)(DmgX * BattleController.Player.Attack + DmgBoost), enemy.GetComponent<Enemy>().Defense);
+        int damage = attack.attacking();
+        enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + damage;
+        Debug.Log("damage of move - " + Name + " is equal to:" + damage);
+        enemyStatus(damage, 0, 0, enemy);
+        additionalActions();
+    }
 
     //Used to add a percentage of special points to player's gauge
 	public void sepc(){
@@ -56,15 +66,15 @@ public abstract class Moves {
 
 
     //Used to resize the enemy status bars and other status effects
-    public virtual void enemyStatus(int dmg, int mpDmg, int epDmg)
+    public virtual void enemyStatus(int dmg, int mpDmg, int epDmg, GameObject enemy)
     {
         if(dmg != 0)
         {
-            FloatingText.Show(string.Format("{0}", dmg), "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, BattleController.Enemy.transform.position, 1.5f, 1));
+            FloatingText.Show(string.Format("{0}", dmg), "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, enemy.transform.position, 3.5f, 0));
         }
-        Status status = BattleController.Enemy.GetComponentInChildren<BaseStatusBar>();
-        status.changeStatusSize(BattleController.Enemy.GetComponent<Enemy>().Health, BattleController.Enemy.GetComponent<Enemy>().MaxHealth);
-        Debug.Log("Enemy : "+BattleController.Enemy.GetComponent<Enemy>().Health);
+        Status status = enemy.GetComponentInChildren<BaseStatusBar>();
+        status.changeStatusSize(enemy.GetComponent<Enemy>().Health, enemy.GetComponent<Enemy>().MaxHealth);
+        Debug.Log("Enemy : "+ enemy.GetComponent<Enemy>().Health);
 
         // Uncomment for future use. 
         //Used to create pop up text when changing the mana and energy points of the Enemey
@@ -91,7 +101,15 @@ public abstract class Moves {
         Energy.energyStatus();
     }
 
-	public Player Player{ get; set; }
+    /// <summary>
+    /// Override this for additional actions after performing move.
+    /// </summary>
+    public virtual void additionalActions()
+    {
+
+    }
+
+    public Player Player{ get; set; }
 	public GameObject Enemy{ get; set;}
 	public float BrnRate{ get; set; }
 	public float FrzRate{ get; set; }
