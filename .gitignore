@@ -21,3 +21,6 @@
 sysinfo.txt
 /TurnbasedProject/Assets/Scenes/BattleScence.unity.BASE.unity
 /TurnbasedProject/Assets/Resources/*.guiskin
+TurnbasedProject/ProjectSettings/GraphicsSettings.asset
+TurnbasedProject/ProjectSettings/ProjectVersion.txt
+*.asset
