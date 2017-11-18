@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Moves {
+public abstract class Moves {
 	
 	private Player player;
 	private GameObject enemy;
@@ -29,7 +29,7 @@ public class Moves {
 		return hit;
 	}
 	public void animate(){
-		//start amination	
+		//start animation	
 	}
     //override to specify the actions for the move
 	public virtual void move(){
@@ -46,10 +46,10 @@ public class Moves {
         additionalActions();
     }
 
-    //Used to add a percentage of special points to player's gauage
+    //Used to add a percentage of special points to player's gauge
 	public void sepc(){
 
-		//add a percentage of special points to player's gauage
+		//add a percentage of special points to player's gauge
 
 	}
 

@@ -20,7 +20,7 @@ public class EnemyEnergy : MonoBehaviour {
     }
     IEnumerator energyRate()
     {
-        bool battle = BattleController.Battle;
+        bool battle = BattleController.ActiveBattle;
         //Debug.Log(GameInformtion.Energy);
         while (true)
         {

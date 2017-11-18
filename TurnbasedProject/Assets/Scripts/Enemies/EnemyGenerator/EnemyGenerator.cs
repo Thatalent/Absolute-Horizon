@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCreation
+public class EnemyGenerator
 {
 
-    // Use this for initialization
-    public EnemyCreation()
+    /// <summary>
+	/// Use this for Enemy Initialization.
+	/// </summary>
+    public EnemyGenerator()
     {
 
         GameObject[] enemyPositionObjects = GameObject.FindGameObjectsWithTag("EnemyPosition");
@@ -16,16 +18,39 @@ public class EnemyCreation
         }
     }
 
-    public void addMoves(GameObject monster)
+	/// <summary>
+	/// Finds the enemy.
+	/// </summary>
+	/// <returns>The enemy.</returns>
+    public EnemyClass findEnemy()
+    {
+        switch (EnemyID)
+        {
+            case 1: return new Noob();
+
+            default: return null;
+
+        }
+    }
+
+	/// <summary>
+	/// Adds the moves.
+	/// </summary>
+	/// <param name="monster">Monster.</param>
+    public void addMoves(GameObject enemy)
     {
         switch (Enemy.EnemyName)
         {
             case "Noob":
-                monster.AddComponent<NoobMoves>();
+                enemy.AddComponent<NoobMoves>();
                 break;
         }
     }
 
+	/// <summary>
+	/// Makes the enemy.
+	/// </summary>
+	/// <returns>The enemy.</returns>
     public GameObject[] makeEnemy()
     {
         int i = 0;
@@ -61,6 +86,11 @@ public class EnemyCreation
         return monsterMob;
     }
 
+	/// <summary>
+	/// Gets the enemy types.
+	/// </summary>
+	/// <returns>The enemy types.</returns>
+	/// <param name="enemyNumber">Enemy number.</param>
     virtual public EnemyClass[] getEnemyTypes(int enemyNumber)
     {
         EnemyClass[] listOfEnemies = new EnemyClass[enemyNumber];
