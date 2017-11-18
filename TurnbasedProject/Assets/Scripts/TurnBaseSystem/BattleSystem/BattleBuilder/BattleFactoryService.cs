@@ -10,6 +10,6 @@ public abstract class BattleFactoryService : BattleFactory {
     /// <returns></returns>
 	static public BattleFactory getNewBattleFactory(PlayerLocation location)
     {
-
+        return new TestWorldBattleFactoryService();
     }
 }

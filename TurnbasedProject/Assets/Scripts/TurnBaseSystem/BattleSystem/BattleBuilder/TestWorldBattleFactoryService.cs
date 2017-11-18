@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestWorldBattleFactoryService : MonoBehaviour {
+public class TestWorldBattleFactoryService : BattleFactoryService {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	public BattleWave generateBattleWaves()
+    {
+        return new BattleWave();
+    }
 }
