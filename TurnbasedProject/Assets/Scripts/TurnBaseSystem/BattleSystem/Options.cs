@@ -35,7 +35,7 @@ void Start () {
     // Update is called once per frame
     void Update () {
 
-        if (BattleController.Battle == true)
+        if (BattleController.ActiveBattle == true)
         {
             //Conditional Input for ending Player's Turn
 
