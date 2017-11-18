@@ -12,7 +12,7 @@ public class CharacterCreation : MonoBehaviour
 
 
 
-    // Use this for initialization
+    // Use this for initialization.
     void Start()
     {
         NewPlayer = new Player();
