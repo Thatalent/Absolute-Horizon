@@ -161,6 +161,8 @@ public class GameInformation : MonoBehaviour
     private static Moves[] spells = new Moves[16];
     private static Moves[] specials = new Moves[5];
 
+    public static PlayerLocation PlayerLocation { get; set; }
+
     public static Moves Trigger { get; set; }
     public static Moves[] Attacks { get; set; }
     public static Moves[] Spells { get; set; }
