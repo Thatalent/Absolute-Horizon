@@ -12,4 +12,6 @@ public abstract class BattleFactoryService : BattleFactory {
     {
         return new TestWorldBattleFactoryService();
     }
+
+    public abstract BattleWave[] generateEnemyWaves();
 }

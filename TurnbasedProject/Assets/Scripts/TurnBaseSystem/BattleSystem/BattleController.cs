@@ -14,7 +14,7 @@ public class BattleController : MonoBehaviour, BattleControllerService
 		ActiveBattle = true;
 		Energy energy = gameObject.GetComponent<Energy> ();
 		energy.enabled = true;
-        BattleWaves = BattleFactoryService.getNewBattleFactory(GameInformation.PlayerLocation).;
+        BattleWaves = BattleFactoryService.getNewBattleFactory(GameInformation.PlayerLocation).generateEnemyWaves();
 		EnemyMob = new EnemyGenerator().makeEnemy();
 		EnemiesAlive = EnemyMob.Length;
 		//TODO: Create service class that determines the number of waves based on the player's level and location
