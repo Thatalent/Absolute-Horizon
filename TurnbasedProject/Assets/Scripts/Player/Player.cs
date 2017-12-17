@@ -1,37 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player {
-
-	private BaseCharacterClass characterClass;
-	private int stamina;
-	private int strength;
-	private int endurance;
-	private int intelligence;
-	private int resistance;
-	private int speed;
-	private int skill;
-	private int luck;
-
-	private int playerLvl;
-	private float playerExp;
-	private string playerName;
-    private int moveCounter;
-    private float moveWait;
-
-    private int maxHealth;
-	private int health;
-	private int attack;
-	private int defense;
-    private int mana;
-    private int maxMana;
-	private int magic;
-	private int magicDefense;
-	private int agility;
-	private int energy;
-
-
-	
+public class Player {	
 	public BaseCharacterClass CharacterClass{ get; set; }
 	public int Stamina{ get; set; }
 	public int Strength{ get; set; }

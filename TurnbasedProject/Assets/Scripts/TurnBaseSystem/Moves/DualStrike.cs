@@ -23,7 +23,7 @@ public class DualStrike : Moves {
 
    public override void additionalActions()
     {
-        if (BattleController.Battle)
+        if (BattleController.ActiveBattle)
         {
             Moves secondAttack = new TrailingStrike(Options.getNextEnemy(BattleController.EnemyIndex));
             secondAttack.move();

@@ -12,7 +12,7 @@ public class FromWorldPointPositioner : IFloatingTextPositioner
     private readonly Vector3 _worldPosition;
     private float _yOffset;
 
-    public FromWorldPointPositioner(Camera camera, Vector3 worldPosition,float timeToLive, float speed)
+    public FromWorldPointPositioner(Camera camera, Vector3 worldPosition, float timeToLive, float speed)
     {
         mainCamera = camera;
         _worldPosition = worldPosition;
