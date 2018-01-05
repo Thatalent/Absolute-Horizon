@@ -1,0 +1,10 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class TestWorldBattleFactoryService : BattleFactoryService {
+
+	public BattleWave generateBattleWaves()
+    {
+
+    }
+}
