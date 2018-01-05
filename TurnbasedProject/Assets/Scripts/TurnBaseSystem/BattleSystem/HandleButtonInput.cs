@@ -77,9 +77,9 @@ public class HandleButtonInput : MonoBehaviour {
 		specialMagicStartPosition = specialMagicButton.transform.position;
 		magicSpecialStartPosition = magicSpecialButton.transform.position;
 		specialSubStartPosition = specialSubButton.transform.position;
-		activePosition = new Vector2(player.transform.position.x, player.transform.position.y + 3.3f);
-		activeSubPosition = new Vector2(player.transform.position.x + 1.3f, player.transform.position.y + 3.3f);
-		backTextPosition = new Vector2(player.transform.position.x + 2.6f, player.transform.position.y + 3.3f);
+		activePosition = new Vector2(player.transform.position.x, player.transform.position.y);
+		activeSubPosition = new Vector2(player.transform.position.x + 1.3f, player.transform.position.y);
+		backTextPosition = new Vector2(player.transform.position.x + 2.6f, player.transform.position.y);
 		buttonObjects.Add(attackButton);
 		buttonObjects.Add(magicButton);
 		buttonObjects.Add(runButton);
