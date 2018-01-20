@@ -13,7 +13,7 @@ public class EnemySelection : MonoBehaviour
     public static Type[] World4Enemies { get; set; }
 
     public static Dictionary<string, EnemyMoves> TestWorldEnemyMoves { get; set; }
-    public static Dictionary<string, EnemyMoves> World1EnemyMoves{ get; set;}
+    public static Dictionary<string, EnemyMoves> World1EnemyMoves { get; set; }
     public static Dictionary<string, EnemyMoves> World2EnemyMoves { get; set; }
     public static Dictionary<string, EnemyMoves> World3EnemyMoves { get; set; }
     public static Dictionary<string, EnemyMoves> World4EnemyMoves { get; set; }
@@ -44,7 +44,7 @@ public class EnemySelection : MonoBehaviour
         for (int i = 0; i < enemyNumber; i++)
         {
             Type type = (Type)EnemySelection.World1Enemies.GetValue(UnityEngine.Random.Range(0, EnemySelection.World1Enemies.Length));
-            EnemyMob[i] =  (EnemyClass)Activator.CreateInstance(type);
+            EnemyMob[i] = (EnemyClass)Activator.CreateInstance(type);
         }
         return EnemyMob;
     }

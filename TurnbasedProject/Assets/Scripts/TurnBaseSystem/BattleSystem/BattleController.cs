@@ -5,9 +5,7 @@ using UnityEngine.SceneManagement;
 public class BattleController : MonoBehaviour, BattleControllerService
 {
 
-	private static bool monsterCreation;
-	private static EnemyGenerator create;
-
+    public enum BattleStatus { START, ACTIVE, PENDING, END};
 	// Use this for initialization
 	void Start ()
 	{
@@ -16,11 +14,9 @@ public class BattleController : MonoBehaviour, BattleControllerService
 		ActiveBattle = true;
 		Energy energy = gameObject.GetComponent<Energy> ();
 		energy.enabled = true;
-		EnemyMob = new EnemyGenerator ().makeEnemy ();
+        BattleWaves = BattleFactoryService.getNewBattleFactory(GameInformation.PlayerLocation).generateEnemyWaves();
+		EnemyMob = new EnemyGenerator().makeEnemy();
 		EnemiesAlive = EnemyMob.Length;
-		monsterCreation = true;
-		 Enemy = EnemyMob[EnemyIndex];
-
 		//TODO: Create service class that determines the number of waves based on the player's level and location
 		if (Player.PlayerLvl > 25) {
 			NumberOfWaves = Random.Range (1, 2);
@@ -32,11 +28,6 @@ public class BattleController : MonoBehaviour, BattleControllerService
 	{
 		if (EnemiesAlive == 0 || Player.Health <= 0) { //TODO: Add condition for NumberOfWaves == 0 once class is set
 			ActiveBattle = false;
-		}
-		if (GameObject.FindGameObjectWithTag ("Enemy") && !monsterCreation) {
-			monsterCreation = true;
-			create.makeEnemy ();
-			EnemiesAlive = EnemyMob.Length;
 		}
 		// Triggers the end of battle. This occurs when ALL waves are complete.
 		if (ActiveBattle == false) {
@@ -52,4 +43,5 @@ public class BattleController : MonoBehaviour, BattleControllerService
 	public static GameObject[] EnemyMob { get; set; }
 	public static int NumberOfWaves { get; set; }
    	public static int EnemyIndex { get; set; }
+    public static BattleWave[] BattleWaves { get; set; }
 }

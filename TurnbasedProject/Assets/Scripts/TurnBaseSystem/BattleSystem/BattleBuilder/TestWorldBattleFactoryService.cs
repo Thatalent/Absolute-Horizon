@@ -3,9 +3,10 @@ using System.Collections;
 
 public class TestWorldBattleFactoryService : BattleFactoryService {
 
-	public BattleWave generateBattleWaves()
+    public override BattleWave[] generateEnemyWaves()
     {
-        return new BattleWave();
-		//insert enemyfactory creation
+        BattleWave[] newBattleWaves = { new BattleWave()};
+        return newBattleWaves;
     }
+//insert enemyfactory creation
 }

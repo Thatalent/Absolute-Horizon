@@ -2,7 +2,7 @@
 using System.Collections;
 
 public interface BattleFactory {
-	BattleWave createBattleWave ();
+	BattleWave[] createBattleWave ();
 	EnemyFactory createEnemyFactory ();
 	void populateBattleWaves ();
 }
