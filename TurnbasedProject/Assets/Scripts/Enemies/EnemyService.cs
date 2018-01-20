@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface EnemyService {
+public interface EnemyFactory {
 
-    EnemyClass[] createAndReturnEnemyMob(int enemyNumber);
+    EnemyClass[] createEnemyMob(int enemyNumber);
 
-    EnemyServiceFactory.EnemyStrategy determineAttackPattern(Enemy enemy);
+    EnemyFactory.EnemyStrategy determineAttackPattern(Enemy enemy);
 
     void addEnemyMoves(GameObject enemy);
 }

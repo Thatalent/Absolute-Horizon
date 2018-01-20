@@ -2,14 +2,14 @@
 using System.Collections;
 using System;
 
-public class TestWorldEnemyServiceFactory : EnemyServiceFactory
+public class TestWorldEnemyServiceFactory : EnemyFactory
 {
     public override void addEnemyMoves(GameObject enemy)
     {
         
     }
 
-    public override EnemyClass[] createAndReturnEnemyMob(int numberOfEnemies)
+    public override EnemyClass[] createEnemyMob(int numberOfEnemies)
     {
         return EnemySelection.getWorld1EnemyMob(numberOfEnemies);
     }

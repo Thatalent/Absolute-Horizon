@@ -56,8 +56,8 @@ public class EnemyGenerator
         int i = 0;
         int enemyNumber = Random.Range(1, 6);
         EnemyMob = new EnemyClass[enemyNumber];
-        EnemyService = EnemyServiceFactory.newEnemyService("TestWorld");
-        EnemyMob = EnemyService.createAndReturnEnemyMob(enemyNumber);
+        EnemyService = EnemyFactory.newEnemyFactory("TestWorld");
+        EnemyMob = EnemyService.createEnemyMob(enemyNumber);
 
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do
@@ -109,5 +109,5 @@ public class EnemyGenerator
     public int EnemyID { get; set; }
     public EnemyClass[] EnemyMob { get; set; }
     public Transform[] EnemyLocation { get; set; }
-    public EnemyService EnemyService { get; set; }
+    public EnemyFactory EnemyService { get; set; }
 }
