@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestWorldBattleFactoryService : MonoBehaviour {
+public class MagicWave : Moves {
 
 	// Use this for initialization
 	void Start () {

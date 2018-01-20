@@ -24,7 +24,7 @@ public abstract class Moves {
 	
     //Use to specify how accuracy is handled by the move
 	public virtual float accuracy(){
-        playerStatus();
+        Moves.playerStatus();
         float hit=(BattleController.Player.Skill/BattleController.Enemy.GetComponent<Enemy>().Agility)*HitRate;
 		return hit;
 	}
@@ -90,15 +90,18 @@ public abstract class Moves {
     }
 
 
-    public virtual void playerStatus()
+    static public void playerStatus()
     {
         Status healthStatus = GameObject.FindGameObjectWithTag("Player_HealthBar").GetComponent<Status>();
-        healthStatus.changeStatusSize(GameInformation .Health, GameInformation.MaxHealth);
+        healthStatus.changeStatusSize(GameInformation.Health, GameInformation.MaxHealth);
 
         Status magicStatus = GameObject.FindGameObjectWithTag("Player_MagicBar").GetComponent<Status>();
         magicStatus.changeStatusSize(GameInformation.Mana, GameInformation.MaxMana);
 
         Energy.energyStatus();
+
+        MultiStatus specialStatus = GameObject.FindGameObjectWithTag("Player_Special").GetComponent<MultiStatus>();
+        specialStatus.updateSubStatus(GameInformation.SpecialCharge, 1, 1);
     }
 
     /// <summary>

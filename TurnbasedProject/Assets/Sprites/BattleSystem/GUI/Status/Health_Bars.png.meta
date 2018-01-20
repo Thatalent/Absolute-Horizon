@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: f883cdae7f529f245ba764eedb7b5827
-timeCreated: 1449602170
+guid: cd6895cc9fb62654ba7215723d8b274f
+timeCreated: 1514147992
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Health_Bars_0
-    21300002: Health_Bars_1
-    21300004: Health_Bars_2
-    21300006: Health_Bars_3
+    21300000: Health_Bars 1_0
+    21300002: Health_Bars 1_1
+    21300004: Health_Bars 1_2
+    21300006: Health_Bars 1_3
+    21300008: Health_Bars 1_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -21,13 +22,13 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 8
+  cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
@@ -46,64 +47,87 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 50
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
   buildTargetSettings:
-  - buildTarget: Web
-    maxTextureSize: 2048
-    textureFormat: -2
-    compressionQuality: 50
-    allowsAlphaSplitting: 0
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -3
-    compressionQuality: 0
+    compressionQuality: 50
     allowsAlphaSplitting: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Health_Bars_0
+    - serializedVersion: 2
+      name: Health_Bars 1_0
       rect:
         serializedVersion: 2
         x: 0
+        y: 16
+        width: 248
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Health_Bars 1_1
+      rect:
+        serializedVersion: 2
+        x: 288
         y: 15
         width: 248
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Health_Bars_1
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Health_Bars 1_2
       rect:
         serializedVersion: 2
-        x: 294
+        x: 582
         y: 15
         width: 249
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Health_Bars_2
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Health_Bars 1_3
       rect:
         serializedVersion: 2
-        x: 586
+        x: 874
         y: 15
         width: 248
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Health_Bars_3
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Health_Bars 1_4
       rect:
         serializedVersion: 2
-        x: 871
+        x: 1159
         y: 0
         width: 280
         height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

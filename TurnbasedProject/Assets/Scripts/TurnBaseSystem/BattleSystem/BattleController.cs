@@ -16,7 +16,7 @@ public class BattleController : MonoBehaviour, BattleControllerService
 		ActiveBattle = true;
 		Energy energy = gameObject.GetComponent<Energy> ();
 		energy.enabled = true;
-		EnemyMob = new EnemyGenerator ().makeEnemy ();
+		EnemyMob = new EnemyGenerator().makeEnemy();
 		EnemiesAlive = EnemyMob.Length;
 		monsterCreation = true;
 		 Enemy = EnemyMob[EnemyIndex];

@@ -8,8 +8,8 @@ public abstract class BattleFactoryService : BattleFactory {
     /// </summary>
     /// <param name="location"></param>
     /// <returns></returns>
-	static public BattleFactory getNewBattleFactory(PlayerLocation location)
+	static public BattleFactory getNewBattleFactory(/* PlayerLocation location */)
     {
-
+        return new TestWorldBattleFactoryService();
     }
 }

@@ -6,7 +6,7 @@ public class BaseStatusBar : MonoBehaviour, Status {
 
     //status bar gameobject
 
-    private GameObject statusBar;
+    protected GameObject statusBar;
 
     //user repersents the user that the status bar belongs to
 
@@ -14,7 +14,7 @@ public class BaseStatusBar : MonoBehaviour, Status {
 
     //the max scale size of the status bar before it scales
 
-    private float maxStatusSize;
+    protected float maxStatusSize;
 
     //colors to use for possible shading
 
@@ -23,7 +23,12 @@ public class BaseStatusBar : MonoBehaviour, Status {
 
     //the rendering compenont that holds the status bar sprite
 
-    private SpriteRenderer image;
+    protected SpriteRenderer image;
+
+    /// <summary>
+    /// Determines which bar is filled first
+    /// </summary>
+    public int order;
 
 	// Use this for initialization
 	void Start () {
@@ -32,21 +37,35 @@ public class BaseStatusBar : MonoBehaviour, Status {
         image = GetComponent<SpriteRenderer>();
         
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     //changes size of status bar
 
     public void changeStatusSize(int use,int maxUse)
     {
+        changeStatusSize((float)use, (float)maxUse);
+    }
+
+    public void changeStatusSize(float use, float maxUse)
+    {
         // find ratio of current status amount to max
 
-        float change = (float)use / (float)maxUse;
+        float change;
 
-        Debug.Log(maxUse+" : maxUse");
+        if(use > maxUse)
+        {
+            change = maxUse;
+        }
+        else if(use < 0)
+        {
+            change = 0;
+        }
+        else
+        {
+            change = (float)use / (float)maxUse;
+
+        }
+
+        Debug.Log(maxUse + " : maxUse");
 
         //gets the left most position of status bar (change min to max to make the capture the right most position)
 
@@ -58,8 +77,8 @@ public class BaseStatusBar : MonoBehaviour, Status {
 
         //scale the bar
 
-        statusBar.transform.localScale = new Vector3(Status,statusBar.transform.localScale.y,statusBar.transform.localScale.z);
-        
+        statusBar.transform.localScale = new Vector3(Status, statusBar.transform.localScale.y, statusBar.transform.localScale.z);
+
 
         float newValue = image.bounds.min.x;
 
