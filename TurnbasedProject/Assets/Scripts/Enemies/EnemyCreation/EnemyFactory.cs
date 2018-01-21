@@ -7,7 +7,7 @@ public abstract class EnemyFactory : EnemyService {
     public abstract EnemyStrategy determineAttackPattern(Enemy enemy);
     public abstract void addEnemyMoves(GameObject enemy);
 
-    public enum EnemyStrategy { OFFENISVE, DEFENSIVE, LOWHEALTH, EASY, DANGEROUS, SUPPORTIVE }
+    public enum EnemyStrategy { OFFENSIVE, DEFENSIVE, LOWHEALTH, EASY, DANGEROUS, SUPPORTIVE }
     
     static public EnemyFactory newEnemyService(String world)
     {
@@ -19,7 +19,5 @@ public abstract class EnemyFactory : EnemyService {
         }
     }
 
-	public EnemyClass[] createEnemyMob(int enemyNumber){
-		
-	}
+	public abstract EnemyClass[] createEnemyMob (int enemyNumber);
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface EnemyFactory {
+public interface EnemyService {
 
     EnemyClass[] createEnemyMob(int enemyNumber);
 

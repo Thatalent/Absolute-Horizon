@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestWorldBattleFactoryService : BattleFactoryService {
+public class TestWorldBattleFactoryService : BattleFactoryService
+{
+	public override BattleWave[] generateEnemyWaves ()
+	{
+		//create a TestWorldBattleWave
+		BattleWave newBattleWave = new BattleWave ();
+		return newBattleWave;
+	}
 
-    public override BattleWave[] generateEnemyWaves()
-    {
-        BattleWave[] newBattleWaves = { new BattleWave()};
-        return newBattleWaves;
-    }
-//insert enemyfactory creation
+	public override EnemyService createEnemyFactory ()
+	{
+		TestWorldEnemyServiceFactory newEnemyFactory = new TestWorldEnemyServiceFactory ();
+		return newEnemyFactory;
+	}
 }

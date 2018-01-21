@@ -14,4 +14,6 @@ public abstract class BattleFactoryService : BattleFactory {
     }
 
     public abstract BattleWave[] generateEnemyWaves();
+	public abstract EnemyService createEnemyFactory ();
+	//will probably remove this: public abstract void populateBattleWaves ();
 }
