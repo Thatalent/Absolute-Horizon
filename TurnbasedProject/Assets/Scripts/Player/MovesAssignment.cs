@@ -7,13 +7,13 @@ public class MovesAssignment : MonoBehaviour {
 	private static string[] mMoves=new string[9];
 	private static int a;
 	private static int m;
-
+    private static int s;
 
 	// Use this for initialization
 	void Start () {
 		a = 0;
         m = 0;
-
+        s = 0;
 	
 	}
 
@@ -55,6 +55,22 @@ public class MovesAssignment : MonoBehaviour {
         }
         if (m  == 9)
             m = 0;
+    }
+
+    public static void specialMove(string sMove)
+    {
+        Moves[] special = GameInformation.Specials;
+        switch (sMove)
+        {
+            case "MagicWave":
+                special[s] = new MagicWave();
+                GameInformation.Specials = special;
+                s++;
+                break;
+            default: break;
+        }
+        if (s == 5)
+            s = 0;
     }
     // Update is called once per frame
     void Update () {
