@@ -3,5 +3,5 @@ using System.Collections;
 
 public interface BattleFactory {
 	EnemyService createEnemyFactory ();
-	BattleWave[] generateEnemyWaves ();
+	BattleWave[] generateEnemyWaves (int PlayerLevel);
 }

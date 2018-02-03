@@ -3,10 +3,20 @@ using System.Collections;
 
 public class TestWorldBattleFactoryService : BattleFactoryService
 {
-	public override BattleWave[] generateEnemyWaves ()
+	public override BattleWave[] generateEnemyWaves (int PlayerLevel)
 	{
+		int NumberOfWaves = 1;
+		if (PlayerLevel > 25) {
+			NumberOfWaves = Random.Range (1, 2);
+		}
+
+		BattleWave[] newBattleWave = new BattleWave [NumberOfWaves];
 		//create a TestWorldBattleWave
-		BattleWave newBattleWave = new BattleWave ();
+		for (int x = 0; x < NumberOfWaves; x++) {
+			BattleWave bw = new BattleWave();
+			bw.populateBattleWave ();
+			newBattleWave [x] = bw;
+		}
 		return newBattleWave;
 	}
 

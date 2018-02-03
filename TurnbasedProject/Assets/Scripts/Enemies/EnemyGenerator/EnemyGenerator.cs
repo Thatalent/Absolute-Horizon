@@ -62,7 +62,8 @@ public class EnemyGenerator
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do
         {
-            //"Enemy" will be replaced with a string {EnemyClass.Name} in order to allow for a object to be dynamically built off of the types of enemies found in EnemySelection.GetEnemyMob()
+            //"Enemy" will be replaced with a string {EnemyClass.Name} in order to allow for a object 
+			//to be dynamically built off of the types of enemies found in EnemySelection.GetEnemyMob()
             GameObject monster = Object.Instantiate(GameObject.FindGameObjectWithTag("Enemy"));
             //   monster.SetActive(true);
             monsterMob[i] = monster;
@@ -79,8 +80,6 @@ public class EnemyGenerator
                 monsterSpriteArray[j].enabled = true;
             }
             addMoves(monster);
-
-
             i++;
         } while (i < enemyNumber);
         return monsterMob;
