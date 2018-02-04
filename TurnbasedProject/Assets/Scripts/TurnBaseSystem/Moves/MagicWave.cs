@@ -23,6 +23,7 @@ public class MagicWave : Moves {
     }
     public override void move()
     {
+        Options.InputType = Options.UserActionType.REACTION;
         Special special = new Special(BattleController.Player, ReactionInput.InputType.RANDOM, 3f);
         special.SpecialCallback = additionalActions;
         special.perform();
@@ -36,11 +37,13 @@ public class MagicWave : Moves {
             enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + netDmg;
             enemyStatus(damage, 0, 0, enemy);
         }
+        Options.InputType = Options.UserActionType.COMMANDS;
     }
 
     public void additionalActions(int damage)
     {
         this.damage = (int)(damage * DmgX);
+        additionalActions();
     }
 
     private int damage;

@@ -17,6 +17,7 @@ public class Options : MonoBehaviour {
     private enum UserChoiceStatus { SELECT_ACTION, SELECT_MOVE, INITIATE_MOVE, END_MOVE}; 
     private enum UserActionStatus { ATTACK, MAGIC, SPECIAL, L_ITEMS, R_ITEMS, ABILITIES};
     private enum UserOptionStatus { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINITH};
+    public enum UserActionType { COMMANDS, REACTION, CHASING, CLASH, PARTNER}
     //TODO: FINISH DIS
 
 
@@ -39,7 +40,7 @@ void Start () {
         {
             //Conditional Input for ending Player's Turn
 
-            if (Input.GetButtonDown("cancel") || EndPlayerTurn && OptionsModule.ActiveTurn)
+            if (Input.GetButtonDown("cancel") || EndPlayerTurn && OptionsModule.ActiveTurn && InputType == UserActionType.COMMANDS)
             {
                 EndPlayerTurn = false;
                 FloatingText.Show("Waiting . . .", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, GameInformation.MoveWait, 0));
@@ -67,7 +68,7 @@ void Start () {
                 Debug.Log("previous Enemy selected at index: " + BattleController.EnemyIndex);
             }
 
-            if (!ActiveEnemy && !Wait)
+            if (!ActiveEnemy && !Wait && InputType == UserActionType.COMMANDS)
             {
                 if (UserChoice.Equals(UserChoiceStatus.SELECT_ACTION))
                 {
@@ -223,6 +224,22 @@ void Start () {
                     }
                 }
             }
+            if(InputType == UserActionType.REACTION)
+            {
+
+            }
+            if (InputType == UserActionType.CHASING)
+            {
+
+            }
+            if (InputType == UserActionType.CLASH)
+            {
+
+            }
+            if (InputType == UserActionType.PARTNER)
+            {
+
+            }
         }
     }
 
@@ -306,4 +323,5 @@ void Start () {
     public static int LowestMoveCount { get; set; }
     public static bool EndPlayerTurn { get; set; }
     private static UserChoiceStatus UserChoice { get; set; }
+    public static UserActionType InputType { get; set; }
 }

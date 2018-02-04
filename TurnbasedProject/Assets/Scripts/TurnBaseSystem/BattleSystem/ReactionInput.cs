@@ -28,8 +28,8 @@ public class ReactionInput : MonoBehaviour {
                 if (Input.GetButtonDown("attack"))
                 {
                     SuccessfulInputs++;
-
-                    if(ReactionType != InputType.RAPID)
+                    FloatingText.Show(SuccessfulInputs.ToString(), "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, 0.5f, 0));
+                    if (ReactionType != InputType.RAPID)
                     {
                         inputCounter++;
                     }
@@ -65,9 +65,11 @@ public class ReactionInput : MonoBehaviour {
         }
         if(ReactionReady && inputCounter >= ReactionCommands.Length)
         {
+            inputCounter = 0;
             ReactionReady = false;
             StopAllCoroutines();
             ReactionImage.sprite = null;
+            FloatingText.Show("SUCCESS!!!", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, 1.5f, 0));
             ReactionCallback(SuccessfulInputs);
         }
     }

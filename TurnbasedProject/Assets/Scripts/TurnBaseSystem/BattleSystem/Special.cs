@@ -46,7 +46,7 @@ public class Special {
 
     static public int getEnemyDmg(int dmg, int eDef)
     {
-        return dmg - eDef;
+        return -(dmg - eDef);
     }
 
     public void generateInputList()
