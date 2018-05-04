@@ -157,14 +157,8 @@ public class GameInformation : MonoBehaviour
     public static int Location { get; set; }
     public static int Area { get; set; }
 
-    private static Moves[] attacks = new Moves[16];
-    private static Moves[] spells = new Moves[16];
-    private static Moves[] specials = new Moves[5];
-
     public static Moves Trigger { get; set; }
-    public static Moves[] Attacks { get; set; }
-    public static Moves[] Spells { get; set; }
-    public static Moves[] Specials { get; set; }
+    public static PlayerActions Actions { get; set; }
 
     ///<summary>
     /// Creates a Player from the current information in 
@@ -249,9 +243,6 @@ public class GameInformation : MonoBehaviour
         GameInformation.Agility = GameInformation.Speed;
         GameInformation.EnergyRate = (GameInformation.Endurance + GameInformation.Resistance) / 20;
         GameInformation.MaxEnergy = GameInformation.Stamina + (GameInformation.Strength + GameInformation.Intelligence) / 2;
-        GameInformation.Attacks = GameInformation.attacks;
-        GameInformation.Spells = GameInformation.spells;
-        GameInformation.Specials = GameInformation.specials;
         SpecialCharge = 0f;
         Energy = MaxEnergy;
         Mana = MaxMana;

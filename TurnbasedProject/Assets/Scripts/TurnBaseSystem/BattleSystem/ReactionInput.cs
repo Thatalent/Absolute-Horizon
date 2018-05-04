@@ -79,7 +79,7 @@ public class ReactionInput : MonoBehaviour {
         ReactionReady = true;
 
         yield return new WaitForSeconds(timeToWait);
-
+        inputCounter = 0;
         ReactionReady = false;
         ReactionCommands = null;
         ReactionImage.sprite = null;

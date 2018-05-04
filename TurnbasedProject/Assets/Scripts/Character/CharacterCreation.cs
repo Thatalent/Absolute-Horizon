@@ -61,7 +61,7 @@ public class CharacterCreation : MonoBehaviour
             MovesAssignment.attackMove("ShockWave");
             MovesAssignment.magicMove("Sparkles");
             MovesAssignment.specialMove("MagicWave");
-            Debug.Log(GameInformation.Spells[0]);
+            Debug.Log(GameInformation.Actions.ActionsMenu1);
             Options.loadMoves();
             Debug.Log("Get World1 Enemy List");
             EnemySelection.world1SetEnemyList();
