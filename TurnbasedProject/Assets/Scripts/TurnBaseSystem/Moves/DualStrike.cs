@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DualStrike : Moves {
+public class DualStrike : Moves, AttackMove {
 
     public DualStrike()
     {

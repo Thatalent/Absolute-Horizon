@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MagicWave : Moves {
+public class MagicWave : Moves, SpecialMove {
 
     public MagicWave()
     {

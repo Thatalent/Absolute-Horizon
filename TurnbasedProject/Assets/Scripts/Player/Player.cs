@@ -30,4 +30,6 @@ public class Player {
 	public int Energy{ get; set; }
 	public int MaxEnergy{ get; set; }
 	public int EnergyRate{ get; set; }
+    
+	public PlayerActions Actions { get; set; }
 }

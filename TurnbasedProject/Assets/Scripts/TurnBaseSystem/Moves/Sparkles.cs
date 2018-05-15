@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Sparkles : Moves {
+public class Sparkles : Moves, MagicMove {
 
 
 
@@ -36,6 +36,4 @@ public class Sparkles : Moves {
        
 
     }
-
-
 }

@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Reflection;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 //Use class to add algorithms, repeative proceses and other utlity based functions.
 
@@ -46,4 +50,14 @@ public class Solution{
         }
         //System.out.println("");
     }
+    
+	public static List<Type> getListOfTypes(Type parentType, Type childType){
+		List<Type> types = new List<Type>();
+		foreach (Type type in Assembly.GetAssembly(parentType).GetTypes().Where(myType => myType.IsClass && !myType.IsAbstract && childType.IsAssignableFrom(myType)))
+        {
+            types.Add(type);
+        }
+
+		return types;
+	}
 }

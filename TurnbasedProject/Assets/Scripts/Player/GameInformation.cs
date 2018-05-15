@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 public class GameInformation : MonoBehaviour
 {
@@ -93,17 +96,42 @@ public class GameInformation : MonoBehaviour
     ///<summary>
     ///Calls and sets the Energy Rate of the Player on GameInformation.
     ///</summary>	
-    public static int EnergyRate { get; set; }
+	public static int EnergyRate { 
+		get{
+			return ((Endurance + Resistance) / 20) + energyRateOffset;
+		}
+		set {
+			energyRateOffset = value - ((Endurance + Resistance) / 20);
+		}
+	}
+
+	private static int energyRateOffset;
 
     ///<summary>
     ///Calls and sets the Maximum Energy of the Player on GameInformation.
     ///</summary>	
-    public static int MaxEnergy { get; set; }
+	public static int MaxEnergy { 
+		get{
+			return (Stamina + (Strength + Intelligence) / 2) + maxEnergyOffset;
+		}
+		set{
+			maxEnergyOffset = value - (Stamina + (Strength + Intelligence) / 2);
+		}
+	}
+
+	private static int maxEnergyOffset;
 
     ///<summary>
     ///Calls and sets the current Energy of the Player on GameInformation.
     ///</summary>	
-    public static int Energy { get; set; }
+	public static int Energy { get{
+			return MaxEnergy + energyOffset;
+		} 
+		set{
+			energyOffset = value - MaxEnergy;
+		} }
+
+	private static int energyOffset;
 
     ///<summary>
     ///Calls and sets the Player on GameInformation.
@@ -112,27 +140,72 @@ public class GameInformation : MonoBehaviour
     ///<summary>
     ///Calls and sets the Maximum of the Player on GameInformation.
     ///</summary>	
-    public static int MaxHealth { get; set; }
+	public static int MaxHealth { 
+		get{
+			return Stamina + maxHealthOffset;
+		} 
+		set{
+			maxHealthOffset = value - Stamina;
+		} 
+	}
+
+	private static int maxHealthOffset = 90;
 
     ///<summary>
     ///Calls and sets the current Health of the Player on GameInformation.
     ///</summary>	
-    public static int Health { get; set; }
+	public static int Health { 
+		get{
+			return MaxHealth + healthOffset;
+		} 
+		set{
+			healthOffset =  value - MaxHealth; 
+		}
+	}
+
+	private static int healthOffset = 0;
 
     ///<summary>
     ///Calls and sets the current Attack of the Player on GameInformation.
     ///</summary>	
-    public static int Attack { get; set; }
+	public static int Attack { 
+		get{
+			return Strength + attackOffset;
+		}
+		set{
+			attackOffset = value - Strength;
+		}
+	}
+
+	private static int attackOffset = 0;
 
     ///<summary>
     ///Calls and sets the Defense of the Player on GameInformation.
     ///</summary>	
-    public static int Defense { get; set; }
+	public static int Defense { 
+		get{
+			return Endurance + defenseOffset;
+		} 
+		set {
+			defenseOffset = value - Endurance;
+		}
+	}
+
+	private static int defenseOffset = 0;
 
     ///<summary>
     ///Calls and sets the current Magic of the Player on GameInformation.
     ///</summary>	
-    public static int Magic { get; set; }
+	public static int Magic { 
+		get{
+			return Intelligence + magicOffset;
+		} 
+		set{
+			magicOffset = value - Intelligence;
+		} 
+	}
+
+	private static int magicOffset;
 
     ///<summary>
     ///Calls and sets the Stamina of the Player on GameInformation.
@@ -142,14 +215,62 @@ public class GameInformation : MonoBehaviour
     /// Stamina also influences the Maximum Energy a player can have at one time.
     ///</summary>	
     /// <return>MagicDefense</return>
-    public static int MagicDefense { get; set; }
-    public static int Mana { get; set; }
-    public static int MaxMana { get; set; }
-    public static int Agility { get; set; }
+	public static int MagicDefense { get{
+			return Resistance + magicDefenseOffset;
+		} 
+		set{
+			magicDefenseOffset = value - Resistance;
+		} }
+
+	private static int magicDefenseOffset;
+
+	public static int Mana
+	{
+		get
+		{
+			return MaxMana + manaOffset;
+		}
+		set
+		{
+			manaOffset = value - MaxMana;
+		}
+	}
+
+	private static int manaOffset;
+
+	public static int MaxMana { 
+		get{
+			return Intelligence + Resistance + maxManaOffset;
+		} 
+		set{
+			maxManaOffset = value - Intelligence + Resistance;
+		}
+	}
+
+	private static int maxManaOffset;
+
+	public static int Agility { get{
+			return Speed + agilityOffset;
+		} 
+		set{
+			agilityOffset = value - Speed;
+		} }
+
+	private static int agilityOffset;
+
     public static float SpecialCharge { get; set; }
 
-    public static int MoveCounter { get; set; }
-    public static float MoveWait { get; set; }
+	public static int MoveCounter { 
+		get{
+			return (Speed + Skill / 2) / 2 + PlayerLvl;
+		} 
+	}
+
+	public static float MoveWait { 
+		get{
+			return (int)(800f / (Mathf.Pow(Skill + Speed, 2)));
+		}
+	}
 
     /*gets and sets values of the Player's current location information*/
     public static int World { get; set; }
@@ -159,6 +280,8 @@ public class GameInformation : MonoBehaviour
 
     public static Moves Trigger { get; set; }
     public static PlayerActions Actions { get; set; }
+
+	public static List<Type> AllMoves { get; set; }
 
     ///<summary>
     /// Creates a Player from the current information in 
@@ -189,7 +312,7 @@ public class GameInformation : MonoBehaviour
     /// <list type="MoveWait">MoveWait</list>
     ///</summary>	
     /// <returns>Player</returns>
-    public static Player data()
+    public static Player Data()
     {
         Player = new Player();
         Player.CharacterClass = GameInformation.PlayerClass;
@@ -217,9 +340,11 @@ public class GameInformation : MonoBehaviour
         Player.Agility = GameInformation.Agility;
         Player.MoveCounter = MoveCounter;
         Player.MoveWait = GameInformation.MoveWait;
+		Player.Actions = GameInformation.Actions;
         return Player;
     }
 
+	//TODO: Make method overloaded method that accepts object that holds all buffs and debuffs that are perm/temp to set values to offset private variables.
     public static void save(Player player)
     {
         GameInformation.PlayerClass = player.CharacterClass;
@@ -233,21 +358,6 @@ public class GameInformation : MonoBehaviour
         GameInformation.Speed = player.Speed;
         GameInformation.Skill = player.Skill;
         GameInformation.Luck = player.Luck;
-        GameInformation.Health = GameInformation.Stamina + 90;
-        GameInformation.MaxHealth = GameInformation.Health;
-        GameInformation.Attack = GameInformation.Strength;
-        GameInformation.Magic = GameInformation.Intelligence;
-        GameInformation.MaxMana = GameInformation.Intelligence + GameInformation.Resistance;
-        GameInformation.Defense = GameInformation.Endurance;
-        GameInformation.MagicDefense = GameInformation.Resistance;
-        GameInformation.Agility = GameInformation.Speed;
-        GameInformation.EnergyRate = (GameInformation.Endurance + GameInformation.Resistance) / 20;
-        GameInformation.MaxEnergy = GameInformation.Stamina + (GameInformation.Strength + GameInformation.Intelligence) / 2;
-        SpecialCharge = 0f;
-        Energy = MaxEnergy;
-        Mana = MaxMana;
-        MoveCounter = (Speed + Skill / 2) / 2 + PlayerLvl;
-        MoveWait = (int)(800f / (Mathf.Pow(Skill + Speed, 2)));
     }
 
 

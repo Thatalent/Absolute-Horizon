@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TrailingStrike : Moves {
+public class TrailingStrike : Moves, AttackMove {
 
     public TrailingStrike(GameObject enemy)
     {

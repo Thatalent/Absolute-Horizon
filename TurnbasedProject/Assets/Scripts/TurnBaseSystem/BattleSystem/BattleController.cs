@@ -11,7 +11,7 @@ public class BattleController : MonoBehaviour, BattleControllerService
 	// Use this for initialization
 	void Start ()
 	{
-		Player = GameInformation.data ();
+		Player = GameInformation.Data ();
 		Debug.Log ("Start of Battle!");
 		ActiveBattle = true;
 		Energy energy = gameObject.GetComponent<Energy> ();
@@ -25,6 +25,7 @@ public class BattleController : MonoBehaviour, BattleControllerService
 		if (Player.PlayerLvl > 25) {
 			NumberOfWaves = Random.Range (1, 2);
 		}
+		setUpOptions();
 	}
 
 	// Update is called once per frame
@@ -43,6 +44,13 @@ public class BattleController : MonoBehaviour, BattleControllerService
 			BattleUtils.endBattle (Player, EnemiesAlive);
 		}
 		EnemiesAlive = EnemyMob.Length;
+	}
+
+	public void setUpOptions()
+	{
+		OptionsModule.start(Player.Actions);
+		Options.loadMoves();
+		//TODO: Danjamin add start up method for OptionsView here.
 	}
 
 	public static Player Player { get; set; }

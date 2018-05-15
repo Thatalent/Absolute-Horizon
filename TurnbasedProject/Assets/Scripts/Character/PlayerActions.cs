@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 
 public class PlayerActions
 {
@@ -13,6 +14,18 @@ public class PlayerActions
     private Moves[] actionsMenu4;
     private Moves[] actionsMenu5;
     private Moves[] specialMenu;
+	private bool resetFlatArrays;
+	private Moves[] allActions;
+	private Moves[] magicActions;
+	private Dictionary<string, bool> resetMap;
+
+    
+	public PlayerActions(){
+		resetMap = new Dictionary<string, bool>();
+		resetMap.Add("all", true);
+		resetMap.Add("magic", true);
+	}
+    
     /// <summary>
     /// The string keys are tied to the fields set on the object. Do not add new keys. 
     /// </summary>
@@ -20,25 +33,35 @@ public class PlayerActions
 
     public bool loadActionMove(Moves action)
     {
-        foreach (string menuName in unlockedMenus.Keys)
-        {
-            int slotIndex = findEmptySlot(unlockedMenus[menuName]);
-            if(slotIndex > -1)
-            {
-                PropertyInfo menuField = this.GetType().GetProperty(menuName);
-                if(menuField != null)
-                {
-                    Moves[] menu = (Moves[])menuField.GetValue(this, null);
-                    menu[slotIndex] = action;
-                    menuField.SetValue(this, menu, null);
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
+		if (action.SpUse >= 0f)
+		{
+			foreach (string menuName in unlockedMenus.Keys)
+			{
+				int slotIndex = findEmptySlot(unlockedMenus[menuName]);
+				if (slotIndex > -1)
+				{
+					PropertyInfo menuField = this.GetType().GetProperty(menuName);
+					if (menuField != null)
+					{
+						Moves[] menu = (Moves[])menuField.GetValue(this, null);
+						menu[slotIndex] = action;
+						menuField.SetValue(this, menu, null);
+						ResetFlatArrays = true;
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}
+		}
+		else{
+			UnlockedSpecialActions++;
+			SpecialMenu[UnlockedSpecialActions - 1] = action;
+			ResetFlatArrays = true;
+			return true;
+		}
         return false;
     }
 
@@ -78,7 +101,8 @@ public class PlayerActions
                 case 4:
                     unlockedMenus.Add("actions4", ActionsMenu4);
                     goto case 3;
-                case 5: unlockedMenus.Add("actions5", ActionsMenu5);
+                case 5: 
+					unlockedMenus.Add("actions5", ActionsMenu5);
                     goto case 4;
                 default: break;
         }
@@ -90,7 +114,7 @@ public class PlayerActions
             switch (unlockedMenusNumber)
             {
                 case 1:
-                    ActionsMenu1 = value.["actions1"];
+                    ActionsMenu1 = value["actions1"];
                     break;
                 case 2:
                     ActionsMenu2 = value["actions2"];
@@ -264,4 +288,45 @@ public class PlayerActions
             }
         }
     }
+
+	public Moves[] AllActions { 
+		get{
+			if(allActions == null || resetMap["all"]){
+				Moves[][] menus = { ActionsMenu1, ActionsMenu2, ActionsMenu3, ActionsMenu4, ActionsMenu5 };
+				allActions = menus.SelectMany(menu => menu).Where(action => action != null).ToArray();
+               }
+			resetMap["all"] = false;
+			return allActions;
+		} 
+	 }
+	public Moves[] MagicActions { get{
+            if(magicActions == null || resetMap["magic"]){
+
+				Moves[][] menus = { ActionsMenu1, ActionsMenu2, ActionsMenu3, ActionsMenu4, ActionsMenu5 };
+				magicActions = menus.SelectMany(menu => menu).Where(action => action != null && action is MagicMove).ToArray();
+			}
+			resetMap["magic"] = false; 
+            return magicActions;
+        } 
+	}
+
+	private bool ResetFlatArrays{
+		get{
+			if(resetMap.ContainsValue(true)){
+				resetFlatArrays =  true;
+			}
+			else{
+				resetFlatArrays = false;
+			}
+			return resetFlatArrays;
+		}
+		set{
+			if(value==true){
+				foreach(string key in  resetMap.Keys){
+					resetMap[key] = true;
+				}
+				resetFlatArrays = value;
+			}
+        }
+	}
 }

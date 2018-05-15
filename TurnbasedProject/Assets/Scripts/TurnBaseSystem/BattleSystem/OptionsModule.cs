@@ -1,22 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OptionsModule : MonoBehaviour {
+public class OptionsModule {
+
+	//TODO: Make lowEnergy compare magic and attack moves together, along with any possible moves.
+	//TODO: Add ammo check to low value finding algorithms.
 
     private static int t;
 
 
     // Use this for initialization
-    static public void start () {
+	static public void start (PlayerActions playerActions) {
         LoMana = int.MaxValue;
         LoAttackEnergy = int.MaxValue;
         LoMagicEnergy = int.MaxValue;
+		Model = new OptionsModule(playerActions);
     }
-	
-	// Update is called once per frame
-	void Update () {
+    
+	private OptionsModule(PlayerActions actions){
+		Actions = actions;
+		Moves[] allActions = actions.AllActions;
+		Moves[] magicActions = actions.MagicActions;
 	}
-
 
     public static void playerTurn(Moves playerMove)
     {
@@ -61,7 +66,7 @@ public class OptionsModule : MonoBehaviour {
             //  endPlayerTurn();
             //   turnWait();
         }
-        if     (GameInformation.Energy < OptionsModule.LoMagicEnergy | GameInformation.Mana < OptionsModule.LoMana)
+        if     (GameInformation.Mana < OptionsModule.LoMana)
         {
             Options.EndPlayerTurn = true;
             //  endPlayerTurn();
@@ -114,7 +119,7 @@ public class OptionsModule : MonoBehaviour {
         return lowestMove;
     }
 
-    public static void lowEnergy( Moves [] moves, string m)
+    public static void lowEnergy( Moves [] moves)
     {
 
         ArrayList energyCounts = new ArrayList();
@@ -132,22 +137,11 @@ public class OptionsModule : MonoBehaviour {
             energyCounted[i] = (int)energyCounts[i];
         }
         Solution.quickSort(energyCounted, 0, energyCounted.Length - 1);
-        switch (m)
+  
+        if (LoAttackEnergy > energyCounted[0])
         {
-            case "attacks":
-                if (LoAttackEnergy > energyCounted[0])
-                {
-                    LoAttackEnergy = energyCounted[0];
-                }
-                break;
-            case "spells":
-                if (LoMagicEnergy > energyCounted[0])
-                {
-                    LoMagicEnergy = energyCounted[0];
-                }
-                break;
-            default: break;
-        }
+            LoAttackEnergy = energyCounted[0];
+        }          
     }
 
     public static void lowMana(Moves[] moves)
@@ -177,4 +171,6 @@ public class OptionsModule : MonoBehaviour {
     public static int LoAttackEnergy { get; set; }
     public static int LoMagicEnergy { get; set; }
     public static bool ActiveTurn { get; set; }
+	private PlayerActions Actions { get; set; }
+	public static OptionsModule Model { get; set; }
 }

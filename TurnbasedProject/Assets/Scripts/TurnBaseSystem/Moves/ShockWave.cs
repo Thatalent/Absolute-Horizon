@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShockWave : Moves {
+public class ShockWave : Moves, AttackMove {
 
     public ShockWave()
     {

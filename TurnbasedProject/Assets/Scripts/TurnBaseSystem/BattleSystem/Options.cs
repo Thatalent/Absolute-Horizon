@@ -18,7 +18,7 @@ public class Options : MonoBehaviour {
     private enum UserActionStatus { ATTACK, MAGIC, SPECIAL, L_ITEMS, R_ITEMS, ABILITIES};
     private enum UserOptionStatus { FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINITH};
     public enum UserActionType { COMMANDS, REACTION, CHASING, CLASH, PARTNER}
-    //TODO: FINISH DIS
+    //TODO: Add intergration with options GUI functionality
 
 
 // Use this for initialization
@@ -244,19 +244,9 @@ void Start () {
     }
 
     public static void loadMoves(){
-        OptionsModule.start();
-		Options.Attacks  = GameInformation.Attacks;
-		Options.attacks = Attacks;
-        LowestMoveCount= OptionsModule.lowMove(Attacks);
-        OptionsModule.lowEnergy(Attacks, "attacks");
-		Debug.Log (attacks[0]);
-        Spells = GameInformation.Spells;
-		spells  = GameInformation.Spells;
-        Debug.Log(Spells[0]);
-        OptionsModule.lowMove(Spells);
-        OptionsModule.lowEnergy(Spells, "spells");
-        OptionsModule.lowMana(Spells);
-        specials  = GameInformation.Specials;
+        LowestMoveCount= OptionsModule.lowMove(GameInformation.Actions.AllActions);
+		OptionsModule.lowEnergy(GameInformation.Actions.AllActions);
+		OptionsModule.lowMana(GameInformation.Actions.MagicActions);
        // OptionsModule.lowMove(specials);
         trigger  = GameInformation.Trigger;
 	}

@@ -21,20 +21,8 @@ public class EnemySelection : MonoBehaviour
 
     public static void world1SetEnemyList()
     {
-
-        List<Type> objects = new List<Type>();
-
-        foreach (Type type in Assembly.GetAssembly(typeof(EnemyClass)).GetTypes().Where(myType => myType.IsClass && !myType.IsAbstract && typeof(TestWorld).IsAssignableFrom(myType)))
-        {
-            objects.Add(type);
-        }
-
-        foreach (Type e in objects)
-        {
-            Debug.Log(e);
-        }
-
-        World1Enemies = objects.ToArray();
+          
+		World1Enemies = Solution.getListOfTypes(typeof(EnemyClass), typeof(TestWorld)).ToArray();
 
     }
 

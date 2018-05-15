@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Stab : Moves {
+public class Stab : Moves, AttackMove {
 
 
 	public Stab(){
