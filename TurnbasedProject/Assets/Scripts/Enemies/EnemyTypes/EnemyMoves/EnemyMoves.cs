@@ -37,7 +37,7 @@ public class EnemyMoves : MonoBehaviour
         yield return new WaitForSeconds(1);
         while (gameObject.GetComponent<Enemy>().Health > 0)
         {
-            if (!OptionsModule.ActiveTurn)
+            if (!battleController.Model.ActiveTurn)
             {
                 int choice = Random.Range(1, 4);
                 switch (choice)
@@ -62,8 +62,8 @@ public class EnemyMoves : MonoBehaviour
     }
     public virtual float accuracy()
     {
-        Debug.Log(BattleController.Player.Agility);
-        float hit = (gameObject.GetComponent<Enemy>().Skill / BattleController.Player.Agility) * HitRate;
+        Debug.Log(battleController.Player.Agility);
+        float hit = (gameObject.GetComponent<Enemy>().Skill / battleController.Player.Agility) * HitRate;
         return hit;
     }
     public virtual void move()
@@ -91,4 +91,6 @@ public class EnemyMoves : MonoBehaviour
     public string Name { get; set; }
     public int Option { get; set; }
    // protected bool ActivePlayer { get; set; }
+
+   public BattleController battleController { get; set; }
 }

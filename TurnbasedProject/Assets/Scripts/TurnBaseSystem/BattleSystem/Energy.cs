@@ -16,11 +16,11 @@ public class Energy : MonoBehaviour {
 
     }
     IEnumerator energyRate(){
-		bool battle = BattleController.ActiveBattle;
+		bool battle = battleController.ActiveBattle;
         //Debug.Log(GameInformtion.Energy);
 		while(battle) {
             yield return new WaitForSeconds(1);
-			if (GameInformation.Energy < GameInformation.MaxEnergy & !OptionsModule.ActiveTurn) {
+			if (GameInformation.Energy < GameInformation.MaxEnergy & !battleController.Model.ActiveTurn) {
 				GameInformation.Energy = GameInformation.Energy + GameInformation.EnergyRate;
                 energyStatus();
             //yield return new WaitForSeconds(10);
@@ -36,7 +36,7 @@ public class Energy : MonoBehaviour {
                 GameInformation.Energy = 0;
                 energyStatus();
             }
-            else if (OptionsModule.ActiveTurn)
+            else if (battleController.Model.ActiveTurn)
             {
                 yield return new WaitForEndOfFrame();
             }
@@ -47,4 +47,6 @@ public class Energy : MonoBehaviour {
         energyStatus.changeStatusSize(GameInformation.Energy, GameInformation.MaxEnergy);
     }
 	//public static Player Player{ get; set; }
+
+    public BattleController battleController{ get; set; }
 }

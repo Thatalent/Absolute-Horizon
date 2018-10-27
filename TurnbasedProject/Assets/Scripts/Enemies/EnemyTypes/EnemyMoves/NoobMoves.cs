@@ -18,17 +18,17 @@ public class NoobMoves : EnemyMoves {
         yield return new WaitForSeconds(1);
         while (gameObject.GetComponent<Enemy>().Health>0)
         {
-            if (!OptionsModule.ActiveTurn)
+            if (!battleController.Model.ActiveTurn)
             {
                 int choice = Random.Range(1, 3);
                 switch (choice)
                 {
                     case 1:
-                        Options.ActiveEnemy = true;
+                        battleController.ActiveEnemy = true;
                         Debug.Log("Trying to attack! >:3");
                         choice1();
                         Debug.Log("Finished attacking! :3");
-                        Options.ActiveEnemy = false;
+                        battleController.ActiveEnemy = false;
                         yield return new WaitForSeconds(2);
                         break;
 

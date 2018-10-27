@@ -28,7 +28,7 @@ public class Special {
     {
         float successRating;
 
-        int attackPow = BattleController.Player.Attack + BattleController.Player.Magic;
+        int attackPow = Player.Attack + Player.Magic;
 
         if (InputType.Equals(ReactionInput.InputType.RAPID))
         {
@@ -91,4 +91,6 @@ public class Special {
     public ReactionInput.InputType InputType { get; set; }
     public int[] CommandList { get; set; }
     public Action<int> SpecialCallback { get; set; }
+
+
 }

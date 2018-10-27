@@ -20,13 +20,13 @@ public class EnemyEnergy : MonoBehaviour {
     }
     IEnumerator energyRate()
     {
-        bool battle = BattleController.ActiveBattle;
+        bool battle = battleController.ActiveBattle;
         //Debug.Log(GameInformtion.Energy);
         while (true)
         {
 
             yield return new WaitForSeconds(1);
-            if (GetComponent<Enemy>().Energy < GetComponent<Enemy>().MaxEnergy && !Options.ActiveEnemy)
+            if (GetComponent<Enemy>().Energy < GetComponent<Enemy>().MaxEnergy && !battleController.ActiveEnemy)
             {
                 GetComponent<Enemy>().Energy = GetComponent<Enemy>().Energy + GetComponent<Enemy>().EnergyRate;
                 //yield return new WaitForSeconds(10);
@@ -40,4 +40,6 @@ public class EnemyEnergy : MonoBehaviour {
         }
     }
     //public static Player Player{ get; set; }
+
+    public BattleController battleController { get; set; }
 }
