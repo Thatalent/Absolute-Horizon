@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DualStrike : Moves, AttackMove {
+public class DualStrike : Moves, AttackMove
+{
 
     public DualStrike()
     {
         Name = "DualStrike";
-        Player = BattleController.Player;
-        Debug.Log(BattleController.Player.Strength);
         BrnRate = 0f;
         FrzRate = 0f;
         StnRate = 0f;
@@ -15,18 +14,29 @@ public class DualStrike : Moves, AttackMove {
         DmgX = 1.0f;
         HitRate = 1.00f;
         DmgBoost = 4;
-        EpUse = (int)(1 / ((float)(BattleController.Player.Strength + BattleController.Player.Skill) / 100));
         MpUse = 0;
         SpUse = -0.2f;
         MoveCount = 4;
     }
 
-   public override void additionalActions()
+    public override void additionalActions()
     {
         if (BattleController.ActiveBattle)
         {
-            Moves secondAttack = new TrailingStrike(Options.getNextEnemy(BattleController.EnemyIndex));
-            secondAttack.move();
+            Moves secondAttack = new TrailingStrike(BattleController.getNextEnemy(BattleController.EnemyIndex));
+            secondAttack.move(BattleController);
+        }
+    }
+
+    /// <summary>
+    /// Hides the original EpUse so a unique value can be obtain based on the player's current stats.
+    /// </summary>
+    /// <returns></returns>
+    public new int EpUse
+    {
+        get
+        {
+            return (int)(1 / ((float)(Player.Strength + Player.Skill) / 100));
         }
     }
 }

@@ -21,10 +21,10 @@ public class ShockWave : Moves, AttackMove {
         SpUse = -0.2f;
         MoveCount = 4;
     }
-    public override void move()
+    public override void move(BattleController battleController)
     {
-        foreach(GameObject enemy in BattleController.EnemyMob){
-            Attack attack = new Attack((BattleController.Player.Attack + DmgBoost), enemy.GetComponent<Enemy>().Defense);
+        foreach(GameObject enemy in battleController.EnemyMob){
+            Attack attack = new Attack((battleController.Player.Attack + DmgBoost), enemy.GetComponent<Enemy>().Defense);
             int damage = attack.attacking();
             enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + damage;
             Debug.Log("damage: " + damage);

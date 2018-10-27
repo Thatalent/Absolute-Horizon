@@ -6,8 +6,6 @@ public class MagicWave : Moves, SpecialMove {
     public MagicWave()
     {
         Name = "MagicWave";
-        Player = BattleController.Player;
-        Debug.Log(BattleController.Player.Strength);
         //Enemy = BattleController.Enemy;
         BrnRate = 0f;
         FrzRate = 0f;
@@ -19,12 +17,14 @@ public class MagicWave : Moves, SpecialMove {
         EpUse = 0;
         MpUse = 0;
         SpUse = 1.0f;
-        MoveCount = Player.MoveCounter;
     }
-    public override void move()
-    {
-        Options.InputType = Options.UserActionType.REACTION;
-        Special special = new Special(BattleController.Player, ReactionInput.InputType.RANDOM, 3f);
+    public override void move(BattleController battleController)
+    {   
+        BattleController = battleController;
+        Player = BattleController.Player;
+        Model = BattleController.Model;
+        Model.State = new CenterBattleMenuState(Model);
+        Special special = new Special(Player, ReactionInput.InputType.RANDOM, 3f);
         special.SpecialCallback = additionalActions;
         special.perform();
     }
@@ -37,7 +37,7 @@ public class MagicWave : Moves, SpecialMove {
             enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + netDmg;
             enemyStatus(damage, 0, 0, enemy);
         }
-        Options.InputType = Options.UserActionType.COMMANDS;
+        Model.State = new CenterBattleMenuState(Model);
     }
 
     public void additionalActions(int damage)
@@ -47,4 +47,13 @@ public class MagicWave : Moves, SpecialMove {
     }
 
     private int damage;
+    OptionsModule Model { get; set; }
+
+    public new int MoveCount { 
+        get
+        {
+            return Player.MoveCounter;
+        }
+    }
+
 }

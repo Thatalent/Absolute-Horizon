@@ -26,10 +26,10 @@ public class Sparkles : Moves, MagicMove {
 
 
     }
-    public override void move()
+    public override void move(BattleController battleController)
     {
-        GameObject enemy = BattleController.Enemy;
-        Magic spell = new Magic((BattleController.Player.Intelligence + DmgBoost), enemy.GetComponent<Enemy>().Resistance);
+        GameObject enemy = battleController.Enemy;
+        Magic spell = new Magic((battleController.Player.Intelligence + DmgBoost), enemy.GetComponent<Enemy>().Resistance);
         int damage = spell.casting();
         enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + damage;
         enemyStatus(damage, 0, 0, enemy);

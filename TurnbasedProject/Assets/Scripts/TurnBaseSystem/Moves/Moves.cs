@@ -5,9 +5,7 @@ public abstract class Moves {
 	
 	private Player player;
 	private GameObject enemy;
-
 	private string name;
-
 	private float brnRate;
 	private float frzRate;
 	private float stnRate;
@@ -25,25 +23,32 @@ public abstract class Moves {
     //Use to specify how accuracy is handled by the move
 	public virtual float accuracy(){
         Moves.playerStatus();
-        float hit=(BattleController.Player.Skill/BattleController.Enemy.GetComponent<Enemy>().Agility)*HitRate;
+        float hit=(Player.Skill/Enemy.GetComponent<Enemy>().Agility)*HitRate;
 		return hit;
 	}
 	public void animate(){
 		//start animation	
 	}
     //override to specify the actions for the move
-	public virtual void move(){
+	public virtual void move(BattleController battleController){
+
+        BattleController = battleController;
+        if(Player == null){
+            Player = BattleController.Player;
+        }
         GameObject enemy = Enemy;
-        if (enemy == null)
-        {
+
+        if(enemy == null){
             enemy = BattleController.Enemy;
         }
-        Attack attack = new Attack((int)(DmgX * BattleController.Player.Attack + DmgBoost), enemy.GetComponent<Enemy>().Defense);
+
+        Attack attack = new Attack((int)(DmgX * Player.Attack + DmgBoost), enemy.GetComponent<Enemy>().Defense);
         int damage = attack.attacking();
         enemy.GetComponent<Enemy>().Health = enemy.GetComponent<Enemy>().Health + damage;
         Debug.Log("damage of move - " + Name + " is equal to:" + damage);
         enemyStatus(damage, 0, 0, enemy);
         additionalActions();
+
     }
 
     //Used to add a percentage of special points to player's gauge
@@ -126,8 +131,5 @@ public abstract class Moves {
 	public float SpUse{ get; set; }
 	public string Name{ get; set; }
     public int MoveCount { get; set; }
-
-
-
-
+    public BattleController BattleController{ get; set; }
 }
