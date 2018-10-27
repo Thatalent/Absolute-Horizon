@@ -329,4 +329,19 @@ public class PlayerActions
 			}
         }
 	}
+
+	public Moves[] getActions(int menuIndex){
+
+		return AllMenus[menuIndex];
+	}
+
+	private Moves[][] AllMenus { 
+		get
+		{
+			return UnlockedMenus.Values.ToArray();
+		} 
+	}
+
+    public Moves Trigger{ get; set; }
+    
 }

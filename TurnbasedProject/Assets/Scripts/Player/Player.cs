@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System;
 
 public class Player {	
 	public BaseCharacterClass CharacterClass{ get; set; }
@@ -32,4 +34,5 @@ public class Player {
 	public int EnergyRate{ get; set; }
     
 	public PlayerActions Actions { get; set; }
+	public Dictionary<string, Enchantment> Enchantments { get; set; }
 }

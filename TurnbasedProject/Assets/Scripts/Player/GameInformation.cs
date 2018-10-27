@@ -214,13 +214,14 @@ public class GameInformation : MonoBehaviour
     /// 
     /// Stamina also influences the Maximum Energy a player can have at one time.
     ///</summary>	
-    /// <return>MagicDefense</return>
+    /// <return type="int">MagicDefense</return>
 	public static int MagicDefense { get{
 			return Resistance + magicDefenseOffset;
 		} 
 		set{
 			magicDefenseOffset = value - Resistance;
-		} }
+		} 
+    }
 
 	private static int magicDefenseOffset;
 
