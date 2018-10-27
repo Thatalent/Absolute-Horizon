@@ -281,6 +281,7 @@ public class GameInformation : MonoBehaviour
 
     public static Moves Trigger { get; set; }
     public static PlayerActions Actions { get; set; }
+    public static PlayerLocation PlayerLocation { get; set; }
 
 	public static List<Type> AllMoves { get; set; }
 
@@ -313,7 +314,7 @@ public class GameInformation : MonoBehaviour
     /// <list type="MoveWait">MoveWait</list>
     ///</summary>	
     /// <returns>Player</returns>
-    public static Player Data()
+    public static Player data()
     {
         Player = new Player();
         Player.CharacterClass = GameInformation.PlayerClass;
@@ -341,7 +342,7 @@ public class GameInformation : MonoBehaviour
         Player.Agility = GameInformation.Agility;
         Player.MoveCounter = MoveCounter;
         Player.MoveWait = GameInformation.MoveWait;
-		Player.Actions = GameInformation.Actions;
+	Player.Actions = GameInformation.Actions;
         return Player;
     }
 

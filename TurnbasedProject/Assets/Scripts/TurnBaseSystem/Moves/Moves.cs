@@ -3,23 +3,6 @@ using System.Collections;
 
 public abstract class Moves {
 	
-	private Player player;
-	private GameObject enemy;
-	private string name;
-	private float brnRate;
-	private float frzRate;
-	private float stnRate;
-	private float psnRate;
-	private float hitRate;
-	private float dmgX;
-	private int dmgBoost;
-	private int epUse;
-	private int mpUse;
-	private float spUse;
-    private int moveCount;
-
-
-	
     //Use to specify how accuracy is handled by the move
 	public virtual float accuracy(){
         Moves.playerStatus();

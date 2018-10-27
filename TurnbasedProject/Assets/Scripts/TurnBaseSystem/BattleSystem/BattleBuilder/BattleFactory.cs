@@ -2,7 +2,6 @@
 using System.Collections;
 
 public interface BattleFactory {
-
-		BattleWave generateBattleWaves();
-
+	EnemyService createEnemyFactory ();
+	BattleWave[] generateEnemyWaves (int PlayerLevel);
 }

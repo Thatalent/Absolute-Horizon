@@ -56,13 +56,14 @@ public class EnemyGenerator
         int i = 0;
         int enemyNumber = Random.Range(1, 6);
         EnemyMob = new EnemyClass[enemyNumber];
-        EnemyService = EnemyServiceFactory.newEnemyService("TestWorld");
-        EnemyMob = EnemyService.createAndReturnEnemyMob(enemyNumber);
+        EnemyService = EnemyFactory.newEnemyService("TestWorld");
+        EnemyMob = EnemyService.createEnemyMob(enemyNumber);
 
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do
         {
-            //"Enemy" will be replaced with a string {EnemyClass.Name} in order to allow for a object to be dynamically built off of the types of enemies found in EnemySelection.GetEnemyMob()
+            //"Enemy" will be replaced with a string {EnemyClass.Name} in order to allow for a object 
+			//to be dynamically built off of the types of enemies found in EnemySelection.GetEnemyMob()
             GameObject monster = Object.Instantiate(GameObject.FindGameObjectWithTag("Enemy"));
             //   monster.SetActive(true);
             monsterMob[i] = monster;
@@ -79,8 +80,6 @@ public class EnemyGenerator
                 monsterSpriteArray[j].enabled = true;
             }
             addMoves(monster);
-
-
             i++;
         } while (i < enemyNumber);
         return monsterMob;
@@ -109,5 +108,5 @@ public class EnemyGenerator
     public int EnemyID { get; set; }
     public EnemyClass[] EnemyMob { get; set; }
     public Transform[] EnemyLocation { get; set; }
-    public EnemyService EnemyService { get; set; }
+    public EnemyFactory EnemyService { get; set; }
 }
