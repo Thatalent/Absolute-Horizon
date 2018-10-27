@@ -12,7 +12,7 @@ public class MovesAssignment : MonoBehaviour {
 
 	}
 
-	public static bool AssignMove(string moveName){
+	public static bool assignMove(string moveName){
 
 		Type newMove = MovesAssignment.getNewMoveType(moveName);
         

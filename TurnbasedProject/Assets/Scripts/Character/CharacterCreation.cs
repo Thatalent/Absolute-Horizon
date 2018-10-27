@@ -41,12 +41,11 @@ public class CharacterCreation : MonoBehaviour
             }
 
 			addClassToPlayer(playerClass);
-            BattleController.Player = GameInformation.Data();
-			MovesAssignment.AssignMove("Stab");
-			MovesAssignment.AssignMove("DualStrike");
-			MovesAssignment.AssignMove("ShockWave");
-			MovesAssignment.AssignMove("Sparkles");
-			MovesAssignment.AssignMove("MagicWave");
+			MovesAssignment.assignMove("Stab");
+			MovesAssignment.assignMove("DualStrike");
+			MovesAssignment.assignMove("ShockWave");
+			MovesAssignment.assignMove("Sparkles");
+			MovesAssignment.assignMove("MagicWave");
             Debug.Log(GameInformation.Actions.ActionsMenu1);
 			Debug.Log(GameInformation.Actions.SpecialMenu);
             Debug.Log("Get World1 Enemy List");
