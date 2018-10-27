@@ -24,3 +24,5 @@ sysinfo.txt
 TurnbasedProject/ProjectSettings/GraphicsSettings.asset
 TurnbasedProject/ProjectSettings/ProjectVersion.txt
 *.asset
+TurnbasedProject/.vs/
+TurnbasedProject/.vscode/
