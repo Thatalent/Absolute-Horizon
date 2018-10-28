@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Reflection;
 
 public class GameInformation : MonoBehaviour
 {
@@ -280,10 +281,33 @@ public class GameInformation : MonoBehaviour
     public static int Area { get; set; }
 
     public static Moves Trigger { get; set; }
-    public static PlayerActions Actions { get; set; }
+
+    private static PlayerActions actions;
+    public static PlayerActions Actions { 
+        get{
+            return  actions != null ? actions : actions = new PlayerActions();
+        } 
+        set {
+            actions = value;
+        } 
+    }
     public static PlayerLocation PlayerLocation { get; set; }
 
-	public static List<Type> AllMoves { get; set; }
+    private static Dictionary<String, Type> allMoves;
+	public static Dictionary<String, Type> AllMoves { 
+        get{
+             if(allMoves == null){
+                 setAllMoves();
+             }
+              return allMoves;
+        }
+    }
+
+    public static void setAllMoves(){
+        List<Type> moves = Solution.getListOfTypes(typeof(Moves), typeof(Moves));
+
+        allMoves = moves.ToDictionary(move => move.Name, move => move);
+    }
 
     ///<summary>
     /// Creates a Player from the current information in 
