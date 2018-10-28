@@ -33,19 +33,20 @@ public class PlayerActions
 
     public bool loadActionMove(Moves action)
     {
-		if (action.SpUse >= 0f)
+		if (action.SpUse <= 0f)
 		{
-			foreach (string menuName in unlockedMenus.Keys)
+			foreach (string menuName in UnlockedMenus.Keys.ToList())
 			{
-				int slotIndex = findEmptySlot(unlockedMenus[menuName]);
+				int slotIndex = findEmptySlot(UnlockedMenus[menuName]);
 				if (slotIndex > -1)
 				{
-					PropertyInfo menuField = this.GetType().GetProperty(menuName);
+					PropertyInfo menuField = this.GetType().GetProperty(menuName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static |BindingFlags.IgnoreCase);
 					if (menuField != null)
 					{
 						Moves[] menu = (Moves[])menuField.GetValue(this, null);
 						menu[slotIndex] = action;
 						menuField.SetValue(this, menu, null);
+                        Debug.Log("Set: "+ action.Name+" to menu: " +menuField.Name);
 						ResetFlatArrays = true;
 						return true;
 					}
@@ -90,19 +91,19 @@ public class PlayerActions
             int unlockedMenusNumber = numberOfUnlockedActionMenus();
             switch (unlockedMenusNumber) {
                 case 1:
-                    unlockedMenus.Add("actions1", ActionsMenu1);
+                    unlockedMenus.Add("actionsMenu1", ActionsMenu1);
                     break;
                 case 2:
-                    unlockedMenus.Add("actions2", ActionsMenu2);
+                    unlockedMenus.Add("actionsMenu2", ActionsMenu2);
                     goto case 1;
                 case 3:
-                    unlockedMenus.Add("actions3", ActionsMenu3);
+                    unlockedMenus.Add("actionsMenu3", ActionsMenu3);
                     goto case 2;
                 case 4:
-                    unlockedMenus.Add("actions4", ActionsMenu4);
+                    unlockedMenus.Add("actionsMenu4", ActionsMenu4);
                     goto case 3;
                 case 5: 
-					unlockedMenus.Add("actions5", ActionsMenu5);
+					unlockedMenus.Add("actionsMenu5", ActionsMenu5);
                     goto case 4;
                 default: break;
         }
@@ -114,19 +115,19 @@ public class PlayerActions
             switch (unlockedMenusNumber)
             {
                 case 1:
-                    ActionsMenu1 = value["actions1"];
+                    ActionsMenu1 = value["actionsMenu1"];
                     break;
                 case 2:
-                    ActionsMenu2 = value["actions2"];
+                    ActionsMenu2 = value["actionsMenu2"];
                     goto case 1;
                 case 3:
-                    ActionsMenu3 = value["actions3"];
+                    ActionsMenu3 = value["actionsMenu3"];
                     goto case 2;
                 case 4:
-                    ActionsMenu4 = value["actions4"];
+                    ActionsMenu4 = value["actionsMenu4"];
                     goto case 3;
                 case 5:
-                    ActionsMenu5 = value["actions5"];
+                    ActionsMenu5 = value["actionsMenu5"];
                     goto case 4;
                 default: break;
             }
@@ -322,7 +323,7 @@ public class PlayerActions
 		}
 		set{
 			if(value==true){
-				foreach(string key in  resetMap.Keys){
+				foreach(string key in  resetMap.Keys.ToList()){
 					resetMap[key] = true;
 				}
 				resetFlatArrays = value;
