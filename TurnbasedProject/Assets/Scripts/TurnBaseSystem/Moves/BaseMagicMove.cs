@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 public abstract class BaseMagicMove : Moves, MagicMove
 {
-    public string getEnchantments(){
+    public Dictionary<string, Enchantment>  getEnchantments(){
         return this.enchantments;
     }
 
-    public string getEnchantments(){
+    public Queue<string>  getChant(){
         return this.chant;
     }
 
