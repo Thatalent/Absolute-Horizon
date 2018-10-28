@@ -51,13 +51,13 @@ public class EnemyGenerator
 	/// Makes the enemy.
 	/// </summary>
 	/// <returns>The enemy.</returns>
-    public GameObject[] makeEnemy()
+    public GameObject[] makeEnemy(EnemyService enemyService)
     {
         int i = 0;
         int enemyNumber = Random.Range(1, 6);
         EnemyMob = new EnemyClass[enemyNumber];
-        EnemyService = EnemyFactory.newEnemyService("TestWorld");
-        EnemyMob = EnemyService.createEnemyMob(enemyNumber);
+
+        EnemyMob = enemyService.createEnemyMob(enemyNumber);
 
         GameObject[] monsterMob = new GameObject[enemyNumber];
         do
