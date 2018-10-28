@@ -9,6 +9,7 @@ public class EnemyEnergy : MonoBehaviour {
     void Start()
     {
         //Player = GameInformtion.data ();
+        battleController = GameObject.Find("Player-Character").GetComponent<BattleController>();
         StartCoroutine(energyRate());
 
     }
@@ -30,7 +31,7 @@ public class EnemyEnergy : MonoBehaviour {
             {
                 GetComponent<Enemy>().Energy = GetComponent<Enemy>().Energy + GetComponent<Enemy>().EnergyRate;
                 //yield return new WaitForSeconds(10);
-                Debug.Log(gameObject.GetComponent<Enemy>().Energy);
+                // Debug.Log(gameObject.GetComponent<Enemy>().Energy);
                 if (GetComponent<Enemy>().Energy > GetComponent<Enemy>().MaxEnergy)
                 {
                     GetComponent<Enemy>().Energy = GetComponent<Enemy>().MaxEnergy;

@@ -7,6 +7,7 @@ public class Energy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         //Player = GameInformtion.data ();
+        battleController = GameObject.Find("Player-Character").GetComponent<BattleController>();
         StartCoroutine(energyRate());
 
     }
@@ -20,20 +21,20 @@ public class Energy : MonoBehaviour {
         //Debug.Log(GameInformtion.Energy);
 		while(battle) {
             yield return new WaitForSeconds(1);
-			if (GameInformation.Energy < GameInformation.MaxEnergy & !battleController.Model.ActiveTurn) {
-				GameInformation.Energy = GameInformation.Energy + GameInformation.EnergyRate;
+			if (battleController.Player.Energy < battleController.Player.MaxEnergy & !battleController.Model.ActiveTurn) {
+				battleController.Player.Energy = battleController.Player.Energy + battleController.Player.EnergyRate;
                 energyStatus();
             //yield return new WaitForSeconds(10);
-				Debug.Log(GameInformation.Energy);
-				if (GameInformation.Energy > GameInformation.MaxEnergy) {
-					GameInformation.Energy = GameInformation.MaxEnergy;
+				Debug.Log(battleController.Player.Energy);
+				if (battleController.Player.Energy > battleController.Player.MaxEnergy) {
+					battleController.Player.Energy = battleController.Player.MaxEnergy;
                     energyStatus();
                   //  yield return new WaitForSeconds(2f);
 				}
 			}
-          if (GameInformation.Energy < 0)
+          if (battleController.Player.Energy < 0)
             {
-                GameInformation.Energy = 0;
+                battleController.Player.Energy = 0;
                 energyStatus();
             }
             else if (battleController.Model.ActiveTurn)
@@ -42,9 +43,9 @@ public class Energy : MonoBehaviour {
             }
 		}
 	}
-    static public void energyStatus() {
+    public void energyStatus() {
         Status energyStatus = GameObject.FindGameObjectWithTag("Player_EnergyBar").GetComponent<Status>();
-        energyStatus.changeStatusSize(GameInformation.Energy, GameInformation.MaxEnergy);
+        energyStatus.changeStatusSize(battleController.Player.Energy, battleController.Player.MaxEnergy);
     }
 	//public static Player Player{ get; set; }
 

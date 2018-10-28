@@ -6,7 +6,9 @@ public class FloobMoves : EnemyMoves {
     // Use this for initialization
     void Start()
     {
+        battleController = GameObject.Find("Player-Character").GetComponent<BattleController>();
         StartCoroutine(enemyChoice());
+
     }
 
     // Update is called once per frame

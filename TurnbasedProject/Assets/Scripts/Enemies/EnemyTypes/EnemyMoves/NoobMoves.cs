@@ -5,7 +5,9 @@ public class NoobMoves : EnemyMoves {
 
 	// Use this for initialization
 	void Start () {
+        battleController = GameObject.Find("Player-Character").GetComponent<BattleController>();
         StartCoroutine(enemyChoice());
+
 	}
 	
 	// Update is called once per frame
@@ -67,15 +69,16 @@ public class NoobMoves : EnemyMoves {
     }
     public override void move()
     {
-		Player = BattleController.Player;
+        Player = battleController.Player;
         Attack attack = new Attack((gameObject.GetComponent<Enemy>().Attack + DmgBoost), Player.Defense);
         int damage = attack.attacking();
         Player.Health = Player.Health + damage;
         BaseStatusBar status = GameObject.FindGameObjectWithTag("Player_HealthBar").GetComponent<BaseStatusBar>() ;
         status.changeStatusSize(Player.Health, Player.MaxHealth);
 
-        Debug.Log(Player.Health);
+        // Debug.Log(Player.Health);
         
 
     }
+
 }
