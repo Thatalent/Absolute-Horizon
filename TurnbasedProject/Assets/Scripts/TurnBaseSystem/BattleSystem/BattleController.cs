@@ -1,5 +1,5 @@
 ﻿ using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class BattleController : MonoBehaviour, BattleControllerService
@@ -9,15 +9,17 @@ public class BattleController : MonoBehaviour, BattleControllerService
 	// Use this for initialization
 	void Start ()
 	{
-		Player = GameInformation.data ();
+		Player = GameInformation.data();
 		Debug.Log ("Start of Battle!");
 		ActiveBattle = true;
-		Energy energy = gameObject.GetComponent<Energy> ();
-		energy.enabled = true;
-		BattleWaves = BattleFactoryService.getNewBattleFactory (GameInformation.PlayerLocation).generateEnemyWaves (GameInformation.PlayerLvl);
-		EnemyMob =  new EnemyGenerator ().makeEnemy ();
+		Energy = gameObject.GetComponent<Energy> ();
+		Energy.enabled = true;
+		BattleWaves = BattleFactoryService.getNewBattleFactory(GameInformation.PlayerLocation).generateEnemyWaves(GameInformation.PlayerLvl);
+		NumberOfWaves = BattleWaves.Count;
+		CurrentWave = BattleWaves.Dequeue();
+		CurrentWave.populateBattleWave();
+		EnemyMob =  CurrentWave.EnemyMob;
 		EnemiesAlive = EnemyMob.Length;
-		NumberOfWaves = BattleWaves.Length;
 		Enemy = EnemyMob[EnemyIndex];
 		setUpOptions();
 	}
@@ -25,18 +27,17 @@ public class BattleController : MonoBehaviour, BattleControllerService
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log("Player Health: " + Player.Health);
-		Debug.Log ("Number of Waves: " + NumberOfWaves);
+		// Debug.Log("Player Health: " + Player.Health);
+		// Debug.Log ("Number of Waves: " + NumberOfWaves);
 		if (Player.Health <= 0 || (EnemiesAlive == 0 && NumberOfWaves == 0)) {
 			ActiveBattle = false;
 		} else if (EnemiesAlive == 0 && NumberOfWaves > 0) {
 			//create the next mob.
-			EnemyMob = new EnemyGenerator ().makeEnemy ();
+			CurrentWave = BattleWaves.Dequeue();
 		}
 		// Triggers the end of battle. This occurs when ALL waves are complete.
 		if (ActiveBattle == false) {
 			BattleUtils.endBattle (Player, EnemiesAlive);
-			NumberOfWaves--;
 		}
 
 		EnemiesAlive = EnemyMob.Length;
@@ -47,6 +48,7 @@ public class BattleController : MonoBehaviour, BattleControllerService
 		Model = OptionsModule.start(Player.Actions);
 		Model.battleController = this;
 		Options.battleController = this;
+		Options.Model = Model;
 		Options.loadMoves();
 		//TODO: Danjamin add start up method for OptionsView here.
 	}
@@ -107,8 +109,11 @@ public class BattleController : MonoBehaviour, BattleControllerService
 	public GameObject Enemy { get; set; }
 	public int EnemiesAlive { get; set; }
 	public bool ActiveBattle { get; set; }
-	public bool ActiveEnemy { get; set; }
+    public Energy Energy { get; private set; }
+    public bool ActiveEnemy { get; set; }
 	public GameObject[] EnemyMob { get; set; }
 	public int NumberOfWaves { get; set; }
    	public int EnemyIndex { get; set; }
+	public BattleWave CurrentWave { get; set; }
+	public Queue<BattleWave> BattleWaves{ get; set; }
 }
