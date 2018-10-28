@@ -14,7 +14,7 @@ public class TestWorldEnemyServiceFactory : EnemyFactory
         return EnemySelection.getWorld1EnemyMob(numberOfEnemies);
     }
 
-    public override EnemyStrategy determineAttackPattern(Enemy currentEnemy)
+    public override EnemyFactory.EnemyStrategy determineAttackPattern(Enemy currentEnemy)
     {
         return EnemyStrategy.EASY;
     }
