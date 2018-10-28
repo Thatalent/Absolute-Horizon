@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 
 public class MovesAssignment : MonoBehaviour {
@@ -21,7 +22,8 @@ public class MovesAssignment : MonoBehaviour {
 			Moves move = (Moves)Activator.CreateInstance(newMove);
             
 			GameInformation.Actions.loadActionMove(move);
-       
+
+			Debug.Log(GameInformation.Actions.AllActions);
 			return true;
 			
 		}
@@ -32,7 +34,7 @@ public class MovesAssignment : MonoBehaviour {
 
 	public static Type getNewMoveType(string moveName){
 		
-		Type newMove = GameInformation.AllMoves.Find(moveType => moveType.Name.Equals(moveName));
+		Type newMove = GameInformation.AllMoves[moveName];
 
 		return newMove;
 
