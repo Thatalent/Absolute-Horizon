@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using System.Collections.Generic;
 
 public class CharacterCreation : MonoBehaviour
 {
@@ -41,6 +41,9 @@ public class CharacterCreation : MonoBehaviour
             }
 
 			addClassToPlayer(playerClass);
+            GameInformation.Actions.isMenu5Locked = true;
+            GameInformation.Actions.isMenu3Locked = true;
+            GameInformation.Actions.isMenu4Locked = true;
 			MovesAssignment.assignMove("Stab");
 			MovesAssignment.assignMove("DualStrike");
 			MovesAssignment.assignMove("ShockWave");
