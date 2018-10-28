@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class Sparkles : Moves, MagicMove {
+public class Sparkles : BaseMagicMove {
 
 
 
     public Sparkles()
     {
         Name = "Sparkles";
-        Player = BattleController.Player;
-        Debug.Log(BattleController.Player.Strength);
         //Enemy = BattleController.Enemy;
         BrnRate = 0f;
         FrzRate = 0f;
@@ -18,12 +17,9 @@ public class Sparkles : Moves, MagicMove {
         DmgX = 1.0f;
         HitRate = 1.00f;
         DmgBoost = 5;
-        EpUse = (int)(1 / ((float)(BattleController.Player.Strength + BattleController.Player.Skill) / 100));
-        MpUse = (int)(1/ ((float)(BattleController.Player.Intelligence + BattleController.Player.Skill) / 100));
-        Debug.Log(MpUse);
         SpUse = -0.2f;
         MoveCount = 3;
-
+        chant = new Queue<string>(new string[] {"oni"});
 
     }
     public override void move(BattleController battleController)
@@ -35,5 +31,29 @@ public class Sparkles : Moves, MagicMove {
         enemyStatus(damage, 0, 0, enemy);
        
 
+    }
+
+    /// <summary>
+    /// Hides the original EpUse so a unique value can be obtain based on the player's current stats.
+    /// </summary>
+    /// <returns></returns>
+    public new int EpUse
+    {
+        get
+        {
+            return (int)(1 / ((float)(Player.Strength + Player.Skill) / 100));
+        }
+    }
+
+    /// <summary>
+    /// Hides the original EpUse so a unique value can be obtain based on the player's current stats.
+    /// </summary>
+    /// <returns></returns>
+    public new int MpUse
+    {
+        get
+        {
+            return (int)(1 / ((float)(Player.Intelligence + Player.Skill) / 100));
+        }
     }
 }
