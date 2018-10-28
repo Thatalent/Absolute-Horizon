@@ -65,7 +65,7 @@ public class BaseStatusBar : MonoBehaviour, Status {
 
         }
 
-        Debug.Log(maxUse + " : maxUse");
+        // Debug.Log(maxUse + " : maxUse");
 
         //gets the left most position of status bar (change min to max to make the capture the right most position)
 
