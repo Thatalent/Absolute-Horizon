@@ -28,12 +28,14 @@ public class OptionsModule
 		LoMana = int.MaxValue;
 		LoAttackEnergy = int.MaxValue;
 		LoMagicEnergy = int.MaxValue;
+		CommandState = new Commands();
+		State = new CenterBattleMenuState(this);
 	}
 
 	public void setValues(){
-		LowestMoveCount= OptionsModule.lowMove(GameInformation.Actions.AllActions);
-		lowEnergy(GameInformation.Actions.AllActions);
-		lowMana(GameInformation.Actions.MagicActions);
+		LowestMoveCount= OptionsModule.lowMove(battleController.Player.Actions.AllActions);
+		lowEnergy(battleController.Player.Actions.AllActions);
+		lowMana(battleController.Player.Actions.MagicActions);
 	}
 
 	public void executeCommands(){
@@ -48,8 +50,9 @@ public class OptionsModule
 		playerMove.BattleController = battleController;
 		int m = battleController.Player.MoveCounter - playerMove.MoveCount;
 
-		if (GameInformation.Energy >= playerMove.EpUse && (m) >= 0 && GameInformation.Mana >= playerMove.MpUse && GameInformation.SpecialCharge >= playerMove.SpUse)
+		if (playerMove.Player.Energy >= playerMove.EpUse && (m) >= 0 && playerMove.Player.Mana >= playerMove.MpUse && GameInformation.SpecialCharge >= playerMove.SpUse)
 		{
+			ActiveTurn = true;
 			battleController.Player.MoveCounter = m;
 			playerMove.resource();
 			float hit = playerMove.accuracy();
@@ -63,7 +66,7 @@ public class OptionsModule
 		{
 			EndPlayerTurn = true;
 		}
-		else if (ActiveTurn == true && GameInformation.Energy < playerMove.EpUse)
+		else if (ActiveTurn == true && playerMove.Player.Energy < playerMove.EpUse)
 		{
 			EndPlayerTurn = true;
 		}
@@ -73,7 +76,7 @@ public class OptionsModule
 			//  endPlayerTurn();
 			//   turnWait();
 		}
-		if (GameInformation.Energy < LoAttackEnergy)
+		if (playerMove.Player.Energy < LoAttackEnergy)
 		{
 			if (ActiveTurn)
 			{
@@ -88,7 +91,7 @@ public class OptionsModule
 			//  endPlayerTurn();
 			//   turnWait();
 		}
-		if (GameInformation.Mana < LoMana)
+		if (playerMove.Player.Mana < LoMana)
 		{
 			EndPlayerTurn = true;
 			//  endPlayerTurn();
@@ -97,7 +100,7 @@ public class OptionsModule
 		else if (battleController.Player.MoveCounter <= 0)
 		{
 			EndPlayerTurn = true;
-			//turnWait();
+			// turnWait();
 			// endPlayerTurn();
 		}
 	}
@@ -109,10 +112,10 @@ public class OptionsModule
 			t = 1;
 			Wait = true;
 			ActiveTurn = false;
-			yield return new WaitForSeconds(GameInformation.MoveWait);
+			yield return new WaitForSeconds(battleController.Player.MoveWait);
 			Wait = false;
 			FloatingText.Show("Ready!!!", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, 1f, 0));
-			battleController.Player.MoveCounter = GameInformation.MoveCounter;
+			battleController.Player.MoveCounter = battleController.Player.MoveCounter;
 			t = 0;
 		}
 	}
@@ -120,7 +123,7 @@ public class OptionsModule
 	public void endTurn(){
 
 		EndPlayerTurn = false;
-        FloatingText.Show("Waiting . . .", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, GameInformation.MoveWait, 0));
+        FloatingText.Show("Waiting . . .", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, battleController.Player.MoveWait, 0));
 
     	battleController.StartCoroutine(this.turnWait());
 	}
