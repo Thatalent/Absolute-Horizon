@@ -5,8 +5,8 @@ public abstract class Moves {
 	
     //Use to specify how accuracy is handled by the move
 	public virtual float accuracy(){
-        Moves.playerStatus();
-        float hit=(Player.Skill/Enemy.GetComponent<Enemy>().Agility)*HitRate;
+        playerStatus();
+        float hit=(Player.Skill/BattleController.Enemy.GetComponent<Enemy>().Agility)*HitRate;
 		return hit;
 	}
 	public void animate(){
@@ -43,8 +43,8 @@ public abstract class Moves {
 
     //Used to change resources like items, energy, magic, or special
 	public void resource(){
-        GameInformation.Energy = GameInformation.Energy - EpUse;
-        GameInformation.Mana = GameInformation.Mana - MpUse;
+        Player.Energy = Player.Energy - EpUse;
+        Player.Mana = Player.Mana - MpUse;
         GameInformation.SpecialCharge = GameInformation.SpecialCharge - SpUse;
     }
     public Transform enemyStatus(int dmg, int epDmg)
@@ -62,7 +62,7 @@ public abstract class Moves {
         }
         Status status = enemy.GetComponentInChildren<BaseStatusBar>();
         status.changeStatusSize(enemy.GetComponent<Enemy>().Health, enemy.GetComponent<Enemy>().MaxHealth);
-        Debug.Log("Enemy : "+ enemy.GetComponent<Enemy>().Health);
+        // Debug.Log("Enemy : "+ enemy.GetComponent<Enemy>().Health);
 
         // Uncomment for future use. 
         //Used to create pop up text when changing the mana and energy points of the Enemey
@@ -78,7 +78,7 @@ public abstract class Moves {
     }
 
 
-    static public void playerStatus()
+    public void playerStatus()
     {
         Status healthStatus = GameObject.FindGameObjectWithTag("Player_HealthBar").GetComponent<Status>();
         healthStatus.changeStatusSize(GameInformation.Health, GameInformation.MaxHealth);
@@ -86,7 +86,7 @@ public abstract class Moves {
         Status magicStatus = GameObject.FindGameObjectWithTag("Player_MagicBar").GetComponent<Status>();
         magicStatus.changeStatusSize(GameInformation.Mana, GameInformation.MaxMana);
 
-        Energy.energyStatus();
+        BattleController.Energy.energyStatus();
 
         MultiStatus specialStatus = GameObject.FindGameObjectWithTag("Player_Special").GetComponent<MultiStatus>();
         specialStatus.updateSubStatus(GameInformation.SpecialCharge, 1, 1);
