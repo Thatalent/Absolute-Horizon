@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public abstract class BattleFactoryService : BattleFactory {
 
 	public abstract EnemyService createEnemyFactory ();
-	public abstract BattleWave[] generateEnemyWaves(int PlayerLevel);
+	public abstract Queue<BattleWave> generateEnemyWaves (int PlayerLevel);
 
 	/// <summary>
 	/// Returns a new instance of an implement child class for Battle Factory based on the player's location in the game universe.

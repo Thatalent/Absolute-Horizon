@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public interface BattleFactory {
 	EnemyService createEnemyFactory ();
-	BattleWave[] generateEnemyWaves (int PlayerLevel);
+	Queue<BattleWave> generateEnemyWaves (int PlayerLevel);
 }
