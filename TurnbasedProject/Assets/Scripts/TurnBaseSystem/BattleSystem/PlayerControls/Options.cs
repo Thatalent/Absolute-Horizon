@@ -36,10 +36,10 @@ void Start () {
             Model.CommandState.RbButton = Input.GetButton("Rb_button");
             Model.CommandState.RtButton = Input.GetButton("Rt_button");
             Model.CommandState.LtButton = Input.GetButton("Lt_button");
-            Model.CommandState.LeftStick.X_Axis = Input.GetAxis("Horizontal");
-            Model.CommandState.LeftStick.Y_Axis = Input.GetAxis("Vertical");
-            Model.CommandState.RightStick.X_Axis = Input.GetAxis("Horizontal");
-            Model.CommandState.RightStick.Y_Axis = Input.GetAxis("Vertical");
+            Model.CommandState.LeftStick.X_Axis = Input.GetAxis("Left_Stick_Y");
+            Model.CommandState.LeftStick.Y_Axis = Input.GetAxis("Left_Stick_X");
+            Model.CommandState.RightStick.X_Axis = Input.GetAxis("Right_Stick_X");
+            Model.CommandState.RightStick.Y_Axis = Input.GetAxis("Right_Stick_Y");
 
             Model.executeCommands();
         }
@@ -64,7 +64,7 @@ void Start () {
 
 //             if (Input.GetButtonDown("previousEnemy"))
 //             {
-                battleController.Enemy = battleController.getPreviousEnemy(battleController.EnemyIndex);
+                // battleController.Enemy = battleController.getPreviousEnemy(battleController.EnemyIndex);
 //                 Debug.Log("previous Enemy selected at index: " + battleController.EnemyIndex);
 //             }
 
