@@ -47,11 +47,32 @@ public class CharacterCreation : MonoBehaviour
 			MovesAssignment.assignMove("Stab");
 			MovesAssignment.assignMove("DualStrike");
 			MovesAssignment.assignMove("ShockWave");
-            Debug.Log(GameInformtion.Spells[0]);
-            Options.loadMoves();
-			SceneManager.LoadScene ("BattleScence");
+			MovesAssignment.assignMove("Sparkles");
+			MovesAssignment.assignMove("MagicWave");
+            Debug.Log(GameInformation.Actions.ActionsMenu1);
+			Debug.Log(GameInformation.Actions.SpecialMenu);
+            Debug.Log("Get World1 Enemy List");
+			GameInitializer.startGame();
+            SceneManager.LoadScene("BattleScence");
+        }
+    }
 
-		}
+	public static void addClassToPlayer(BaseCharacterClass playerClass){
+		
+		NewPlayer.CharacterClass = playerClass;
+		NewPlayer.PlayerLvl = 1;
+        NewPlayer.Stamina = NewPlayer.CharacterClass.Stamina;
+        Debug.Log(NewPlayer.Stamina);
+        NewPlayer.Strength = NewPlayer.CharacterClass.Strength;
+        NewPlayer.Endurance = NewPlayer.CharacterClass.Endurance;
+        NewPlayer.Intelligence = NewPlayer.CharacterClass.Intelligence;
+        NewPlayer.Resistance = NewPlayer.CharacterClass.Resistance;
+        NewPlayer.Skill = NewPlayer.CharacterClass.Skill;
+        NewPlayer.Speed = NewPlayer.CharacterClass.Speed;
+        NewPlayer.Luck = NewPlayer.CharacterClass.Luck;
+        NewPlayer.PlayerExp = 0f;
+        GameInformation.save(NewPlayer);
 	}
-	public static Player NewPlayer{ get; set; }
+
+    public static Player NewPlayer { get; set; }
 }
