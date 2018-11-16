@@ -43,7 +43,9 @@ public abstract class Moves {
 
     //Used to change resources like items, energy, magic, or special
 	public void resource(){
-        Player.Energy = Player.Energy - EpUse;
+
+
+        Player.Energy = Player.Energy - this.EpUse;
         Player.Mana = Player.Mana - MpUse;
         GameInformation.SpecialCharge = GameInformation.SpecialCharge - SpUse;
     }
@@ -81,10 +83,10 @@ public abstract class Moves {
     public void playerStatus()
     {
         Status healthStatus = GameObject.FindGameObjectWithTag("Player_HealthBar").GetComponent<Status>();
-        healthStatus.changeStatusSize(GameInformation.Health, GameInformation.MaxHealth);
+        healthStatus.changeStatusSize(Player.Health, Player.MaxHealth);
 
         Status magicStatus = GameObject.FindGameObjectWithTag("Player_MagicBar").GetComponent<Status>();
-        magicStatus.changeStatusSize(GameInformation.Mana, GameInformation.MaxMana);
+        magicStatus.changeStatusSize(Player.Mana, Player.MaxMana);
 
         BattleController.Energy.energyStatus();
 
@@ -100,6 +102,15 @@ public abstract class Moves {
 
     }
 
+    /// <summary>
+    /// Hides the original EpUse so a unique value can be obtain based on the player's current stats.
+    /// </summary>
+    /// <returns></returns>
+    protected virtual int getEpUse()
+        {
+            return (int)(1 / ((float)(Player.Strength + Player.Skill) / 100));
+        }
+
     public Player Player{ get; set; }
 	public GameObject Enemy{ get; set;}
 	public float BrnRate{ get; set; }
@@ -109,7 +120,25 @@ public abstract class Moves {
 	public float HitRate{ get; set; }
 	public float DmgX{ get; set; }
 	public int DmgBoost{ get; set; }
-	public int EpUse{ get; set; }
+
+    private int epUse = -1;
+
+	/// <summary>
+	/// Energy use of a move. By default uses the function getEpUse to determine value. Set to -1 to reset value to getEpuse
+	/// </summary>
+	/// <returns></returns>
+	public int EpUse{ 
+        get { 
+            if(epUse == -1){
+                epUse = getEpUse();
+            }
+            return epUse;
+        } 
+        set{
+            epUse = value;
+        }
+    }
+
 	public int MpUse{ get; set; }
 	public float SpUse{ get; set; }
 	public string Name{ get; set; }

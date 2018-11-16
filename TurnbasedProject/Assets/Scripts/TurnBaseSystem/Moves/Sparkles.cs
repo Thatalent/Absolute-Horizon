@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class Sparkles : BaseMagicMove {
 
-
-
     public Sparkles()
     {
         Name = "Sparkles";
@@ -20,8 +18,16 @@ public class Sparkles : BaseMagicMove {
         SpUse = -0.2f;
         MoveCount = 3;
         chant = new Queue<string>(new string[] {"oni"});
+        // EpUse = getEpUse();
 
     }
+
+    // public override void move(BattleController battleController){
+    //     battleController.Model.State = new ChantState();
+    //     battleController.Model.ActiveTurn = true;
+    // }
+
+
     public override void move(BattleController battleController)
     {
         GameObject enemy = battleController.Enemy;
@@ -31,18 +37,6 @@ public class Sparkles : BaseMagicMove {
         enemyStatus(damage, 0, 0, enemy);
        
 
-    }
-
-    /// <summary>
-    /// Hides the original EpUse so a unique value can be obtain based on the player's current stats.
-    /// </summary>
-    /// <returns></returns>
-    public new int EpUse
-    {
-        get
-        {
-            return (int)(1 / ((float)(Player.Strength + Player.Skill) / 100));
-        }
     }
 
     /// <summary>

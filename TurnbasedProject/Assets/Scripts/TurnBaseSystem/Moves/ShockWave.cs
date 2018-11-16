@@ -17,6 +17,7 @@ public class ShockWave : Moves, AttackMove {
         MpUse = 0;
         SpUse = -0.2f;
         MoveCount = 4;
+        // EpUse = getEpUse();
     }
     public override void move(BattleController battleController)
     {
@@ -29,15 +30,5 @@ public class ShockWave : Moves, AttackMove {
         }
     }
 
-    /// <summary>
-    /// Hides the original EpUse so a unique value can be obtain based on the player's current stats.
-    /// </summary>
-    /// <returns></returns>
-    public new int EpUse
-    {
-        get
-        {
-            return (int)(1 / ((float)(Player.Strength + Player.Skill) / 100));
-        }
-    }
+
 }

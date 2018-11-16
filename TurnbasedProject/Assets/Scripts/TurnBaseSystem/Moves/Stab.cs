@@ -18,16 +18,4 @@ public class Stab : Moves, AttackMove {
 		SpUse = -0.2f;
         MoveCount = 3;	
 	}
-
-	/// <summary>
-    /// Hides the original EpUse so a unique value can be obtain based on the player's current stats.
-    /// </summary>
-    /// <returns></returns>
-    public new int EpUse
-    {
-        get
-        {
-            return (int)(1 / ((float)(Player.Strength + Player.Skill) / 100));
-        }
-    }
 }
