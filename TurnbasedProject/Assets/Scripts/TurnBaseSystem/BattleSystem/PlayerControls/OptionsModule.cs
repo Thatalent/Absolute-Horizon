@@ -33,8 +33,15 @@ public class OptionsModule
 	}
 
 	public void setValues(){
-		LowestMoveCount= OptionsModule.lowMove(battleController.Player.Actions.AllActions);
-		lowEnergy(battleController.Player.Actions.AllActions);
+
+		Moves [] allMoves =battleController.Player.Actions.AllActions;
+		for (int i =0; i <allMoves.Length; i++){
+			allMoves[i].BattleController = battleController;
+			allMoves[i].Player = battleController.Player;
+		}
+		LowestMoveCount= OptionsModule.lowMove(allMoves);
+		Debug.LogWarning("Lowest Move count: "+LowestMoveCount);
+		lowEnergy(allMoves);
 		lowMana(battleController.Player.Actions.MagicActions);
 	}
 
@@ -48,12 +55,24 @@ public class OptionsModule
 	{
 		playerMove.Player = battleController.Player;
 		playerMove.BattleController = battleController;
+
 		int m = battleController.Player.MoveCounter - playerMove.MoveCount;
+
+		Debug.Log("Player Move Engery use :"+playerMove.Name);
+		Debug.Log("Player Energy: "+battleController.Player.Energy);
+		Debug.Log("Player Mana: "+battleController.Player.Mana);
+		Debug.Log("Player Special Charage: "+GameInformation.SpecialCharge);
+		Debug.LogWarning("Player Move Engery use :"+playerMove.EpUse);
+		Debug.Log("Player Move Mana use :"+playerMove.MpUse);
+		Debug.LogWarning("Player Move Count use :"+playerMove.MoveCount);
+		Debug.LogWarning("Player MoveCounter use :"+battleController.Player.MoveCounter);
 
 		if (playerMove.Player.Energy >= playerMove.EpUse && (m) >= 0 && playerMove.Player.Mana >= playerMove.MpUse && GameInformation.SpecialCharge >= playerMove.SpUse)
 		{
 			ActiveTurn = true;
 			battleController.Player.MoveCounter = m;
+			Debug.LogWarning("Player MoveCounter use :"+battleController.Player.MoveCounter);
+
 			playerMove.resource();
 			float hit = playerMove.accuracy();
 
@@ -64,44 +83,64 @@ public class OptionsModule
 		}
 		else if (m < 0)
 		{
-			EndPlayerTurn = true;
+			Debug.LogWarning("Wating because m is lower lower than 0");
+
+			endTurn();
+			return;
 		}
 		else if (ActiveTurn == true && playerMove.Player.Energy < playerMove.EpUse)
 		{
-			EndPlayerTurn = true;
+			Debug.LogWarning("Wating because Energy is lower lowest Energy count");
+
+			endTurn();
+			return;
 		}
 		if (battleController.Player.MoveCounter < LowestMoveCount)
 		{
-			EndPlayerTurn = true;
-			//  endPlayerTurn();
+			Debug.LogWarning("Player MoveCounter use :"+battleController.Player.MoveCounter);
+
+			Debug.LogWarning("Wating because MoveCounter is lower lowest Move count");
+			 endTurn();
+			 return;
 			//   turnWait();
 		}
 		if (playerMove.Player.Energy < LoAttackEnergy)
 		{
 			if (ActiveTurn)
 			{
-				EndPlayerTurn = true;
+				Debug.LogWarning("Wating because Eneergy is loower than lowest count and turn is active");
+
+				endTurn();
+				return;
 			}
 			else
 			{
 				FloatingText.Show("Need More Energy :(", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, GameInformation.MoveWait, 0));
+				return;
 			}
 
+			Debug.LogWarning("Wating because  Eneergy is loower than lowest count");
 
-			//  endPlayerTurn();
+			//  endTurn();
 			//   turnWait();
 		}
 		if (playerMove.Player.Mana < LoMana)
 		{
-			EndPlayerTurn = true;
-			//  endPlayerTurn();
+			// EndTurn = true;
+						Debug.LogWarning("Wating because MoveCounter is lower lowest Move count");
+
+			 endTurn();
+			 return;
 			//   turnWait();
 		}
-		else if (battleController.Player.MoveCounter <= 0)
+		if (battleController.Player.MoveCounter <= 0)
 		{
-			EndPlayerTurn = true;
+			// EndTurn = true;
 			// turnWait();
-			// endPlayerTurn();
+						Debug.LogWarning("Wating because MoveCounter is lower lowest Move count");
+
+			endTurn();
+			return;
 		}
 	}
 
@@ -112,17 +151,18 @@ public class OptionsModule
 			t = 1;
 			Wait = true;
 			ActiveTurn = false;
+			Debug.LogWarning("Wait Start");
 			yield return new WaitForSeconds(battleController.Player.MoveWait);
 			Wait = false;
 			FloatingText.Show("Ready!!!", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, 1f, 0));
-			battleController.Player.MoveCounter = battleController.Player.MoveCounter;
+			battleController.Player.MoveCounter = battleController.Player.MaxMoveCounter;
+			Debug.LogWarning("Move reset to: "+ battleController.Player.MaxMoveCounter);
 			t = 0;
 		}
 	}
 
 	public void endTurn(){
 
-		EndPlayerTurn = false;
         FloatingText.Show("Waiting . . .", "EnemyDamageTaken", new FromWorldPointPositioner(Camera.main, GameObject.Find("Text_Generator").transform.position, battleController.Player.MoveWait, 0));
 
     	battleController.StartCoroutine(this.turnWait());
