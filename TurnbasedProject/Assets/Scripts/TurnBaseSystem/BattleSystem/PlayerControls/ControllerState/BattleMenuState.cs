@@ -15,18 +15,30 @@ public abstract class BattleMenuState : BattleState {
 
 	public override void executeAButton(OptionsModule module)
     {
+        if(module.Wait){
+            return;
+        }
 		Moves move = Menu[(int)ActionIndex.A];
 		setFieldsOnMove(module.battleController, move);
         module.playerTurn(move);
     }
 	public override void executeXButton(OptionsModule module)
     {
+        if(module.Wait){
+            return;
+        }
 		Moves move = Menu[(int)ActionIndex.X];
 		setFieldsOnMove(module.battleController, move);
         module.playerTurn(move);
     }
 	public override void executeYButton(OptionsModule module)
     {
+        Debug.LogWarning("Deciding to start move");
+        if(module.Wait){
+            Debug.LogWarning("Waiting for release!!!");
+            return;
+        }
+    
 		Moves move = Menu[(int)ActionIndex.Y];
 		setFieldsOnMove(module.battleController, move);
         module.playerTurn(move);
