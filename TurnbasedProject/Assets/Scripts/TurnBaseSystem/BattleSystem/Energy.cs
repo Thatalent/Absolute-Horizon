@@ -23,10 +23,13 @@ public class Energy : MonoBehaviour {
             yield return new WaitForSeconds(1);
 			if (battleController.Player.Energy < battleController.Player.MaxEnergy & !battleController.Model.ActiveTurn) {
 				battleController.Player.Energy = battleController.Player.Energy + battleController.Player.EnergyRate;
+
                 energyStatus();
             //yield return new WaitForSeconds(10);
-				Debug.Log(battleController.Player.Energy);
+				Debug.Log("New PLayer Energy: "+battleController.Player.Energy);
 				if (battleController.Player.Energy > battleController.Player.MaxEnergy) {
+                    Debug.LogWarning("JK New PLayer Energy is: "+battleController.Player.Energy);
+
 					battleController.Player.Energy = battleController.Player.MaxEnergy;
                     energyStatus();
                   //  yield return new WaitForSeconds(2f);
