@@ -18,6 +18,8 @@ public class Player {
 	public float PlayerExp{ get; set; }
 	public string PlayerName{ get; set; }
     public int MoveCounter { get; set; }
+
+	public int MaxMoveCounter { get; set; }
     public float MoveWait { get; set;}
 
     public int MaxHealth { get; set; }

@@ -365,6 +365,7 @@ public class GameInformation : MonoBehaviour
         Player.EnergyRate = GameInformation.EnergyRate;
         Player.Agility = GameInformation.Agility;
         Player.MoveCounter = MoveCounter;
+        Player.MaxMoveCounter = MoveCounter;
         Player.MoveWait = GameInformation.MoveWait;
 	Player.Actions = GameInformation.Actions;
         return Player;
