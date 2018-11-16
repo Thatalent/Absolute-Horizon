@@ -4,9 +4,9 @@ using UnityEngine;
 public class FireBoost : Enchantment
 {
     
-    int limit = 3;
+    private int limit = 3;
 
-    string chant = "fir";
+    private string chant = "fir";
 
     public void enchant(Moves move){
         move.BrnRate += 0.15f;
