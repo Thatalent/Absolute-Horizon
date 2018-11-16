@@ -24,18 +24,18 @@ void Start () {
 
         if(Input.anyKey){
 
-            Model.CommandState.XButton = Input.GetButton("X_button");
-            Model.CommandState.YButton = Input.GetButton("Y_button");
-            Model.CommandState.AButton = Input.GetButton("A_button");
-            Model.CommandState.BButton = Input.GetButton("B_button");
-            Model.CommandState.LCtrlButton = Input.GetButton("L_Ctrl_button");
-            Model.CommandState.RCtrlButton = Input.GetButton("R_Ctrl_button");
-            Model.CommandState.StartButton = Input.GetButton("Start_button");
-            Model.CommandState.SelectButton = Input.GetButton("Select_button");
-            Model.CommandState.LbButton = Input.GetButton("Lb_button");
-            Model.CommandState.RbButton = Input.GetButton("Rb_button");
-            Model.CommandState.RtButton = Input.GetButton("Rt_button");
-            Model.CommandState.LtButton = Input.GetButton("Lt_button");
+            Model.CommandState.XButton = Input.GetButtonDown("X_button");
+            Model.CommandState.YButton = Input.GetButtonDown("Y_button");
+            Model.CommandState.AButton = Input.GetButtonDown("A_button");
+            Model.CommandState.BButton = Input.GetButtonDown("B_button");
+            Model.CommandState.LCtrlButton = Input.GetButtonDown("L_Ctrl_button");
+            Model.CommandState.RCtrlButton = Input.GetButtonDown("R_Ctrl_button");
+            Model.CommandState.StartButton = Input.GetButtonDown("Start_button");
+            Model.CommandState.SelectButton = Input.GetButtonDown("Select_button");
+            Model.CommandState.LbButton = Input.GetButtonDown("Lb_button");
+            Model.CommandState.RbButton = Input.GetButtonDown("Rb_button");
+            Model.CommandState.RtButton = Input.GetButtonDown("Rt_button");
+            Model.CommandState.LtButton = Input.GetButtonDown("Lt_button");
             Model.CommandState.LeftStick.X_Axis = Input.GetAxis("Left_Stick_Y");
             Model.CommandState.LeftStick.Y_Axis = Input.GetAxis("Left_Stick_X");
             Model.CommandState.RightStick.X_Axis = Input.GetAxis("Right_Stick_X");
