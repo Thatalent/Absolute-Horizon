@@ -22,4 +22,5 @@ public abstract class ReactionState : BattleState
         public Queue<string> CommandQueue { get; set; }
 
         public Queue<string> InputQueue { get; set; }
+        
     }
