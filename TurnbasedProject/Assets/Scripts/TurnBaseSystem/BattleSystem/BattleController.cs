@@ -1,4 +1,6 @@
-﻿ using UnityEngine;
+//Created by Jonathan Hudson for DoL 242. Github username Thatalent
+
+using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
