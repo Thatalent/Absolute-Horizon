@@ -1,3 +1,5 @@
+//Created by Jonathan Hudson for DoL 242. Github username Thatalent
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
